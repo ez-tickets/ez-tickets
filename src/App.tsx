@@ -1,12 +1,10 @@
 import {Fragment} from "react";
-import Menu from "./screen/Menu.tsx";
+import Home from "./screen/Home.tsx";
 
 function App() {
-
-
   return (
     <Fragment>
-      <Menu/>
+      <Home/>
     </Fragment>
   )
 }
