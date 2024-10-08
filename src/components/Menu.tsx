@@ -1,90 +1,20 @@
-import { Fragment } from 'react';
-import sampleMenu from "../assets/sampleMenu.jpeg";
-import {menu} from "./style/Menu.css.ts";
+import {Fragment} from 'react';
+import {menuStyle} from "./style/Menu.css.ts";
+import {menuData} from "../mockData.ts";
 
 function Menu() {
     return (
         <Fragment>
-            <div className={menu.menu}>
-                <img
-                    src={sampleMenu}
-                    className={menu.menuImg}
-                />
-                <div className={menu.menuName}>SampleMenu</div>
-                <div className={menu.menuPrice}>850円</div>
-            </div>
-
-            <div className={menu.menu}>
-                <img
-                    src={sampleMenu}
-                    className={menu.menuImg}
-                />
-                <div className={menu.menuName}>SampleMenu</div>
-                <div className={menu.menuPrice}>850円</div>
-            </div>
-
-            <div className={menu.menu}>
-                <img
-                    src={sampleMenu}
-                    className={menu.menuImg}
-                />
-                <div className={menu.menuName}>SampleMenu</div>
-                <div className={menu.menuPrice}>850円</div>
-            </div>
-
-            <div className={menu.menu}>
-                <img
-                    src={sampleMenu}
-                    className={menu.menuImg}
-                />
-                <div className={menu.menuName}>SampleMenu</div>
-                <div className={menu.menuPrice}>850円</div>
-            </div>
-
-            <div className={menu.menu}>
-                <img
-                    src={sampleMenu}
-                    className={menu.menuImg}
-                />
-                <div className={menu.menuName}>SampleMenu</div>
-                <div className={menu.menuPrice}>850円</div>
-            </div>
-
-            <div className={menu.menu}>
-                <img
-                    src={sampleMenu}
-                    className={menu.menuImg}
-                />
-                <div className={menu.menuName}>SampleMenu</div>
-                <div className={menu.menuPrice}>850円</div>
-            </div>
-
-            <div className={menu.menu}>
-                <img
-                    src={sampleMenu}
-                    className={menu.menuImg}
-                />
-                <div className={menu.menuName}>SampleMenu</div>
-                <div className={menu.menuPrice}>850円</div>
-            </div>
-
-            <div className={menu.menu}>
-                <img
-                    src={sampleMenu}
-                    className={menu.menuImg}
-                />
-                <div className={menu.menuName}>SampleMenu</div>
-                <div className={menu.menuPrice}>850円</div>
-            </div>
-
-            <div className={menu.menu}>
-                <img
-                    src={sampleMenu}
-                    className={menu.menuImg}
-                />
-                <div className={menu.menuName}>SampleMenu</div>
-                <div className={menu.menuPrice}>850円</div>
-            </div>
+            {menuData.map((menu) => (
+                <div className={menuStyle.menuCard} key={menu.id}>
+                    <img
+                        src={menu.image}
+                        className={menuStyle.menuImg}
+                    />
+                    <div className={menuStyle.menuName}>{menu.name}</div>
+                    <div className={menuStyle.menuPrice}>{menu.price}</div>
+                </div>
+            ))}
         </Fragment>
     );
 }

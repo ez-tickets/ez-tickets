@@ -5,7 +5,6 @@ import CategoryNav from "../components/CategoryNav.tsx";
 import MenuCardList from "../components/MenuCardList.tsx";
 
 function Home() {
-
     return (
         <Fragment>
             <div className={home.parent}>

@@ -1,7 +1,7 @@
 import {style} from "@vanilla-extract/css";
 
-export const menu = ({
-    menu: style({
+export const menuStyle = ({
+    menuCard: style({
         display: "flex",
         flexDirection: "column",
         width: "160px",
@@ -28,6 +28,9 @@ export const menu = ({
         padding: "6px 0",
         borderRadius: "0 0 10px 10px",
         textAlign: "right",
-        paddingRight: "10px"
+        paddingRight: "10px",
+        ":after": {
+            content: "円"
+        }
     }),
 })

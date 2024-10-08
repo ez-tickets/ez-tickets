@@ -51,6 +51,10 @@ export const menuDetail = ({
         fontSize: "2rem",
         textAlign: "right",
         margin: "30px 10px 0 0",
+
+        ":after": {
+            content: "円"
+        }
     }),
 
     decisionButton: style({

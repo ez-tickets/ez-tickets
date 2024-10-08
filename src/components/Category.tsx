@@ -1,18 +1,13 @@
-import { Fragment } from "react";
-import { category } from "./style/Category.css.ts";
+import {Fragment} from "react";
+import {categoryData} from "../mockData.ts";
+import {category} from "./style/Category.css.ts"
 
 function Category() {
     return (
         <Fragment>
-            <li className={ category.item }>card1</li>
-            <li className={ category.item }>card1</li>
-            <li className={ category.item }>card1</li>
-            <li className={ category.item }>card1</li>
-            <li className={ category.item }>card1</li>
-            <li className={ category.item }>card1</li>
-            <li className={ category.item }>card1</li>
-            <li className={ category.item }>card1</li>
-            <li className={ category.item }>card1</li>
+            {categoryData.map((card) => (
+                <li key={card.id} className={category.item}>{card.name}</li>
+            ))}
         </Fragment>
     );
 }
