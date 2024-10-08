@@ -10,7 +10,7 @@ export const menuDetail = ({
         display: "flex",
         width: "100%",
         height: "50px",
-        zIndex: 100 //todo
+        zIndex: "100"
     }),
 
     backImg: style({
