@@ -18,13 +18,13 @@ export const menuStyle = ({
     }),
 
     menuName: style({
-        backgroundColor: "yellow",
+        // backgroundColor: "yellow",
         padding: "5px 0",
         paddingLeft: "10px",
     }),
 
     menuPrice: style({
-        backgroundColor: "greenyellow",
+        // backgroundColor: "greenyellow",
         padding: "6px 0",
         borderRadius: "0 0 10px 10px",
         textAlign: "right",

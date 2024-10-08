@@ -3,6 +3,7 @@ import { Fragment } from "react";
 import { menuDetail } from "./style/MenuDetail.css.ts";
 import OptionalMenu from "../components/OptionalMenu.tsx";
 import { selectMenuData } from "../mockData.ts";
+import {Link} from "react-router-dom";
 
 function MenuDetail() {
     const getData = selectMenuData;
@@ -11,10 +12,12 @@ function MenuDetail() {
         <Fragment>
             <div className={menuDetail.screen}>
                 <div className={menuDetail.topBar}>
-                    <img
-                        src={backSVG}
-                        className={menuDetail.backImg}
-                    />
+                    <Link to={"/"}>
+                        <img
+                            src={backSVG}
+                            className={menuDetail.backImg}
+                        />
+                    </Link>
                     <h1 className={menuDetail.menuTitle}>{getData.name}</h1>
                 </div>
 
