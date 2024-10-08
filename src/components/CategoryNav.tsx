@@ -1,24 +1,14 @@
-import {Fragment} from "react";
-import {category} from "./style/Category.css.ts";
+import { Fragment } from "react";
+import { categoryNav } from "./style/CategoryNav.css.ts";
+import Category from "./Category.tsx";
 
 function CategoryNav() {
+
     return (
         <Fragment>
-            <div className={category.header}>
-                <ul className={category.menuCard}>
-                    <li className={category.li}>card1</li>
-                    <li className={category.li}>card1</li>
-                    <li className={category.li}>card1</li>
-                    <li className={category.li}>card1</li>
-                    <li className={category.li}>card1</li>
-                    <li className={category.li}>card1</li>
-                    <li className={category.li}>card1</li>
-                    <li className={category.li}>card1</li>
-                    <li className={category.li}>card1</li>
-                    <li className={category.li}>card1</li>
-                    <li className={category.li}>card1</li>
-                    <li className={category.li}>card1</li>
-                    <li className={category.li}>card1</li>
+            <div className={categoryNav.header}>
+                <ul className={categoryNav.menuCard}>
+                    <Category/>
                 </ul>
             </div>
         </Fragment>

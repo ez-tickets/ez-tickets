@@ -7,11 +7,6 @@ export const home = ({
         height: "100vh",
     }),
 
-
-    //menu -------------------------------------------------------------------
-
-
-    //footer ------------------------------------------------------------------
     footer: style({
         backgroundColor: "aqua",
         textAlign: "center",
@@ -21,5 +16,5 @@ export const home = ({
         left: "0",
         width: "100%",
         zIndex: "1"
-    })
+    }),
 });
