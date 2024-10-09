@@ -1,4 +1,4 @@
-import {style} from "@vanilla-extract/css";
+import {style, keyframes} from "@vanilla-extract/css";
 
 export const menuDetail = ({
     screen: style({
@@ -69,3 +69,15 @@ export const menuDetail = ({
         margin: "auto"
     }),
 })
+
+const slideIn = keyframes({
+    from: { transform: 'translateX(100%)', opacity: 0 },
+    to  : { transform: 'translateX(0)',    opacity: 1 },
+});
+
+export const slidePage = style({
+    animation: `${slideIn} 0.5s ease-in-out`,
+    position: 'absolute',
+    width: '100%',
+    animationDuration: "0.4s",
+});

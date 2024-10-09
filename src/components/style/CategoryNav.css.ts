@@ -8,7 +8,6 @@ export const categoryNav = ({
         boxShadow: "0px 2px 5px gray",
         overflow: "scroll",
         whiteSpace: "nowrap",
-        overflowX: "auto",
     }),
 
     menuCard: style({
