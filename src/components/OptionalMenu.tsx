@@ -33,7 +33,7 @@ function OptionalMenu({ options }: OptionalMenuProps) {
                         type={"checkbox"}
                         onChange={(e) => selectedOptions(e, option.id, option.name)}
                     />
-                    { option.name }
+                    <span>　{ option.name }</span>
                 </label>
             ))}
         </Fragment>

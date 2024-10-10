@@ -7,10 +7,12 @@ export const menuDetail = ({
     }),
 
     topBar: style({
-        display: "flex",
-        width: "100%",
-        height: "50px",
-        zIndex: "100"
+        top: "0",
+        left: "0",
+        zIndex: 1000,
+        boxShadow: "0px 2px 5px gray",
+        overflow: "scroll",
+        whiteSpace: "nowrap",
     }),
 
     backImg: style({
@@ -19,7 +21,7 @@ export const menuDetail = ({
     }),
 
     menuTitle: style({
-        margin: "auto",
+        textAlign: "center",
     }),
 
     menuImg: style({
@@ -59,7 +61,7 @@ export const menuDetail = ({
 
     decisionButton: style({
         position: "absolute",
-        bottom: "30px",
+        bottom: "10px",
         left: "20px",
         display: "block",
         backgroundColor: "gold",

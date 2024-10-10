@@ -1,10 +1,12 @@
 import backSVG from "../assets/back.svg";
-import {Fragment } from "react";
+import incrementSVG from "../assets/increment.svg";
+import decrementSVG from "../assets/decrement.svg";
+import {Fragment, useState} from "react";
 import { menuDetail, slidePage} from "./style/MenuDetail.css.ts";
 import OptionalMenu from "../components/OptionalMenu.tsx";
 import { selectMenuData } from "../mockData.ts";
 import { Link } from "react-router-dom";
-import { create } from "zustand";
+import OrderAmount from "../components/OrderAmount.tsx";
 
 function MenuDetail() {
     const getData = selectMenuData;
@@ -23,7 +25,12 @@ function MenuDetail() {
                         <h1 className={menuDetail.menuTitle}>{getData.name}</h1>
                     </div>
 
-                    <div>
+                    <div style={{
+                        flex: "1",
+                        marginBottom: "40px",
+                        overflowY: "auto",
+                        padding: "20px"
+                    }}>
                         <img
                             src={getData.image}
                             className={menuDetail.menuImg}
@@ -39,10 +46,23 @@ function MenuDetail() {
                             </div>
                         </div>
 
+                        <OrderAmount/>
+
                         <p className={menuDetail.price}>{getData.price}</p>
                     </div>
 
-                    <button className={menuDetail.decisionButton}>カートに入れる</button>
+                    {/*todo -------------------------------------------------style変更*/}
+                    <div style={{  //todo
+                        backgroundColor: "aqua",
+                        padding: "20px",
+                        position: "fixed",
+                        bottom: "0",
+                        left: "0",
+                        width: "100%",
+                        zIndex: "1"}}>
+
+                        <button className={menuDetail.decisionButton}>カートに入れる</button>
+                    </div>
                 </div>
             </div>
         </Fragment>
