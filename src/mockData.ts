@@ -25,19 +25,25 @@ export const menuData: Menu[] = [
     { id: "7", name: "Menu7", price: 900,  image: sampleMenu1 },
 ];
 
-export const selectMenuData: SelectMenu = {
+export const selectMenuData1: SelectMenu = {
     name: "sampleMenu",
     image: sampleMenu1,
     description: "サンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキスト",
     options: [
         { id: "1", name: "キャラメルソース", price: 50 },
-        { id: "2", name: "ねぎ", price: 100 },
-        { id: "3", name: "もやし", price: 150 },
-        { id: "4", name: "チョコレート", price: 20 },
-        { id: "5", name: "バニラ", price: 80 },
+        { id: "2", name: "ねぎ", 　　　　　　price: 100 },
+        { id: "3", name: "もやし", 　　　　　price: 150 },
+        { id: "4", name: "チョコレート", 　　price: 20 },
+        { id: "5", name: "バニラ", 　　　　　price: 80 },
     ],
     price: 850
 }
 
-
-
+//optionがなければ複数選択できるようにしたい
+export const selectMenuData2: SelectMenu = {
+    name: "sampleMenu",
+    image: sampleMenu2,
+    description: "サンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキスト",
+    options: [],
+    price: 500
+}

@@ -51,16 +51,6 @@ export const menuDetail = ({
         borderBottom: "1px solid gray",
     }),
 
-    menuOptionContainer: style({
-        textAlign: "center",
-        marginTop: "40px",
-    }),
-
-    menuOptions: style({
-        marginTop: "20px",
-        textAlign: "left"
-    }),
-
     price: style({
         fontSize: "2rem",
         textAlign: "right",

@@ -1,4 +1,4 @@
-import { Fragment, useState } from 'react';
+import { Fragment } from 'react';
 import { orderAmount } from "./style/OrderAmount.css.ts";
 import decrementSVG from "../assets/decrement.svg";
 import incrementSVG from "../assets/increment.svg";
