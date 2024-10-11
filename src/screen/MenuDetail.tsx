@@ -1,12 +1,11 @@
 import backSVG from "../assets/back.svg";
-import incrementSVG from "../assets/increment.svg";
-import decrementSVG from "../assets/decrement.svg";
-import {Fragment, useState} from "react";
-import { menuDetail, slidePage} from "./style/MenuDetail.css.ts";
+import { Fragment } from "react";
+import { menuDetail, slidePage } from "./style/MenuDetail.css.ts";
 import OptionalMenu from "../components/OptionalMenu.tsx";
 import { selectMenuData } from "../mockData.ts";
 import { Link } from "react-router-dom";
 import OrderAmount from "../components/OrderAmount.tsx";
+import PriceTotalView from "../components/PriceTotalView.tsx";
 
 function MenuDetail() {
     const getData = selectMenuData;
@@ -20,20 +19,17 @@ function MenuDetail() {
                             <img
                                 src={backSVG}
                                 className={menuDetail.backImg}
+                                alt={"戻る"}
                             />
                         </Link>
                         <h1 className={menuDetail.menuTitle}>{getData.name}</h1>
                     </div>
 
-                    <div style={{
-                        flex: "1",
-                        marginBottom: "40px",
-                        overflowY: "auto",
-                        padding: "20px"
-                    }}>
+                    <div className={menuDetail.main}>
                         <img
                             src={getData.image}
                             className={menuDetail.menuImg}
+                            alt={getData.name}
                         />
 
                         <p className={menuDetail.menuDescription}>{getData.description}</p>
@@ -47,21 +43,12 @@ function MenuDetail() {
                         </div>
 
                         <OrderAmount/>
-
-                        <p className={menuDetail.price}>{getData.price}</p>
+                        <PriceTotalView menuPrice={getData.price}/>
                     </div>
 
-                    {/*todo -------------------------------------------------style変更*/}
-                    <div style={{  //todo
-                        backgroundColor: "aqua",
-                        padding: "20px",
-                        position: "fixed",
-                        bottom: "0",
-                        left: "0",
-                        width: "100%",
-                        zIndex: "1"}}>
-
-                        <button className={menuDetail.decisionButton}>カートに入れる</button>
+                    <div className={menuDetail.buttonContainer}>
+                        <button className={menuDetail.actionButton}>注文確定に進む</button>
+                        <button className={menuDetail.actionButton}>カートに追加する</button>
                     </div>
                 </div>
             </div>

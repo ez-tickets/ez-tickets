@@ -30,9 +30,11 @@ export const selectMenuData: SelectMenu = {
     image: sampleMenu1,
     description: "サンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキスト",
     options: [
-        { id: "1", name: "option1", price: 50 },
-        { id: "2", name: "option2", price: 100 },
-        { id: "3", name: "option3", price: 150 },
+        { id: "1", name: "キャラメルソース", price: 50 },
+        { id: "2", name: "ねぎ", price: 100 },
+        { id: "3", name: "もやし", price: 150 },
+        { id: "4", name: "チョコレート", price: 20 },
+        { id: "5", name: "バニラ", price: 80 },
     ],
     price: 850
 }

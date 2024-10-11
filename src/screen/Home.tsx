@@ -11,7 +11,7 @@ function Home() {
                 <MenuCardList />
 
                 <div className={home.footer}>
-                    <p>footerです</p>
+                    <button className={home.decisionButton}>注文確定に進む</button>
                 </div>
             </div>
         </Fragment>

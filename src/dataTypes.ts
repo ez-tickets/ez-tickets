@@ -38,7 +38,6 @@ export interface SelectMenu {
 
 export interface Order {
     id: string;
-    options: string;
 }
 
 // 送信データ
