@@ -1,7 +1,7 @@
 import { Fragment } from 'react';
 import { menuDetail } from "../screen/style/MenuDetail.css.ts";
-import { useOptionsPrice } from "./OptionalMenu.tsx";
 import {orderAmountStore} from "./OrderAmount.tsx";
+import {useOptionsPrice} from "./OptionalMenu.tsx";
 
 type PriceTotalViewProps = {
     menuPrice: number;

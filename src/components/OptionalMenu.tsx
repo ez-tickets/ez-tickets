@@ -1,7 +1,8 @@
-import * as React from "react";
 import {Fragment, useState} from 'react';
-import { Option, Order } from "../dataTypes.ts";
-import { create } from "zustand";
+import * as React from "react";
+import { create } from "zustand/index";
+import { Option } from "../dataTypes.ts";
+import {optionalMenuStyle} from "./style/OptionalMenu.css.ts";
 
 type OptionalMenuProps = {
     options: Option[];
@@ -17,9 +18,10 @@ export const useOptionsPrice = create<OptionTotal>()((set) => ({
     optionTotal: 0,
     sum: (price) => set((state) => ({optionTotal: state.optionTotal + price})),
     subtraction: (price) => set((state) => ({optionTotal: state.optionTotal - price})),
-}))
+}));
 
-function OptionalMenu({ options }: OptionalMenuProps) {
+
+function OptionalMenu({ options }:OptionalMenuProps) {
     const [state, setState] = useState<string[]>([])!;
     const {sum, subtraction} = useOptionsPrice();
 
@@ -36,18 +38,18 @@ function OptionalMenu({ options }: OptionalMenuProps) {
     return (
         <Fragment>
             {options.map((option) => (
-                <p style={{margin: "10px 0", borderBottom: "1px solid gainsboro", position: "relative"}}>
-                    <label key={option.id}>
+                <div className={optionalMenuStyle.optionContainer} key={option.id}>
+                    <label>
                         {option.name}
                         <input
-                            style={{position: "absolute", top: "10px", right: "10px"}}
+                            className={optionalMenuStyle.checkBox}
                             type={"checkbox"}
                             checked={state.includes(option.id)}
                             onChange={() => selectedOptions(option.id, option.price)}
                         />
-                        <p style={{fontSize: "12px"}}>+{option.price}円</p>
+                        <p className={optionalMenuStyle.optionPrice}>+{option.price}円</p>
                     </label>
-                </p>
+                </div>
             ))}
         </Fragment>
     );

@@ -26,7 +26,7 @@ export interface SelectMenu {
 }
 
 // let optionList: string[] = [];
-// options.map((props) => <OptionalMenu props={prop} onSelect={(id) => optionList.push(id)} />)
+// options.map((props) => <OptionalMenuContainer props={prop} onSelect={(id) => optionList.push(id)} />)
 
  export interface OptionalMenu {
     id: string;
