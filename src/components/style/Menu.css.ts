@@ -8,7 +8,8 @@ export const menuStyle = ({
         height: "178px",
         borderRadius: "10px",
         marginBottom: "20px",
-        border: "1px solid gray",
+        border: "1px solid rgba(0,0,0,0.3)",
+        boxShadow: "0 0 2px rgba(0,0,0,0.2)",
     }),
 
     menuImg: style({

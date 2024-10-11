@@ -16,8 +16,12 @@ export const orderAmount = {
     }),
 
     amountDisplay: style({
+        width: "40px",
+        height: "40px",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
         border: "1px solid gray",
-        padding: "10px",
         borderRadius: "5px"
     }),
 }

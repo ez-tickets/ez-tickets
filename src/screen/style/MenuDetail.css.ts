@@ -2,26 +2,39 @@ import {style, keyframes} from "@vanilla-extract/css";
 
 export const menuDetail = ({
     screen: style({
-        overflow: "hidden",
-        height: "100vh"
+        display: "flex",
+        flexDirection: "column",
+        height: "100vh",
     }),
 
     topBar: style({
+        position: "relative",
         top: "0",
         left: "0",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        height: "55px",
         zIndex: 1000,
         boxShadow: "0px 2px 5px gray",
-        overflow: "scroll",
         whiteSpace: "nowrap",
     }),
 
     backImg: style({
         position: "absolute",
+        top: "2.5px",
         left: "5px"
     }),
 
     menuTitle: style({
         textAlign: "center",
+        fontSize: "24px",
+    }),
+
+    main: style({
+        flex: "1",
+        overflowY: "auto",
+        padding: "20px"
     }),
 
     menuImg: style({
@@ -29,12 +42,13 @@ export const menuDetail = ({
         border: "1px solid gray",
         width: "250px",
         height: "200px",
-        margin: "40px auto"
+        margin: "20px auto"
     }),
 
     menuDescription: style({
-        padding: "0 30px",
+        padding: "20px 30px",
         marginBottom: "30px",
+        borderBottom: "1px solid gray",
     }),
 
     menuOptionContainer: style({
@@ -43,10 +57,8 @@ export const menuDetail = ({
     }),
 
     menuOptions: style({
-        display: "grid",
         marginTop: "20px",
-        gridTemplateColumns: "repeat(auto-fit, minmax(150px, 1fr));",
-        placeItems: "center",
+        textAlign: "left"
     }),
 
     price: style({
@@ -59,16 +71,19 @@ export const menuDetail = ({
         }
     }),
 
-    decisionButton: style({
-        position: "absolute",
-        bottom: "10px",
-        left: "20px",
-        display: "block",
+    buttonContainer: style({
+        display: "flex",
+        justifyContent: "space-around",
+        padding: "15px 0",
+        borderTop: "1px solid rgba(0,0,0,0.2)"
+    }),
+
+    actionButton: style({
+        width: "150px",
         backgroundColor: "gold",
-        borderRadius: "3px",
-        width: "calc(100% - 10%)",
-        height: "40px",
-        margin: "auto"
+        borderRadius: "2.5px",
+        padding: "10px",
+        border: "1px solid rgba(0,0,0,0.2)",
     }),
 })
 

@@ -1,6 +1,6 @@
 import { Fragment } from "react";
 import Menu from "./Menu.tsx";
-import {menuCardList} from "./style/MenuCardList.css.ts";
+import { menuCardList } from "./style/MenuCardList.css.ts";
 
 function MenuCardList() {
     return (

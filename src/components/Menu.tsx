@@ -1,7 +1,7 @@
-import {Fragment} from 'react';
-import {menuStyle} from "./style/Menu.css.ts";
-import {menuData} from "../mockData.ts";
-import {Link} from "react-router-dom";
+import { Fragment } from 'react';
+import { menuStyle } from "./style/Menu.css.ts";
+import { menuData } from "../mockData.ts";
+import { Link } from "react-router-dom";
 
 function Menu() {
     return (
@@ -12,6 +12,7 @@ function Menu() {
                         <img
                             src={menu.image}
                             className={menuStyle.menuImg}
+                            alt={menu.name}
                         />
                         <div className={menuStyle.menuName}>{menu.name}</div>
                         <div className={menuStyle.menuPrice}>{menu.price}</div>
