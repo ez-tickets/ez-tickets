@@ -2,7 +2,7 @@ import { Fragment } from 'react';
 import { orderAmount } from "./style/OrderAmount.css.ts";
 import decrementSVG from "../assets/decrement.svg";
 import incrementSVG from "../assets/increment.svg";
-import {create} from "zustand";
+import { create } from "zustand";
 
 type OrderAmount = {
     amount: number;
@@ -10,7 +10,7 @@ type OrderAmount = {
     dec: () => void;
 }
 
-export const orderAmountStore = create<OrderAmount>()((set) => ({
+export const useOrderAmountStore = create<OrderAmount>()((set) => ({
     amount: 1,
     inc: () => set((state) => ({amount: state.amount + 1})),
     dec: () => set((state) => ({amount: state.amount - 1})),
@@ -18,13 +18,14 @@ export const orderAmountStore = create<OrderAmount>()((set) => ({
 
 
 function OrderAmount() {
-    const {amount, inc, dec} = orderAmountStore();
+    const {amount, inc, dec} = useOrderAmountStore();
     const maxAmount = 10;
     const minAmount = 1;
 
     return (
         <Fragment>
             <div className={orderAmount.amountContainer}>
+                <p className={orderAmount.text}>数量: </p>
                 <button
                     className={orderAmount.decrementButton}
                     onClick={dec}

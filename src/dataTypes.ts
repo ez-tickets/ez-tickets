@@ -16,11 +16,18 @@ export interface Option {
     price: number;
 }
 
+export interface Size {
+    id: string;
+    name: string;
+    price: number;
+}
+
 // select時の受信データ
 export interface SelectMenu {
     name: string;
     image: string;
     description: string;
+    sizes: Size[]
     options: Option[];
     price: number;
 }

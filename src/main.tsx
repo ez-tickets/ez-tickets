@@ -12,5 +12,5 @@ createRoot(document.getElementById('root')!).render(
               <Route path='/MenuDetail' element={<MenuDetail />} />
           </Routes>
       </BrowserRouter>
-  </StrictMode>,
+  </StrictMode>
 )

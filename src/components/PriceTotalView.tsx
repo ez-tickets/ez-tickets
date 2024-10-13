@@ -1,20 +1,28 @@
 import { Fragment } from 'react';
-import { menuDetail } from "../screen/style/MenuDetail.css.ts";
-import {orderAmountStore} from "./OrderAmount.tsx";
-import {useOptionsPrice} from "./OptionalMenu.tsx";
+import { useOrderAmountStore } from "./OrderAmount.tsx";
+import { useOptionsPrice } from "./OptionalMenu.tsx";
+import {priceTotalViewStyle} from "./style/PriceTotalView.css.ts";
+import { useSizePrice } from "./MenuSize.tsx";
 
 type PriceTotalViewProps = {
     menuPrice: number;
 }
 
-function PriceTotalView({menuPrice}: PriceTotalViewProps) {
+function PriceTotalView({ menuPrice }: PriceTotalViewProps) {
+    const {price} = useSizePrice();
     const {optionTotal} = useOptionsPrice();
-    const {amount} = orderAmountStore();
-    const result = ((menuPrice * amount) + optionTotal).toLocaleString();
+    const {amount} = useOrderAmountStore();
+    let result;
+
+    if (price == 0) {
+        result = menuPrice * amount;
+    } else {
+        result = ((price * amount) + optionTotal);
+    }
 
     return (
         <Fragment>
-            <p className={menuDetail.price}>{result}</p>
+            <p className={priceTotalViewStyle.total}>{result.toLocaleString()}</p>
         </Fragment>
     );
 }
