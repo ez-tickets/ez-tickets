@@ -2,14 +2,15 @@ import backSVG from "../assets/back.svg";
 import { Fragment } from "react";
 import { menuDetail, slidePage } from "./style/MenuDetail.css.ts";
 import OptionalMenuContainer from "../components/OptionalMenuContainer.tsx";
-import {selectMenuData1, selectMenuData2} from "../mockData.ts";
+import { selectMenuData1, selectMenuData2 } from "../mockData.ts";
 import { Link } from "react-router-dom";
-import OrderAmount from "../components/OrderAmount.tsx";
 import PriceTotalView from "../components/PriceTotalView.tsx";
+import OrderAmount from "../components/OrderAmount.tsx";
+import MenuSizeContainer from "../components/MenuSizeContainer.tsx";
+import { orderAmount } from "../components/style/OrderAmount.css.ts";
 
 function MenuDetail() {
     const getData = selectMenuData1;
-    const getData2 = selectMenuData2;
 
     return (
         <Fragment>
@@ -36,13 +37,25 @@ function MenuDetail() {
 
                         <p className={menuDetail.menuDescription}>{getData.description}</p>
 
-                        {getData.options.length != 0 ? <OptionalMenuContainer options={getData.options} /> : ""}
 
-                        <PriceTotalView menuPrice={getData.price}/>
+                        {getData.sizes.length != 0 ? <MenuSizeContainer sizes={getData.sizes} /> : ""}
+                        {getData.options.length != 0 ? <OptionalMenuContainer options={getData.options}/> : ""}
+
                     </div>
                     {/*--------------------------------------------------------------------*/}
 
                     <div className={menuDetail.buttonContainer}>
+                        {getData.options.length != 0
+                            ?
+                            <div className={orderAmount.amountContainer}>
+                                <p className={orderAmount.text}>数量: </p>
+                                <div className={orderAmount.amountDisplay}>1</div>
+                            </div>
+                            :
+                            <OrderAmount/>}
+
+                        <PriceTotalView menuPrice={getData.price}/>
+
                         <button className={menuDetail.actionButton}>注文確定に進む</button>
                         <button className={menuDetail.actionButton}>カートに追加する</button>
                     </div>

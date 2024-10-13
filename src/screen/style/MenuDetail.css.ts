@@ -46,25 +46,14 @@ export const menuDetail = ({
     }),
 
     menuDescription: style({
-        padding: "20px 30px",
-        marginBottom: "30px",
-        borderBottom: "1px solid gray",
-    }),
-
-    price: style({
-        fontSize: "2rem",
-        textAlign: "right",
-        margin: "30px 10px 0 0",
-
-        ":after": {
-            content: "円"
-        }
+        padding: "10px 30px 20px",
     }),
 
     buttonContainer: style({
+        position: "relative",
         display: "flex",
         justifyContent: "space-around",
-        padding: "15px 0",
+        padding: "60px 0 10px",
         borderTop: "1px solid rgba(0,0,0,0.2)"
     }),
 

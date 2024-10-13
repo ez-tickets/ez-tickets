@@ -1,19 +1,19 @@
-import {style} from "@vanilla-extract/css";
+import { style } from "@vanilla-extract/css";
 
-export const optionalMenuStyle = ({
-    optionContainer: style({
+export const menuSizeStyle = ({
+    sizeContainer: style({
         padding: "10px 0",
         borderTop: "1px solid gainsboro",
         position: "relative"
     }),
 
-    checkBox: style({
+    radio: style({
         position: "absolute",
         top: "25px",
         right: "10px"
     }),
 
-    optionPrice: style({
+    sizePrice: style({
         fontSize: "12px"
-    })
+    }),
 })

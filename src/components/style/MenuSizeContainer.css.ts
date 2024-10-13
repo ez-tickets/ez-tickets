@@ -1,13 +1,13 @@
 import {style} from "@vanilla-extract/css";
 
-export const optionalMenuContainerStyle = ({
-    menuOptionContainer: style({
+export const menuSizeContainerStyle = ({
+    menuSizeContainer: style({
         borderTop: "1px solid gainsboro",
         textAlign: "center",
         paddingTop: "20px",
     }),
 
-    menuOptions: style({
+    menuSize: style({
         marginTop: "20px",
         textAlign: "left"
     }),
