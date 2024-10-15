@@ -1,13 +1,13 @@
-import {style} from "@vanilla-extract/css";
+import { style } from "@vanilla-extract/css";
 
-export const menuCardList = ({
+export const menuCardListStyle = ({
     //header -------------------------------------------------------------
     main: style({
         flex: "1",
         marginBottom: "40px",
         overflowY: "auto",
         padding: "20px",
-        paddingBottom: "150px",
+        paddingBottom: "50px",
     }),
 
     menuContainer: style({

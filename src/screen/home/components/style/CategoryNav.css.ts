@@ -1,6 +1,6 @@
-import {style} from "@vanilla-extract/css";
+import { style } from "@vanilla-extract/css";
 
-export const categoryNav = ({
+export const categoryNavStyle = ({
     header: style({
         zIndex: 1000,
         boxShadow: "0px 2px 5px gray",

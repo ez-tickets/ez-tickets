@@ -1,7 +1,7 @@
 import { Fragment } from 'react';
-import { Size } from "../dataTypes.ts";
-import { menuSizeContainerStyle } from "./style/MenuSizeContainer.css.ts";
 import MenuSize from "./MenuSize.tsx";
+import { Size } from "../../../dataTypes.ts";
+import { menuSizeContainerStyle } from "./style/MenuSizeContainer.css.ts";
 
 type MenuSizeContainerProps = {
     sizes: Size[];
