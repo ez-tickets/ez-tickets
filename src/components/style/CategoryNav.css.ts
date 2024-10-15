@@ -2,12 +2,8 @@ import {style} from "@vanilla-extract/css";
 
 export const categoryNav = ({
     header: style({
-        top: "0",
-        left: "0",
         zIndex: 1000,
         boxShadow: "0px 2px 5px gray",
-        overflow: "scroll",
-        whiteSpace: "nowrap",
     }),
 
     menuCard: style({

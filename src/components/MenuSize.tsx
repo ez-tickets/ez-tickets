@@ -10,16 +10,18 @@ type MenuSizeProps = {
 type SizePrice = {
     price: number;
     setPrice: (price: number) => void;
+    resetPrice: () => void;
 };
 
-export const useSizePrice = create<SizePrice>()((set) => ({
+export const useSizePriceStore = create<SizePrice>()((set) => ({
     price: 0,
-    setPrice: (price) => set((state) => ({price: state.price = price}))
+    setPrice: (price) => set((state) => ({price: state.price = price})),
+    resetPrice: () => set({price: 0}),
 }));
 
 function MenuSize({ sizes }: MenuSizeProps) {
     const [state, setState] = useState<string>(sizes[1].id);
-    const {setPrice} = useSizePrice();
+    const {setPrice} = useSizePriceStore();
 
     const selectedOptions = (id: string,  price: number) => {
         setState(id);

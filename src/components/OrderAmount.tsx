@@ -8,12 +8,14 @@ type OrderAmount = {
     amount: number;
     inc: () => void;
     dec: () => void;
+    resetAmount: () => void;
 }
 
 export const useOrderAmountStore = create<OrderAmount>()((set) => ({
     amount: 1,
     inc: () => set((state) => ({amount: state.amount + 1})),
     dec: () => set((state) => ({amount: state.amount - 1})),
+    resetAmount: () => set({amount: 1})
 }));
 
 

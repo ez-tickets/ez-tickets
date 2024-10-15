@@ -11,18 +11,20 @@ type OptionTotal = {
     optionTotal: number;
     sum: (price: number) => void;
     subtraction: (price: number) => void;
+    resetOptionTotal: () => void;
 };
 
-export const useOptionsPrice = create<OptionTotal>()((set) => ({
+export const useOptionsPriceStore = create<OptionTotal>()((set) => ({
     optionTotal: 0,
     sum: (price) => set((state) => ({optionTotal: state.optionTotal + price})),
     subtraction: (price) => set((state) => ({optionTotal: state.optionTotal - price})),
+    resetOptionTotal: () => set({optionTotal: 0}),
 }));
 
 
 function OptionalMenu({ options }:OptionalMenuProps) {
     const [state, setState] = useState<string[]>([])!;
-    const {sum, subtraction} = useOptionsPrice();
+    const {sum, subtraction} = useOptionsPriceStore();
 
     const selectedOptions = (id: string,  price: number) => {
         if (!state.includes(id)) {
