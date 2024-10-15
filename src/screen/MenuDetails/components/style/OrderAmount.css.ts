@@ -1,6 +1,6 @@
-import {style} from "@vanilla-extract/css";
+import { style } from "@vanilla-extract/css";
 
-export const orderAmount = {
+export const orderAmountStyle = {
     amountContainer: style({
         position: "absolute",
         top: "15px",

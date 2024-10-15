@@ -1,6 +1,6 @@
 import { Fragment, useState } from 'react';
 import { create } from "zustand/index";
-import { Option } from "../dataTypes.ts";
+import { Option } from "../../../dataTypes.ts";
 import { optionalMenuStyle } from "./style/OptionalMenu.css.ts";
 
 type OptionalMenuProps = {

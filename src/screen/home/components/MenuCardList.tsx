@@ -1,12 +1,12 @@
 import { Fragment } from "react";
 import Menu from "./Menu.tsx";
-import { menuCardList } from "./style/MenuCardList.css.ts";
+import { menuCardListStyle } from "./style/MenuCardList.css.ts";
 
 function MenuCardList() {
     return (
         <Fragment>
-            <div className={menuCardList.main}>
-                <div className={menuCardList.menuContainer}>
+            <div className={menuCardListStyle.main}>
+                <div className={menuCardListStyle.menuContainer}>
                     <Menu/>
                 </div>
             </div>

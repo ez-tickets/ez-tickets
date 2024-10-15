@@ -1,13 +1,13 @@
 import { Fragment } from "react";
-import { categoryNav } from "./style/CategoryNav.css.ts";
 import Category from "./Category.tsx";
+import { categoryNavStyle } from "./style/CategoryNav.css.ts";
 
 function CategoryNav() {
 
     return (
         <Fragment>
-            <div className={categoryNav.header}>
-                <ul className={categoryNav.menuCard}>
+            <div className={categoryNavStyle.header}>
+                <ul className={categoryNavStyle.menuCard}>
                     <Category/>
                 </ul>
             </div>

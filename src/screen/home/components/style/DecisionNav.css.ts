@@ -1,12 +1,6 @@
-import { keyframes, style} from "@vanilla-extract/css";
+import { style } from "@vanilla-extract/css";
 
-export const home = ({
-    parent: style({
-        display: "flex",
-        flexDirection: "column",
-        height: "100vh",
-    }),
-
+export const decisionNavStyle = ({
     footer: style({
         // backgroundColor: "#ffd700", //カートの中に商品が入っている時の色
         backgroundColor: "lightgray",  //注文の品がない時の色
@@ -23,13 +17,4 @@ export const home = ({
     decisionButton: style({
         color: "rgba(0,0,0,0.5)"
     })
-});
-
-const slideOut = keyframes({
-    from: { transform: 'translateX(-100%)', opacity: 0 },
-    to  : { transform: 'translateX(0)',     opacity: 1 },
-});
-
-export const exitSlidePage = style({
-    animation: `${slideOut} 0.5s ease-in-out`,
-});
+})

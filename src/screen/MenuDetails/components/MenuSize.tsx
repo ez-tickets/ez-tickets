@@ -1,7 +1,7 @@
 import { Fragment, useState } from 'react';
-import { Size } from "../dataTypes.ts";
-import { menuSizeStyle } from "./style/MenuSize.css.ts";
 import { create } from "zustand/index";
+import { Size } from "../../../dataTypes.ts";
+import { menuSizeStyle } from "./style/MenuSize.css.ts";
 
 type MenuSizeProps = {
     sizes: Size[];
@@ -19,8 +19,9 @@ export const useSizePriceStore = create<SizePrice>()((set) => ({
     resetPrice: () => set({price: 0}),
 }));
 
+
 function MenuSize({ sizes }: MenuSizeProps) {
-    const [state, setState] = useState<string>(sizes[1].id);
+    const [state, setState] = useState<string>(sizes[1].id); //todo
     const {setPrice} = useSizePriceStore();
 
     const selectedOptions = (id: string,  price: number) => {

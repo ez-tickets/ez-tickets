@@ -1,8 +1,8 @@
 import { Fragment } from 'react';
-import { menuStyle } from "./style/Menu.css.ts";
-import { menuData } from "../mockData.ts";
 import { Link } from "react-router-dom";
-import { useSlideAnimeStore } from "../screen/MenuDetail.tsx";
+import { useSlideAnimeStore } from "../Home.tsx";
+import { menuData } from "../../../mockData.ts";
+import { menuStyle } from "./style/Menu.css.ts";
 
 function Menu() {
     const {changeRightAnimation} = useSlideAnimeStore();
@@ -10,7 +10,11 @@ function Menu() {
     return (
         <Fragment>
             {menuData.map((menu) => (
-                <Link to={"/MenuDetail"} key={menu.id} onClick={changeRightAnimation}>
+                <Link
+                    to={"/MenuDetail"}
+                    key={menu.id}
+                    onClick={changeRightAnimation}
+                >
                     <div className={menuStyle.menuCard}>
                         <img
                             src={menu.image}
