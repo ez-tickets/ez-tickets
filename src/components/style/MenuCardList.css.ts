@@ -6,7 +6,8 @@ export const menuCardList = ({
         flex: "1",
         marginBottom: "40px",
         overflowY: "auto",
-        padding: "20px"
+        padding: "20px",
+        paddingBottom: "150px",
     }),
 
     menuContainer: style({

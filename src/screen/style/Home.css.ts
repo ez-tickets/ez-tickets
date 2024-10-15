@@ -16,7 +16,7 @@ export const home = ({
         bottom: "0",
         left: "0",
         width: "100%",
-        zIndex: "1",
+        zIndex: 1,
         boxShadow: "0 -1px 2px gray"
     }),
 

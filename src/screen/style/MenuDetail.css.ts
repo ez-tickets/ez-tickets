@@ -9,15 +9,12 @@ export const menuDetail = ({
 
     topBar: style({
         position: "relative",
-        top: "0",
-        left: "0",
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
         height: "55px",
         zIndex: 1000,
         boxShadow: "0px 2px 5px gray",
-        whiteSpace: "nowrap",
     }),
 
     backImg: style({
@@ -33,8 +30,9 @@ export const menuDetail = ({
 
     main: style({
         flex: "1",
-        overflowY: "auto",
-        padding: "20px"
+        marginBottom: "100px",
+        overflowY: "scroll",
+        padding: " 0 10px",
     }),
 
     menuImg: style({
@@ -50,9 +48,15 @@ export const menuDetail = ({
     }),
 
     buttonContainer: style({
-        position: "relative",
+        backgroundColor: "white",
+        position: "fixed",
+        bottom: "0",
+        left: "0",
+        width: "100%",
+        zIndex: 1,
         display: "flex",
         justifyContent: "space-around",
+        marginTop: "60px",
         padding: "60px 0 10px",
         borderTop: "1px solid rgba(0,0,0,0.2)"
     }),
@@ -66,13 +70,25 @@ export const menuDetail = ({
     }),
 })
 
-const slideIn = keyframes({
+const rightIn = keyframes({
     from: { transform: 'translateX(100%)', opacity: 0 },
     to  : { transform: 'translateX(0)',    opacity: 1 },
 });
 
-export const slidePage = style({
-    animation: `${slideIn} 0.5s ease-in-out`,
+const leftIn = keyframes({
+    from: { transform: 'translateX(-100%)',    opacity: 0 },
+    to  : { transform: 'translateX(0)', opacity: 1 },
+});
+
+export const slideRightPage = style({
+    animation: `${rightIn} 0.5s ease-in-out`,
+    position: 'absolute',
+    width: '100%',
+    animationDuration: "0.4s",
+});
+
+export const slideLeftPage = style({
+    animation: `${leftIn} 0.5s ease-in-out`,
     position: 'absolute',
     width: '100%',
     animationDuration: "0.4s",
