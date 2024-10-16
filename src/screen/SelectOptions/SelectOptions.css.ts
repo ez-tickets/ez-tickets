@@ -1,6 +1,12 @@
 import {style} from "@vanilla-extract/css";
 
 export const selectOptionsStyle = ({
+    screen: style({
+        display: "flex",
+        flexDirection: "column",
+        height: "100svh"
+    }),
+
     topBar: style({
         position: "relative",
         display: "flex",
@@ -25,10 +31,27 @@ export const selectOptionsStyle = ({
     menuOptionContainer: style({
         borderTop: "1px solid gainsboro",
         textAlign: "center",
+        flex: "1",
+        marginBottom: "40px",
+        overflowY: "auto",
+        paddingBottom: "30px",
     }),
 
     menuOptions: style({
         textAlign: "left",
         padding: "0 5px"
+    }),
+
+    footer: style({
+        // backgroundColor: "#ffd700", //カートの中に商品が入っている時の色
+        backgroundColor: "lightgray",  //注文の品がない時の色
+        textAlign: "center",
+        padding: "20px",
+        position: "fixed",
+        bottom: "0",
+        left: "0",
+        width: "100%",
+        zIndex: 1,
+        boxShadow: "0 -1px 2px gray"
     }),
 })
