@@ -15,5 +15,23 @@ export const optionalMenuStyle = ({
 
     optionPrice: style({
         fontSize: "12px"
-    })
+    }),
+
+    buttonContainer: style({
+        display: "flex",
+        position: "absolute",
+        top: "50%",
+        transform: "translate(0, -50%)",
+        right: 0
+    }),
+
+    amountDisplay: style({
+        width: "30px",
+        height: "30px",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        border: "1px solid gray",
+        borderRadius: "5px"
+    }),
 })
