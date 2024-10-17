@@ -5,7 +5,6 @@ import MenuDescription from "./components/MenuDescription.tsx";
 import BottomNav from "./components/BottomNav.tsx";
 import { useSlideAnimeStore } from "../home/Home.tsx";
 import { topNavStyle } from "./MenuDetail.css.ts";
-import SelectedOptionsView from "./components/SelectedOptionsView.tsx";
 
 function MenuDetail() {
     const getData = selectMenuData1;

@@ -7,12 +7,14 @@ function Category() {
     return (
         <Fragment>
             {categoryData.map((card) => (
-                <Link to={"/"} key={card.id}>
+                <Link
+                    to={"/"}
+                    key={card.id}
+                >
                     <li className={categoryStyle.item}>{card.name}</li>
                 </Link>
             ))}
         </Fragment>
     );
 }
-
 export default Category;
