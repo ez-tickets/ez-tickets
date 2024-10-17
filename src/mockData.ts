@@ -22,10 +22,21 @@ export const menuData: Menu[] = [
     { id: "4", name: "Menu4", price: 1000, image: sampleMenu2 },
     { id: "5", name: "Menu5", price: 1500, image: sampleMenu1 },
     { id: "6", name: "Menu6", price: 1200, image: sampleMenu2 },
-    { id: "7", name: "Menu7", price: 900,  image: sampleMenu1 },
+    { id: "8", name: "Menu7", price: 900,  image: sampleMenu1 },
+    { id: "9", name: "Menu7", price: 900,  image: sampleMenu1 },
+    { id: "10", name: "Menu7", price: 900, image: sampleMenu1 },
+];
+
+export const menuData2: Menu[] = [
+    { id: "1", name: "Menu1", price: 600,  image: sampleMenu1 },
+    { id: "2", name: "Menu2", price: 700,  image: sampleMenu2 },
+    { id: "3", name: "Menu3", price: 800,  image: sampleMenu1 },
+    { id: "4", name: "Menu4", price: 1000, image: sampleMenu2 },
+    { id: "5", name: "Menu5", price: 1500, image: sampleMenu1 },
 ];
 
 export const selectMenuData1: SelectMenu = {
+    id: "1",
     name: "sampleMenu",
     image: sampleMenu1,
     description: "サンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキスト",
@@ -40,22 +51,13 @@ export const selectMenuData1: SelectMenu = {
         { id: "3", name: "もやし", 　　　　　price: 150 },
         { id: "4", name: "チョコレート", 　　price: 20 },
         { id: "5", name: "バニラ", 　　　　　price: 80 },
-        { id: "6", name: "バニラ", 　　　　　price: 80 },
-        { id: "7", name: "バニラ", 　　　　　price: 80 },
-        { id: "8", name: "バニラ", 　　　　　price: 80 },
-        { id: "9", name: "バニラ", 　　　　　price: 80 },
-        { id: "10", name: "バニラ", 　　　　　price: 80 },
-        { id: "11", name: "バニラ", 　　　　　price: 80 },
-        { id: "12", name: "バニラ", 　　　　　price: 80 },
-        { id: "13", name: "バニラ", 　　　　　price: 80 },
-        { id: "14", name: "バニラ", 　　　　　price: 80 },
-        { id: "15", name: "バニラ", 　　　　　price: 80 },
     ],
     price: 850
 }
 
 //optionがなければ複数選択できるようにしたい
 export const selectMenuData2: SelectMenu = {
+    id: "2",
     name: "sampleMenu",
     image: sampleMenu2,
     description: "サンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキスト",
