@@ -24,6 +24,7 @@ export interface Size {
 
 // select時の受信データ
 export interface SelectMenu {
+    id: string;
     name: string;
     image: string;
     description: string;
@@ -43,8 +44,19 @@ export interface SelectMenu {
     onSelect: (id: string) => void;
 }
 
-export interface Order {
+export interface ProdOrder {
     id: string;
+    amount: number;
+}
+
+export interface ProdOptionOrder {
+    id: string;
+    amount: number;
+}
+
+export interface Order {
+    product: ProdOrder;
+    options: ProdOptionOrder[];
 }
 
 // 送信データ

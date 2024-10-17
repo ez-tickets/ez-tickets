@@ -1,15 +1,18 @@
 import { Fragment } from 'react';
 import { Link } from "react-router-dom";
 import { useSlideAnimeStore } from "../home/Home.tsx";
-import { useSelectedOptionsStore } from "../MenuDetails/components/MenuDescription.tsx";
+import {OrderOptions, useSelectedOptionsStore} from "../MenuDetails/components/MenuDescription.tsx";
 import OptionalMenu from "./components/OptionalMenu.tsx";
 import backSVG from "../../assets/back.svg";
 import { selectOptionsStyle } from "./SelectOptions.css.ts";
 import { slideRightPage } from "../MenuDetails/MenuDetail.css.ts";
+import {addOrChangeOption, useOrderReducer} from "../MenuDetails/MenuDetail.tsx";
+import {ProdOptionOrder} from "../../dataTypes.ts";
 
 
 function SelectOptions() {
     const {changeLeftAnimation} = useSlideAnimeStore();
+    const {dispatch} = useOrderReducer();
     const {initOptions, stateOptions, stateOptionsAddHandler, resetHandler} = useSelectedOptionsStore();
 
     const backHandler = () => {
@@ -20,10 +23,15 @@ function SelectOptions() {
         resetHandler();
     }
 
+    const toOrder = (to: OrderOptions[]): ProdOptionOrder[] => {
+        return to.map((m) => ({ id: m.id, amount: m.amount }));
+    }
+
     const confirmedHandler = () => {
         const selectedOption = initOptions.filter((item) => item.amount > 0);
         stateOptionsAddHandler(selectedOption);
-        alert("toppingを追加しました"); // React-toastifyに置き換える
+        dispatch(addOrChangeOption(toOrder(selectedOption)))
+        alert("toppingを追加しました"); // todo: React-toastifyに置き換える
     }
 
     return (

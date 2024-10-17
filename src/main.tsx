@@ -11,7 +11,8 @@ createRoot(document.getElementById('root')!).render(
       <BrowserRouter>
           <Routes>
               <Route path='/' element={<Home/>} />
-              <Route path='/MenuDetail' element={<MenuDetail/>} />
+              {/* fixme: see MenuDetail.tsx */}
+              <Route path='/MenuDetail' element={<MenuDetail /* key={id} id={id} */ />} />
               <Route path='/SelectOptions' element={<SelectOptions/>}></Route>
           </Routes>
       </BrowserRouter>
