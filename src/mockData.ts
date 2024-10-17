@@ -40,16 +40,6 @@ export const selectMenuData1: SelectMenu = {
         { id: "3", name: "もやし", 　　　　　price: 150 },
         { id: "4", name: "チョコレート", 　　price: 20 },
         { id: "5", name: "バニラ", 　　　　　price: 80 },
-        { id: "6", name: "バニラ", 　　　　　price: 80 },
-        { id: "7", name: "バニラ", 　　　　　price: 80 },
-        { id: "8", name: "バニラ", 　　　　　price: 80 },
-        { id: "9", name: "バニラ", 　　　　　price: 80 },
-        { id: "10", name: "バニラ", 　　　　　price: 80 },
-        { id: "11", name: "バニラ", 　　　　　price: 80 },
-        { id: "12", name: "バニラ", 　　　　　price: 80 },
-        { id: "13", name: "バニラ", 　　　　　price: 80 },
-        { id: "14", name: "バニラ", 　　　　　price: 80 },
-        { id: "15", name: "バニラ", 　　　　　price: 80 },
     ],
     price: 850
 }
