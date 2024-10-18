@@ -1,7 +1,10 @@
 import { Fragment } from "react";
 import { Link } from "react-router-dom";
 import type { Option } from "../../../dataTypes.ts";
-import OrderAmount from "./OrderAmount.tsx";
+import { useOrderStore } from "../store/Order.ts";
+import { dispersion } from "../store/action/OrderAction.ts";
+import { useSelectedOptionsStore } from "./MenuDescription.tsx";
+import OrderAmount, { useOrderAmountStore } from "./OrderAmount.tsx";
 import PriceTotalView from "./PriceTotalView.tsx";
 import { bottomNavStyle } from "./style/BottomNav.css.ts";
 
@@ -10,7 +13,14 @@ type BottomNavProps = {
 };
 
 function BottomNav({ options }: BottomNavProps) {
-  const orderHandler = () => {
+  const { dispatch } = useOrderStore();
+  const { resetHandler } = useSelectedOptionsStore();
+  const { resetAmount } = useOrderAmountStore();
+
+  const orderAddHandler = () => {
+    resetHandler();
+    resetAmount();
+    dispatch(dispersion());
     alert("注文を追加しました");
   };
 
@@ -36,7 +46,7 @@ function BottomNav({ options }: BottomNavProps) {
           </button>
         </Link>
 
-        <Link to={"/"} onClick={orderHandler}>
+        <Link to={"/"} onClick={orderAddHandler}>
           <button type={"button"} className={bottomNavStyle.actionButton}>
             カートに追加する
           </button>

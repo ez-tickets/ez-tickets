@@ -29,7 +29,8 @@ export const useSelectedOptionsStore = create<OptionsDetail>()((set) => ({
   initOptions: [],
   stateOptions: [],
   initOptionsAddHandler: (optionsDetail) => set({ initOptions: optionsDetail }),
-  stateOptionsAddHandler: (optionsDetail) => set({ stateOptions: optionsDetail }),
+  stateOptionsAddHandler: (optionsDetail) =>
+    set({ stateOptions: optionsDetail }),
   resetHandler: () => set({ initOptions: [], stateOptions: [] }),
 }));
 
@@ -61,9 +62,7 @@ function MenuDescription({ data }: MenuDescriptionProps) {
           {data.description}
         </p>
 
-        <p className={menuDescriptionStyle.menuPrice}>
-          {data.price}
-        </p>
+        <p className={menuDescriptionStyle.menuPrice}>{data.price}</p>
 
         {data.options.length !== 0 ? (
           <Link to={"/SelectOptions"} onClick={changeLeftAnimation}>
