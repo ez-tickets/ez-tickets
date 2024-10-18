@@ -1,11 +1,11 @@
 import { Fragment, useState } from "react";
-import { useOrderReducer } from "../MenuDetail.tsx";
+import { useOrderStore } from "../store/Order.ts";
 import { priceTotalViewStyle } from "./style/PriceTotalView.css.ts";
 
 function PriceTotalView() {
   const [totalPrice, setTotalPrice] = useState<number>();
 
-  useOrderReducer.subscribe((state, _) => {
+  useOrderStore.subscribe((state, _) => {
     if (state.query === undefined) return;
     const basePrice = state.query.product.price;
     const totalPrice = state.query.options.reduce(

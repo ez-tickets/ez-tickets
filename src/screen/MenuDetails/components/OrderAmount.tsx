@@ -2,11 +2,8 @@ import { Fragment } from "react";
 import { create } from "zustand";
 import decrementSVG from "../../../assets/decrement.svg";
 import incrementSVG from "../../../assets/increment.svg";
-import {
-  decreaseAmount,
-  increaseAmount,
-  useOrderReducer,
-} from "../MenuDetail.tsx";
+import { useOrderStore } from "../store/Order.ts";
+import { decreaseAmount, increaseAmount } from "../store/action/OrderAction.ts";
 import { orderAmountStyle } from "./style/OrderAmount.css.ts";
 
 type OrderAmount = {
@@ -25,7 +22,7 @@ export const useOrderAmountStore = create<OrderAmount>()((set) => ({
 
 function OrderAmount() {
   const { amount, inc, dec } = useOrderAmountStore();
-  const { dispatch } = useOrderReducer();
+  const { dispatch } = useOrderStore();
   const maxAmount = 10;
   const minAmount = 1;
 

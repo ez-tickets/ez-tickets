@@ -3,18 +3,19 @@ import { Link } from "react-router-dom";
 import backSVG from "../../assets/back.svg";
 import type { ProdOptionOrder } from "../../dataTypes.ts";
 import { slideRightPage } from "../MenuDetails/MenuDetail.css.ts";
-import { replaceOption, useOrderReducer } from "../MenuDetails/MenuDetail.tsx";
 import {
   type OrderOptions,
   useSelectedOptionsStore,
 } from "../MenuDetails/components/MenuDescription.tsx";
+import { useOrderStore } from "../MenuDetails/store/Order.ts";
+import { replaceOption } from "../MenuDetails/store/action/OrderAction.ts";
 import { useSlideAnimeStore } from "../home/Home.tsx";
 import { selectOptionsStyle } from "./SelectOptions.css.ts";
 import OptionalMenu from "./components/OptionalMenu.tsx";
 
 function SelectOptions() {
   const { changeLeftAnimation } = useSlideAnimeStore();
-  const { dispatch } = useOrderReducer();
+  const { dispatch } = useOrderStore();
   const { initOptions, stateOptions, stateOptionsAddHandler, resetHandler } =
     useSelectedOptionsStore();
 
