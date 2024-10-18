@@ -1,15 +1,15 @@
 import { style } from "@vanilla-extract/css";
 
-export const priceTotalViewStyle = ({
-    total: style({
-        position: "absolute",
-        top: "10px",
-        right: "20px",
-        fontSize: "1.5rem",
-        textAlign: "right",
+export const priceTotalViewStyle = {
+  total: style({
+    position: "absolute",
+    top: "10px",
+    right: "20px",
+    fontSize: "1.5rem",
+    textAlign: "right",
 
-        ":after": {
-            content: "円"
-        }
-    }),
-})
+    ":after": {
+      content: "円",
+    },
+  }),
+};
