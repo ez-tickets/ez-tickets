@@ -17,7 +17,15 @@ export const menuDescriptionStyle = {
   }),
 
   menuDescription: style({
-    padding: "10px 30px 20px",
+    padding: "0 10px",
+  }),
+
+  menuPrice: style({
+    padding: "10px",
+    textAlign: "right",
+    ":after": {
+      content: "円"
+    }
   }),
 
   toppingButton: style({
