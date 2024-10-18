@@ -37,8 +37,8 @@ export const selectMenuData1: SelectMenu = {
     ],
     options: [
         { id: "1", name: "キャラメルソース", price: 50 },
-        { id: "2", name: "ねぎ",             price: 100 },
-        { id: "3", name: "もやし",           price: 150 },
+        { id: "2", name: "ねぎ",           price: 100 },
+        { id: "3", name: "もやし",         price: 150 },
         { id: "4", name: "チョコレート",     price: 20 },
         { id: "5", name: "バニラ",           price: 80 },
     ],

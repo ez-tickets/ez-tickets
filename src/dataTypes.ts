@@ -47,11 +47,13 @@ export interface SelectMenu {
 export interface ProdOrder {
     id: string;
     amount: number;
+    price: number;
 }
 
 export interface ProdOptionOrder {
     id: string;
     amount: number;
+    price: number;
 }
 
 export interface Order {

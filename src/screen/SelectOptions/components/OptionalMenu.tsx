@@ -6,21 +6,7 @@ import incrementSVG from "../../../assets/increment.svg";
 import { optionalMenuStyle } from "./style/OptionalMenu.css.ts";
 import { orderAmountStyle } from "../../MenuDetails/components/style/OrderAmount.css.ts";
 
-// いらないデータになりそう------------------------------------------------------------------------
-type OptionTotal = {
-    optionTotal: number;
-    sum: (price: number) => void;
-    subtraction: (price: number) => void;
-    resetOptionTotal: () => void;
-};
 
-export const useOptionsPriceStore = create<OptionTotal>()((set) => ({
-    optionTotal: 0,
-    sum: (price) => set((state) => ({optionTotal: state.optionTotal + price})),
-    subtraction: (price) => set((state) => ({optionTotal: state.optionTotal - price})),
-    resetOptionTotal: () => set({optionTotal: 0}),
-}));
-//-----------------------------------------------------------------------------------------
 
 function OptionalMenu() {
     const maxAmount = 5;

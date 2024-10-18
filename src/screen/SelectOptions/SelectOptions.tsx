@@ -6,7 +6,7 @@ import OptionalMenu from "./components/OptionalMenu.tsx";
 import backSVG from "../../assets/back.svg";
 import { selectOptionsStyle } from "./SelectOptions.css.ts";
 import { slideRightPage } from "../MenuDetails/MenuDetail.css.ts";
-import {addOrChangeOption, useOrderReducer} from "../MenuDetails/MenuDetail.tsx";
+import {replaceOption, useOrderReducer} from "../MenuDetails/MenuDetail.tsx";
 import {ProdOptionOrder} from "../../dataTypes.ts";
 
 
@@ -24,13 +24,13 @@ function SelectOptions() {
     }
 
     const toOrder = (to: OrderOptions[]): ProdOptionOrder[] => {
-        return to.map((m) => ({ id: m.id, amount: m.amount }));
+        return to.map((m) => ({ id: m.id, amount: m.amount, price: m.price }));
     }
 
     const confirmedHandler = () => {
         const selectedOption = initOptions.filter((item) => item.amount > 0);
         stateOptionsAddHandler(selectedOption);
-        dispatch(addOrChangeOption(toOrder(selectedOption)))
+        dispatch(replaceOption(toOrder(selectedOption)));
         alert("toppingを追加しました"); // todo: React-toastifyに置き換える
     }
 

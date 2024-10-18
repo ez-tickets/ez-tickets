@@ -9,9 +9,10 @@ import {create} from "zustand/index";
 import {Order, ProdOptionOrder} from "../../dataTypes.ts";
 
 const INITIALIZE = "initialize" as const;
-export const initialize = (id: string) => ({
+export const initialize = (id: string, price: number) => ({
     type: INITIALIZE,
-    payload: id
+    payload: id,
+    price: price,
 })
 
 const INCREASE_AMOUNT = "increase-amount" as const;
@@ -24,9 +25,9 @@ export const decreaseAmount = () => ({
     type: DECREASE_AMOUNT,
 })
 
-const ADD_OR_CHANGE_OPTION = "add-or-change-option" as const;
-export const addOrChangeOption = (options: ProdOptionOrder[]) => ({
-    type: ADD_OR_CHANGE_OPTION,
+const REPLACE = "replace" as const;
+export const replaceOption = (options: ProdOptionOrder[]) => ({
+    type: REPLACE,
     payload: options
 })
 
@@ -35,21 +36,21 @@ export const dispersion = () => ({
     type: DISPERSION
 })
 
-
 type Action = (
-  | ReturnType<typeof initialize>
-  | ReturnType<typeof increaseAmount>
-  | ReturnType<typeof decreaseAmount>
-  | ReturnType<typeof addOrChangeOption>
-  | ReturnType<typeof dispersion>
+    | ReturnType<typeof initialize>
+    | ReturnType<typeof increaseAmount>
+    | ReturnType<typeof decreaseAmount>
+    | ReturnType<typeof replaceOption>
+    | ReturnType<typeof dispersion>
 );
 
 const reducer = (action: Action, prev?: Order): Order | undefined => {
     let state = prev;
+
     switch (action.type) {
         case INITIALIZE:
             if (state === undefined) {
-                return { product: { id: action.payload, amount: 1 }, options: [] }
+                return { product: { id: action.payload, amount: 1, price: action.price }, options: [] }
             }
             break;
         case INCREASE_AMOUNT:
@@ -60,27 +61,17 @@ const reducer = (action: Action, prev?: Order): Order | undefined => {
             if (state === undefined) { return state }
             state.product.amount -= 1;
             break;
-        case ADD_OR_CHANGE_OPTION:
+        case REPLACE:
             if (state === undefined) { return state }
-            action.payload.forEach((option) => {
-                if (state.options.some((inner) => inner.id === option.id)) {
-                    state.options.map((inner) => {
-                        if (inner.id === option.id) {
-                            inner.amount = option.amount;
-                        }
-                    });
-                } else {
-                    state.options.push(option);
-                }
-            });
+            state.options = action.payload;
             break;
+
         case DISPERSION:
             return undefined;
         default:
             // linting error DO NOT TOUCH!
             const _: never = action;
     }
-
     return state;
 }
 
@@ -92,20 +83,20 @@ interface OrderQueryDispatcher {
 export const useOrderReducer = create<OrderQueryDispatcher>((set) => ({
     query: undefined,
     dispatch: (action) => set((state) => {
-        return { query: reducer(action, state.query )}
-    })
-}))
+        return { query: reducer(action, state.query)}
+    }),
+}));
 
 // fixme: IDを指定して商品ごとのデータを得るようにする
 // 多分fetchはSWRを使うことになると思う
 function MenuDetail(/* {id} */) {
-    const getData = selectMenuData2;
+    const getData = selectMenuData1;
     const { dispatch } = useOrderReducer();
-    const {animation} = useSlideAnimeStore();
+    const { animation } = useSlideAnimeStore();
 
     useEffect(() => {
-        dispatch(initialize(getData.id));
-    }, [getData, dispatch, initialize]);
+        dispatch(initialize(getData.id, getData.price));
+    }, []);
 
     return (
         <Fragment>
