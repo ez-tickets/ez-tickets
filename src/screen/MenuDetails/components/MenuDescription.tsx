@@ -2,7 +2,7 @@ import { Fragment } from "react";
 import { Link } from "react-router-dom";
 import { create } from "zustand/index";
 import type { SelectMenu } from "../../../dataTypes.ts";
-import { useSlideAnimeStore } from "../../home/Home.tsx";
+import { useSlideAnimeStore } from "../../Home/Home.tsx";
 import MenuSizeContainer from "./MenuSizeContainer.tsx";
 import SelectedOptionsView from "./SelectedOptionsView.tsx";
 import { menuDescriptionStyle } from "./style/MenuDescription.css.ts";

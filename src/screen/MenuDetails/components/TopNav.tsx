@@ -1,7 +1,7 @@
 import { Fragment } from "react";
 import { Link } from "react-router-dom";
 import backSVG from "../../../assets/back.svg";
-import { useSlideAnimeStore } from "../../home/Home.tsx";
+import { useSlideAnimeStore } from "../../Home/Home.tsx";
 import { useSizePriceStore } from "./MenuSize.tsx";
 import { useOrderAmountStore } from "./OrderAmount.tsx";
 import { topNavStyle } from "./style/TopNav.css.ts";

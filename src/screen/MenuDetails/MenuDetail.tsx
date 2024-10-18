@@ -1,6 +1,6 @@
 import { Fragment, useEffect } from "react";
 import { selectMenuData1, selectMenuData2 } from "../../mockData.ts";
-import { useSlideAnimeStore } from "../home/Home.tsx";
+import { useSlideAnimeStore } from "../Home/Home.tsx";
 import { topNavStyle } from "./MenuDetail.css.ts";
 import BottomNav from "./components/BottomNav.tsx";
 import MenuDescription from "./components/MenuDescription.tsx";
