@@ -31,11 +31,6 @@ export const selectMenuData1: SelectMenu = {
   image: sampleMenu1,
   description:
     "サンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキスト",
-  sizes: [
-    { id: "1", name: "小", price: 800 },
-    { id: "2", name: "並", price: 850 },
-    { id: "3", name: "大", price: 900 },
-  ],
   options: [
     { id: "1", name: "キャラメルソース", price: 50 },
     { id: "2", name: "ねぎ", price: 100 },
@@ -53,7 +48,6 @@ export const selectMenuData2: SelectMenu = {
   image: sampleMenu2,
   description:
     "サンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキスト",
-  sizes: [],
   options: [],
   price: 500,
 };

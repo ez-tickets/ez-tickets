@@ -7,7 +7,7 @@ function PriceTotalView() {
 
   useOrderStore.subscribe((state, _) => {
     if (state.query === undefined) return;
-    const basePrice = state.query.product.price;
+    const basePrice = state.query.product.price * state.query.product.amount;
     const totalPrice = state.query.options.reduce(
       (acc, price) => acc + price.price * price.amount,
       basePrice,

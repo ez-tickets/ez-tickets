@@ -2,7 +2,6 @@ import { Fragment } from "react";
 import { Link } from "react-router-dom";
 import backSVG from "../../../assets/back.svg";
 import { useSlideAnimeStore } from "../../Home/Home.tsx";
-import { useSizePriceStore } from "./MenuSize.tsx";
 import { useOrderAmountStore } from "./OrderAmount.tsx";
 import { topNavStyle } from "./style/TopNav.css.ts";
 
@@ -11,21 +10,18 @@ type TopNavProps = {
 };
 
 function TopNav({ menuName }: TopNavProps) {
-  const { resetPrice } = useSizePriceStore();
   const { resetAmount } = useOrderAmountStore();
   const { changeLeftAnimation } = useSlideAnimeStore();
 
   const backHandler = () => {
-    resetPrice();
     resetAmount();
     changeLeftAnimation();
+    //storeを空にする関数を用意する
   };
 
   return (
     <Fragment>
       <div className={topNavStyle.topBar}>
-        {" "}
-        {/* header */}
         <Link to={"/"} onClick={backHandler}>
           <img src={backSVG} className={topNavStyle.backImg} alt={"戻る"} />
         </Link>

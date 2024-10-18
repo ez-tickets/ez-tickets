@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import { create } from "zustand/index";
 import type { SelectMenu } from "../../../dataTypes.ts";
 import { useSlideAnimeStore } from "../../Home/Home.tsx";
-import MenuSizeContainer from "./MenuSizeContainer.tsx";
 import SelectedOptionsView from "./SelectedOptionsView.tsx";
 import { menuDescriptionStyle } from "./style/MenuDescription.css.ts";
 
@@ -30,8 +29,7 @@ export const useSelectedOptionsStore = create<OptionsDetail>()((set) => ({
   initOptions: [],
   stateOptions: [],
   initOptionsAddHandler: (optionsDetail) => set({ initOptions: optionsDetail }),
-  stateOptionsAddHandler: (optionsDetail) =>
-    set({ stateOptions: optionsDetail }),
+  stateOptionsAddHandler: (optionsDetail) => set({ stateOptions: optionsDetail }),
   resetHandler: () => set({ initOptions: [], stateOptions: [] }),
 }));
 
@@ -63,11 +61,9 @@ function MenuDescription({ data }: MenuDescriptionProps) {
           {data.description}
         </p>
 
-        {data.sizes.length !== 0 ? (
-          <MenuSizeContainer sizes={data.sizes} />
-        ) : (
-          ""
-        )}
+        <p className={menuDescriptionStyle.menuPrice}>
+          {data.price}
+        </p>
 
         {data.options.length !== 0 ? (
           <Link to={"/SelectOptions"} onClick={changeLeftAnimation}>

@@ -28,7 +28,6 @@ export interface SelectMenu {
   name: string;
   image: string;
   description: string;
-  sizes: Size[];
   options: Option[];
   price: number;
 }
