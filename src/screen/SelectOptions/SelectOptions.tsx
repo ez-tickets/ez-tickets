@@ -1,5 +1,6 @@
 import { Fragment } from "react";
 import { Link } from "react-router-dom";
+import { toast } from "react-toastify";
 import backSVG from "../../assets/back.svg";
 import type { ProdOptionOrder } from "../../dataTypes.ts";
 import { useSlideAnimeStore } from "../Home/Home.tsx";
@@ -35,7 +36,8 @@ function SelectOptions() {
     const selectedOption = initOptions.filter((item) => item.amount > 0);
     stateOptionsAddHandler(selectedOption);
     dispatch(replaceOption(toOrder(selectedOption)));
-    alert("toppingを追加しました"); // todo: React-toastifyに置き換える
+
+    toast.success("トッピングを追加しました");
   };
 
   return (
