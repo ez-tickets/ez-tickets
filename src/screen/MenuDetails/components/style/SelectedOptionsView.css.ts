@@ -24,12 +24,8 @@ export const selectedOptionsViewStyle = {
 
   deleteButton: style({
     position: "absolute",
-    top: "50%",
+    top: "54%",
     right: 0,
     transform: "translate(0, -50%)",
-  }),
-
-  deleteIcon: style({
-    color: "red",
   }),
 };

@@ -17,12 +17,20 @@ import OptionalMenu from "./components/OptionalMenu.tsx";
 function SelectOptions() {
   const { changeLeftAnimation } = useSlideAnimeStore();
   const { dispatch } = useOrderStore();
-  const { initOptions, stateOptions, stateOptionsAddHandler, resetHandler } =
-    useSelectedOptionsStore();
+  const { initOptions, stateOptions, stateOptionsAddHandler, resetHandler } = useSelectedOptionsStore();
 
   const backHandler = () => {
     if (stateOptions.length !== 0) {
+      initOptions.map((initOption) => {
+        const orderOptions = stateOptions.find((stateOption) => initOption.id === stateOption.id);
+        if (orderOptions) {
+          initOption.amount = orderOptions.amount;
+        } else {
+          initOption.amount = 0;
+        }
+      })
       changeLeftAnimation();
+      confirm("内容が変更されていませんがよろしいですか？");
       return;
     }
     resetHandler();
@@ -69,7 +77,7 @@ function SelectOptions() {
                 className={selectOptionsStyle.confirmButton}
                 onClick={confirmedHandler}
               >
-                追加する
+                追加・変更する
               </button>
             </Link>
           </div>

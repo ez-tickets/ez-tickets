@@ -1,10 +1,23 @@
 import { Fragment } from "react";
-import deleteSVG from "../../../assets/delete.svg";
 import { useSelectedOptionsStore } from "./MenuDescription.tsx";
 import { selectedOptionsViewStyle } from "./style/SelectedOptionsView.css.ts";
+import trashSVG from "../../../assets/trash.svg";
+import {useOrderStore} from "../store/Order.ts";
+import {replaceOption} from "../store/action/OrderAction.ts";
 
 function SelectedOptionsView() {
-  const { stateOptions } = useSelectedOptionsStore();
+  const {initOptions, stateOptions, stateOptionsAddHandler, initOptionsAddHandler } = useSelectedOptionsStore();
+  const { dispatch } = useOrderStore();
+
+  const deleteHandler = (id: string) => {
+    const deleteOptions = stateOptions.filter((option) => option.id !== id);
+    const deleteAmount = initOptions.map((option) => {
+      return option.id === id ? { ...option, amount: 0 } : option;
+    });
+    initOptionsAddHandler(deleteAmount);
+    stateOptionsAddHandler(deleteOptions);
+    dispatch(replaceOption(deleteOptions));
+  }
 
   return (
     <Fragment>
@@ -21,8 +34,11 @@ function SelectedOptionsView() {
             <button
               type={"button"}
               className={selectedOptionsViewStyle.deleteButton}
+              onClick={() => {
+                deleteHandler(option.id);
+              }}
             >
-              <img src={deleteSVG} alt={"削除"} />
+              <img src={trashSVG} alt="削除" />
             </button>
           </div>
         ))}
