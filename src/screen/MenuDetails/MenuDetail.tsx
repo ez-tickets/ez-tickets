@@ -11,7 +11,7 @@ import { initialize } from "./store/action/OrderAction.ts";
 // fixme: IDを指定して商品ごとのデータを得るようにする
 // 多分fetchはSWRを使うことになると思う
 function MenuDetail(/* {id} */) {
-  const getData = selectMenuData1;
+  const getData = selectMenuData2;
   const { dispatch } = useOrderStore();
   const { animation } = useSlideAnimeStore();
 
