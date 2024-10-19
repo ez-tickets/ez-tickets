@@ -34,4 +34,19 @@ export const optionalMenuStyle = {
     border: "1px solid gray",
     borderRadius: "5px",
   }),
+
+  decrementButton: style({
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    marginRight: "10px",
+  }),
+
+  incrementButton: style({
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    marginLeft: "10px",
+    fill: "red",
+  }),
 };

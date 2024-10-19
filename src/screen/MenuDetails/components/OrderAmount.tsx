@@ -1,7 +1,9 @@
 import { Fragment } from "react";
 import { create } from "zustand";
 import decrementSVG from "../../../assets/decrement.svg";
+import decrementLimitSVG from "../../../assets/decrementLimit.svg";
 import incrementSVG from "../../../assets/increment.svg";
+import incrementLimitSVG from "../../../assets/incrementLimit.svg";
 import { useOrderStore } from "../store/Order.ts";
 import { decreaseAmount, increaseAmount } from "../store/action/OrderAction.ts";
 import { orderAmountStyle } from "./style/OrderAmount.css.ts";
@@ -46,7 +48,11 @@ function OrderAmount() {
         onClick={decHandler}
         disabled={amount <= minAmount}
       >
-        <img src={decrementSVG} alt="減らす" />
+        {amount <= minAmount ? (
+          <img src={decrementLimitSVG} alt="減らせません" />
+        ) : (
+          <img src={decrementSVG} alt="減らす" />
+        )}
       </button>
 
       <div className={orderAmountStyle.amountDisplay}>{amount}</div>
@@ -57,7 +63,11 @@ function OrderAmount() {
         onClick={incHandler}
         disabled={amount >= maxAmount}
       >
-        <img src={incrementSVG} alt="増やす" />
+        {amount >= maxAmount ? (
+          <img src={incrementLimitSVG} alt="増やせません" />
+        ) : (
+          <img src={incrementSVG} alt="増やす" />
+        )}
       </button>
     </Fragment>
   );

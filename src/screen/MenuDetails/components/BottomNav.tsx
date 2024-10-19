@@ -1,6 +1,6 @@
 import { Fragment } from "react";
 import { Link } from "react-router-dom";
-import { Bounce, toast } from "react-toastify";
+import { toast } from "react-toastify";
 import type { Option } from "../../../dataTypes.ts";
 import { useOrderStore } from "../store/Order.ts";
 import { dispersion } from "../store/action/OrderAction.ts";

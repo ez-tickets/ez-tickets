@@ -1,8 +1,9 @@
 import { Fragment } from "react";
 import decrementSVG from "../../../assets/decrement.svg";
+import decrementLimitSVG from "../../../assets/decrementLimit.svg";
 import incrementSVG from "../../../assets/increment.svg";
+import incrementLimitSVG from "../../../assets/incrementLimit.svg";
 import { useSelectedOptionsStore } from "../../MenuDetails/components/MenuDescription.tsx";
-import { orderAmountStyle } from "../../MenuDetails/components/style/OrderAmount.css.ts";
 import { optionalMenuStyle } from "./style/OptionalMenu.css.ts";
 
 function OptionalMenu() {
@@ -39,13 +40,17 @@ function OptionalMenu() {
             <div className={optionalMenuStyle.buttonContainer}>
               <button
                 type={"button"}
-                className={orderAmountStyle.decrementButton}
+                className={optionalMenuStyle.decrementButton}
                 onClick={() => {
                   decrementHandler(option.id);
                 }}
                 disabled={option.amount <= minAmount}
               >
-                <img src={decrementSVG} alt="減らす" />
+                {option.amount <= minAmount ? (
+                  <img src={decrementLimitSVG} alt="減らせません" />
+                ) : (
+                  <img src={decrementSVG} alt="減らす" />
+                )}
               </button>
 
               <div className={optionalMenuStyle.amountDisplay}>
@@ -54,13 +59,17 @@ function OptionalMenu() {
 
               <button
                 type={"button"}
-                className={orderAmountStyle.incrementButton}
+                className={optionalMenuStyle.incrementButton}
                 onClick={() => {
                   incrementHandler(option.id);
                 }}
                 disabled={option.amount >= maxAmount}
               >
-                <img src={incrementSVG} alt="増やす" />
+                {option.amount >= maxAmount ? (
+                  <img src={incrementLimitSVG} alt="増やせません" />
+                ) : (
+                  <img src={incrementSVG} alt="増やす" />
+                )}
               </button>
             </div>
           </div>
