@@ -1,4 +1,5 @@
 import { Fragment } from "react";
+import deleteSVG from "../../../assets/delete.svg";
 import { useSelectedOptionsStore } from "./MenuDescription.tsx";
 import { selectedOptionsViewStyle } from "./style/SelectedOptionsView.css.ts";
 
@@ -17,6 +18,12 @@ function SelectedOptionsView() {
             <p className={selectedOptionsViewStyle.amountText}>
               ×　数量: {option.amount}
             </p>
+            <button
+              type={"button"}
+              className={selectedOptionsViewStyle.deleteButton}
+            >
+              <img src={deleteSVG} alt={"削除"} />
+            </button>
           </div>
         ))}
       </div>

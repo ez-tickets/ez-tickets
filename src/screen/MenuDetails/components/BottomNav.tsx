@@ -1,5 +1,6 @@
 import { Fragment } from "react";
 import { Link } from "react-router-dom";
+import { Bounce, toast } from "react-toastify";
 import type { Option } from "../../../dataTypes.ts";
 import { useOrderStore } from "../store/Order.ts";
 import { dispersion } from "../store/action/OrderAction.ts";
@@ -21,7 +22,8 @@ function BottomNav({ options }: BottomNavProps) {
     resetHandler();
     resetAmount();
     dispatch(dispersion());
-    alert("注文を追加しました");
+
+    toast.success("商品をカートに追加しました");
   };
 
   return (
@@ -46,8 +48,12 @@ function BottomNav({ options }: BottomNavProps) {
           </button>
         </Link>
 
-        <Link to={"/"} onClick={orderAddHandler}>
-          <button type={"button"} className={bottomNavStyle.actionButton}>
+        <Link to={"/"}>
+          <button
+            type={"button"}
+            className={bottomNavStyle.actionButton}
+            onClick={orderAddHandler}
+          >
             カートに追加する
           </button>
         </Link>
