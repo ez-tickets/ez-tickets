@@ -10,13 +10,13 @@ import {
   useSelectedOptionsStore,
 } from "../MenuDetails/components/MenuDescription.tsx";
 import { useCustomizeStore } from "../MenuDetails/store/Order.ts";
+import { replaceOption } from "../MenuDetails/store/action/CustomizeAction.ts";
 import { selectOptionsStyle } from "./SelectOptions.css.ts";
 import OptionalMenu from "./components/OptionalMenu.tsx";
-import {replaceOption} from "../MenuDetails/store/action/CustomizeAction.ts";
 
 function SelectOptions() {
   const { changeLeftAnimation } = useSlideAnimeStore();
-  const { dispatch } = useCustomizeStore();
+  const { customizeDispatch } = useCustomizeStore();
   const { initOptions, stateOptions, stateOptionsAddHandler, resetHandler } =
     useSelectedOptionsStore();
 
@@ -33,7 +33,7 @@ function SelectOptions() {
         }
       });
       changeLeftAnimation();
-      confirm("内容が変更されていませんがよろしいですか？");//todo: なんかいいライブラリない？
+      confirm("内容が変更されていませんがよろしいですか？"); //todo: なんかいいライブラリない？
       return;
     }
     resetHandler();
@@ -42,7 +42,7 @@ function SelectOptions() {
   const confirmedHandler = () => {
     const selectedOption = initOptions.filter((item) => item.amount > 0);
     stateOptionsAddHandler(selectedOption);
-    dispatch(replaceOption(selectedOption));
+    customizeDispatch(replaceOption(selectedOption));
 
     toast.success("トッピングを追加しました");
   };

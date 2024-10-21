@@ -1,22 +1,28 @@
-import {Fragment} from "react";
+import { Fragment } from "react";
 import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
-import type {Option} from "../../../dataTypes.ts";
-import {useOrderedStore, useCustomizeStore} from "../store/Order.ts";
+import type { Option } from "../../../dataTypes.ts";
+import {
+  useCustomizeStore,
+  useOrderStore,
+  useOrderedStore,
+} from "../store/Order.ts";
+import { dispersion } from "../store/action/CustomizeAction.ts";
+import { addSelectedOrder } from "../store/action/OrderAction.ts";
+import { orderAdd } from "../store/action/OrderedAction.ts";
 import { useSelectedOptionsStore } from "./MenuDescription.tsx";
 import OrderAmount, { useOrderAmountStore } from "./OrderAmount.tsx";
 import PriceTotalView from "./PriceTotalView.tsx";
 import { bottomNavStyle } from "./style/BottomNav.css.ts";
-import {dispersion} from "../store/action/CustomizeAction.ts";
-import {orderAdd} from "../store/action/OrderedAction.ts";
 
 type BottomNavProps = {
   options: Option[];
 };
 
 function BottomNav({ options }: BottomNavProps) {
-  const { query, dispatch } = useCustomizeStore();
-  const { dispatcher } = useOrderedStore();
+  const { query, customizeDispatch } = useCustomizeStore();
+  const { orderDispatch } = useOrderStore();
+  const { orderedDispatch } = useOrderedStore();
   const { resetHandler } = useSelectedOptionsStore();
   const { resetAmount } = useOrderAmountStore();
 
@@ -25,19 +31,20 @@ function BottomNav({ options }: BottomNavProps) {
     resetAmount();
 
     if (query === undefined) return;
-      const order = {
-        product: {
-          id: query.product.id,
-          amount: query.product.amount
-        },
-        options: query.options.map((option) => ({
-          id: option.id,
-          amount: option.amount
-        }))
-      };
-      dispatcher(orderAdd(order));
+    orderDispatch(addSelectedOrder(query));
+    const order = {
+      product: {
+        id: query.product.id,
+        amount: query.product.amount,
+      },
+      options: query.options.map((option) => ({
+        id: option.id,
+        amount: option.amount,
+      })),
+    };
+    orderedDispatch(orderAdd(order));
 
-    dispatch(dispersion());
+    customizeDispatch(dispersion());
     toast.success("商品をカートに追加しました");
   };
 
