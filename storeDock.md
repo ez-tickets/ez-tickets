@@ -218,5 +218,5 @@ export const useOrderStore = create<OrderQueryDispatcher>((set) => ({
 # データの流れ 
 ## MenuDetail (getData)
 　　　　　　　↓
-#### TopNav (getData.name)
+#### OptionTopNav (getData.name)
 #### MenuDescription (data)
