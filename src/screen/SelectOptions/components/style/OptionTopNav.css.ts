@@ -1,6 +1,6 @@
-import {style} from "@vanilla-extract/css";
+import { style } from "@vanilla-extract/css";
 
-export const optionTopNavStyle = ({
+export const optionTopNavStyle = {
   topBar: style({
     position: "relative",
     display: "flex",
@@ -21,4 +21,4 @@ export const optionTopNavStyle = ({
     textAlign: "center",
     fontSize: "24px",
   }),
-})
+};
