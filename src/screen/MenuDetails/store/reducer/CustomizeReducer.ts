@@ -1,18 +1,17 @@
+import type { OrderMenu } from "../../../../dataTypes.ts";
 import {
+  type CustomizeAction,
   DECREASE_AMOUNT,
   DISPERSION,
   INCREASE_AMOUNT,
   INITIALIZE,
-  type CustomizeAction,
   REPLACE,
 } from "../action/CustomizeAction.ts";
-import type {OrderMenu} from "../../../../dataTypes.ts";
-
 
 export const customizeReducer = (
   action: CustomizeAction,
   prev?: OrderMenu,
-):OrderMenu  | undefined => {
+): OrderMenu | undefined => {
   const state = prev;
 
   switch (action.type) {
@@ -25,11 +24,12 @@ export const customizeReducer = (
             price: action.payload.price,
             amount: 1,
           },
-          options: action.payload.options.map((option) => ({
-            ...option,
-            amount: 0
-          })) || []
-        }
+          options:
+            action.payload.options.map((option) => ({
+              ...option,
+              amount: 0,
+            })) || [],
+        };
       }
       break;
     case INCREASE_AMOUNT:

@@ -1,9 +1,9 @@
 import { Fragment } from "react";
 import trashSVG from "../../../assets/trash.svg";
 import { useCustomizeStore } from "../store/Order.ts";
+import { replaceOption } from "../store/action/CustomizeAction.ts";
 import { useSelectedOptionsStore } from "./MenuDescription.tsx";
 import { selectedOptionsViewStyle } from "./style/SelectedOptionsView.css.ts";
-import {replaceOption} from "../store/action/CustomizeAction.ts";
 
 function SelectedOptionsView() {
   const {
@@ -12,7 +12,7 @@ function SelectedOptionsView() {
     stateOptionsAddHandler,
     initOptionsAddHandler,
   } = useSelectedOptionsStore();
-  const { dispatch } = useCustomizeStore();
+  const { customizeDispatch } = useCustomizeStore();
 
   const deleteHandler = (id: string) => {
     const deleteOptions = stateOptions.filter((option) => option.id !== id);
@@ -21,7 +21,7 @@ function SelectedOptionsView() {
     });
     initOptionsAddHandler(deleteAmount);
     stateOptionsAddHandler(deleteOptions);
-    dispatch(replaceOption(deleteOptions));
+    customizeDispatch(replaceOption(deleteOptions));
   };
 
   return (

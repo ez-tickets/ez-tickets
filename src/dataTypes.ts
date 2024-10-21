@@ -35,23 +35,23 @@ export type SelectProduct = {
   name: string;
   price: number;
   amount: number;
-}
+};
 
 export type SelectOption = {
   id: string;
   name: string;
   price: number;
   amount: number;
-}
+};
 
 export type OrderMenu = {
   product: SelectProduct;
   options: SelectOption[];
-}
+};
 
 type OrderMenus = {
   orderMenus: OrderMenu[];
-}
+};
 // ----------------------------------------------------
 
 // 送信データ形成 ---------------------------------------

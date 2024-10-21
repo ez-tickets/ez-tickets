@@ -3,10 +3,10 @@ import { Link } from "react-router-dom";
 import backSVG from "../../../assets/back.svg";
 import { useSlideAnimeStore } from "../../Home/Home.tsx";
 import { useCustomizeStore } from "../store/Order.ts";
+import { dispersion } from "../store/action/CustomizeAction.ts";
 import { useSelectedOptionsStore } from "./MenuDescription.tsx";
 import { useOrderAmountStore } from "./OrderAmount.tsx";
 import { topNavStyle } from "./style/TopNav.css.ts";
-import {dispersion} from "../store/action/CustomizeAction.ts";
 
 type TopNavProps = {
   menuName: string;
@@ -15,13 +15,13 @@ type TopNavProps = {
 function TopNav({ menuName }: TopNavProps) {
   const { resetAmount } = useOrderAmountStore();
   const { resetHandler } = useSelectedOptionsStore();
-  const { dispatch } = useCustomizeStore();
+  const { customizeDispatch } = useCustomizeStore();
   const { changeLeftAnimation } = useSlideAnimeStore();
 
   const backHandler = () => {
     resetAmount();
     resetHandler();
-    dispatch(dispersion());
+    customizeDispatch(dispersion());
     changeLeftAnimation();
   };
 

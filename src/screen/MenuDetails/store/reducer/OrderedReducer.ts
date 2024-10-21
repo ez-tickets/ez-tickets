@@ -1,13 +1,14 @@
+import type { Order } from "../../../../dataTypes.ts";
 import {
-  DISPERSION, ORDER_ADD, type OrderedAction,
+  DISPERSION,
+  ORDER_ADD,
+  type OrderedAction,
 } from "../action/OrderedAction.ts";
-import type {Order} from "../../../../dataTypes.ts";
-
 
 export const orderedReducer = (
   action: OrderedAction,
   prev: Order[],
-):Order[] => {
+): Order[] => {
   const state = prev ?? [];
 
   switch (action.type) {

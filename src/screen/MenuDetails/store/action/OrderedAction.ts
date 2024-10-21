@@ -1,9 +1,9 @@
-import type {Order} from "../../../../dataTypes.ts";
+import type { Order } from "../../../../dataTypes.ts";
 
 export const ORDER_ADD = "order-add" as const;
 export const orderAdd = (order: Order) => ({
   type: ORDER_ADD,
-  payload: order
+  payload: order,
 });
 
 export const DISPERSION = "dispersion" as const;
