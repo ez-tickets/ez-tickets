@@ -1,6 +1,6 @@
-import {style} from "@vanilla-extract/css";
+import { style } from "@vanilla-extract/css";
 
-export const optionBottomNavStyle = ({
+export const optionBottomNavStyle = {
   footer: style({
     backgroundColor: "white",
     textAlign: "center",
@@ -20,4 +20,4 @@ export const optionBottomNavStyle = ({
     borderRadius: "5px",
     width: "100%",
   }),
-})
+};
