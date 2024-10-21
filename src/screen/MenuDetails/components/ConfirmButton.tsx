@@ -6,7 +6,7 @@ import {
   useOrderStore,
   useOrderedStore,
 } from "../store/Order.ts";
-import { dispersion } from "../store/action/CustomizeAction.ts";
+import {dispersion, replaceOption} from "../store/action/CustomizeAction.ts";
 import { addSelectedOrder } from "../store/action/OrderAction.ts";
 import { orderAdd } from "../store/action/OrderedAction.ts";
 import { useSelectedOptionsStore } from "./MenuDescription.tsx";
@@ -26,7 +26,10 @@ function ConfirmButton() {
     resetAmount();
 
     if (customizeQuery === undefined) return;
+    const initCustomizeOrder = customizeQuery.options.filter((option) => option.amount > 0);
+    customizeDispatch(replaceOption(initCustomizeOrder));
     orderDispatch(addSelectedOrder(customizeQuery));
+
     const order = {
       product: {
         id: customizeQuery.product.id,

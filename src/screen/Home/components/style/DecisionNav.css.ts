@@ -14,18 +14,18 @@ export const decisionNavStyle = {
   }),
 
   existButton: style({
-    width: "250px",
+    width: "100%",
     backgroundColor: "gold",
     borderRadius: "2.5px",
-    padding: "10px",
+    padding: "10px 20px",
     border: "1px solid rgba(0,0,0,0.2)",
   }),
 
   emptyButton: style({
-    width: "250px",
+    width: "100%",
     backgroundColor: "rgba(0,0,0,0.2)",
     borderRadius: "2.5px",
-    padding: "10px",
+    padding: "10px 20px",
     border: "1px solid rgba(0,0,0,0.2)",
   }),
 
@@ -41,7 +41,7 @@ export const decisionNavStyle = {
     boxShadow: "-2px -2px 4px rgba(0,0,0,0.2)",
     borderRadius: "50%",
     top: "-30%",
-    right: "10%",
+    right: "-2%",
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
