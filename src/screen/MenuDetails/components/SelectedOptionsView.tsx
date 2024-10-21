@@ -1,13 +1,18 @@
 import { Fragment } from "react";
+import trashSVG from "../../../assets/trash.svg";
+import { useCustomizeStore } from "../store/Order.ts";
 import { useSelectedOptionsStore } from "./MenuDescription.tsx";
 import { selectedOptionsViewStyle } from "./style/SelectedOptionsView.css.ts";
-import trashSVG from "../../../assets/trash.svg";
-import {useOrderStore} from "../store/Order.ts";
-import {replaceOption} from "../store/action/OrderAction.ts";
+import {replaceOption} from "../store/action/CustomizeAction.ts";
 
 function SelectedOptionsView() {
-  const {initOptions, stateOptions, stateOptionsAddHandler, initOptionsAddHandler } = useSelectedOptionsStore();
-  const { dispatch } = useOrderStore();
+  const {
+    initOptions,
+    stateOptions,
+    stateOptionsAddHandler,
+    initOptionsAddHandler,
+  } = useSelectedOptionsStore();
+  const { dispatch } = useCustomizeStore();
 
   const deleteHandler = (id: string) => {
     const deleteOptions = stateOptions.filter((option) => option.id !== id);
@@ -17,7 +22,7 @@ function SelectedOptionsView() {
     initOptionsAddHandler(deleteAmount);
     stateOptionsAddHandler(deleteOptions);
     dispatch(replaceOption(deleteOptions));
-  }
+  };
 
   return (
     <Fragment>

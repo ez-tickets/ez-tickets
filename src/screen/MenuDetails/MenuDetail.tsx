@@ -5,20 +5,21 @@ import { topNavStyle } from "./MenuDetail.css.ts";
 import BottomNav from "./components/BottomNav.tsx";
 import MenuDescription from "./components/MenuDescription.tsx";
 import TopNav from "./components/TopNav.tsx";
-import { useOrderStore } from "./store/Order.ts";
-import { initialize } from "./store/action/OrderAction.ts";
+import { useCustomizeStore } from "./store/Order.ts";
+import {initialize} from "./store/action/CustomizeAction.ts";
+
 
 // fixme: IDを指定して商品ごとのデータを得るようにする
 // 多分fetchはSWRを使うことになると思う
 function MenuDetail(/* {id} */) {
-  const getData = selectMenuData1;
-  const { dispatch } = useOrderStore();
+  const getData = selectMenuData2;
+  const { dispatch } = useCustomizeStore();
   const { animation } = useSlideAnimeStore();
 
   // コンポーネントの初期化時だけで呼ばれてほしいため
   // biome-ignore lint: react-hooks/exhaustive-deps
   useEffect(() => {
-    dispatch(initialize(getData.id, getData.price));
+    dispatch(initialize(getData));
   }, []);
 
   return (

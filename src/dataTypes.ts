@@ -1,3 +1,4 @@
+// category ------------------------------------------
 export interface Category {
   id: string;
   name: string;
@@ -9,20 +10,15 @@ export interface Menu {
   price: number;
   image: string;
 }
+// -----------------------------------------------------
 
+// メニュー選択時受信データ --------------------------------
 export interface Option {
   id: string;
   name: string;
   price: number;
 }
 
-export interface Size {
-  id: string;
-  name: string;
-  price: number;
-}
-
-// select時の受信データ
 export interface SelectMenu {
   id: string;
   name: string;
@@ -31,28 +27,42 @@ export interface SelectMenu {
   options: Option[];
   price: number;
 }
+// ----------------------------------------------------
 
-// let optionList: string[] = [];
-// options.map((props) => <OptionalMenuContainer props={prop} onSelect={(id) => optionList.push(id)} />)
-
-export interface OptionalMenu {
+// 表示データ形成 ---------------------------------------
+export type SelectProduct = {
   id: string;
   name: string;
-  image: string;
-  description: string;
-  onSelect: (id: string) => void;
+  price: number;
+  amount: number;
 }
 
+export type SelectOption = {
+  id: string;
+  name: string;
+  price: number;
+  amount: number;
+}
+
+export type OrderMenu = {
+  product: SelectProduct;
+  options: SelectOption[];
+}
+
+type OrderMenus = {
+  orderMenus: OrderMenu[];
+}
+// ----------------------------------------------------
+
+// 送信データ形成 ---------------------------------------
 export interface ProdOrder {
   id: string;
   amount: number;
-  price: number;
 }
 
 export interface ProdOptionOrder {
   id: string;
   amount: number;
-  price: number;
 }
 
 export interface Order {
@@ -60,7 +70,7 @@ export interface Order {
   options: ProdOptionOrder[];
 }
 
-// 送信データ
 export interface Cart {
   order: Order[];
 }
+// ---------------------------------------------------

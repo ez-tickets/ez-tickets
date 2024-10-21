@@ -4,9 +4,9 @@ import decrementSVG from "../../../assets/decrement.svg";
 import decrementLimitSVG from "../../../assets/decrementLimit.svg";
 import incrementSVG from "../../../assets/increment.svg";
 import incrementLimitSVG from "../../../assets/incrementLimit.svg";
-import { useOrderStore } from "../store/Order.ts";
-import { decreaseAmount, increaseAmount } from "../store/action/OrderAction.ts";
+import { useCustomizeStore } from "../store/Order.ts";
 import { orderAmountStyle } from "./style/OrderAmount.css.ts";
+import {decreaseAmount, increaseAmount} from "../store/action/CustomizeAction.ts";
 
 type OrderAmount = {
   amount: number;
@@ -24,7 +24,7 @@ export const useOrderAmountStore = create<OrderAmount>()((set) => ({
 
 function OrderAmount() {
   const { amount, inc, dec } = useOrderAmountStore();
-  const { dispatch } = useOrderStore();
+  const { dispatch } = useCustomizeStore();
   const maxAmount = 10;
   const minAmount = 1;
 

@@ -9,41 +9,40 @@ import {
   type OrderOptions,
   useSelectedOptionsStore,
 } from "../MenuDetails/components/MenuDescription.tsx";
-import { useOrderStore } from "../MenuDetails/store/Order.ts";
-import { replaceOption } from "../MenuDetails/store/action/OrderAction.ts";
+import { useCustomizeStore } from "../MenuDetails/store/Order.ts";
 import { selectOptionsStyle } from "./SelectOptions.css.ts";
 import OptionalMenu from "./components/OptionalMenu.tsx";
+import {replaceOption} from "../MenuDetails/store/action/CustomizeAction.ts";
 
 function SelectOptions() {
   const { changeLeftAnimation } = useSlideAnimeStore();
-  const { dispatch } = useOrderStore();
-  const { initOptions, stateOptions, stateOptionsAddHandler, resetHandler } = useSelectedOptionsStore();
+  const { dispatch } = useCustomizeStore();
+  const { initOptions, stateOptions, stateOptionsAddHandler, resetHandler } =
+    useSelectedOptionsStore();
 
   const backHandler = () => {
     if (stateOptions.length !== 0) {
       initOptions.map((initOption) => {
-        const orderOptions = stateOptions.find((stateOption) => initOption.id === stateOption.id);
+        const orderOptions = stateOptions.find(
+          (stateOption) => initOption.id === stateOption.id,
+        );
         if (orderOptions) {
           initOption.amount = orderOptions.amount;
         } else {
           initOption.amount = 0;
         }
-      })
+      });
       changeLeftAnimation();
-      confirm("内容が変更されていませんがよろしいですか？");
+      confirm("内容が変更されていませんがよろしいですか？");//todo: なんかいいライブラリない？
       return;
     }
     resetHandler();
   };
 
-  const toOrder = (to: OrderOptions[]): ProdOptionOrder[] => {
-    return to.map((m) => ({ id: m.id, amount: m.amount, price: m.price }));
-  };
-
   const confirmedHandler = () => {
     const selectedOption = initOptions.filter((item) => item.amount > 0);
     stateOptionsAddHandler(selectedOption);
-    dispatch(replaceOption(toOrder(selectedOption)));
+    dispatch(replaceOption(selectedOption));
 
     toast.success("トッピングを追加しました");
   };

@@ -1,28 +1,43 @@
-import { Fragment } from "react";
+import {Fragment} from "react";
 import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
-import type { Option } from "../../../dataTypes.ts";
-import { useOrderStore } from "../store/Order.ts";
-import { dispersion } from "../store/action/OrderAction.ts";
+import type {Option} from "../../../dataTypes.ts";
+import {useOrderedStore, useCustomizeStore} from "../store/Order.ts";
 import { useSelectedOptionsStore } from "./MenuDescription.tsx";
 import OrderAmount, { useOrderAmountStore } from "./OrderAmount.tsx";
 import PriceTotalView from "./PriceTotalView.tsx";
 import { bottomNavStyle } from "./style/BottomNav.css.ts";
+import {dispersion} from "../store/action/CustomizeAction.ts";
+import {orderAdd} from "../store/action/OrderedAction.ts";
 
 type BottomNavProps = {
   options: Option[];
 };
 
 function BottomNav({ options }: BottomNavProps) {
-  const { dispatch } = useOrderStore();
+  const { query, dispatch } = useCustomizeStore();
+  const { dispatcher } = useOrderedStore();
   const { resetHandler } = useSelectedOptionsStore();
   const { resetAmount } = useOrderAmountStore();
 
   const orderAddHandler = () => {
     resetHandler();
     resetAmount();
-    dispatch(dispersion());
 
+    if (query === undefined) return;
+      const order = {
+        product: {
+          id: query.product.id,
+          amount: query.product.amount
+        },
+        options: query.options.map((option) => ({
+          id: option.id,
+          amount: option.amount
+        }))
+      };
+      dispatcher(orderAdd(order));
+
+    dispatch(dispersion());
     toast.success("商品をカートに追加しました");
   };
 
