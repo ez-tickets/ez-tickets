@@ -6,9 +6,10 @@ function PriceTotalView() {
   const [totalPrice, setTotalPrice] = useState<number>();
 
   useCustomizeStore.subscribe((state, _) => {
-    if (state.query === undefined) return;
-    const basePrice = state.query.product.price * state.query.product.amount;
-    const totalPrice = state.query.options.reduce(
+    if (state.customizeQuery === undefined) return;
+    const basePrice =
+      state.customizeQuery.product.price * state.customizeQuery.product.amount;
+    const totalPrice = state.customizeQuery.options.reduce(
       (acc, price) => acc + price.price * price.amount,
       basePrice,
     );

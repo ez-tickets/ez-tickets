@@ -8,40 +8,40 @@ import { orderReducer } from "./reducer/OrderReducer.ts";
 import { orderedReducer } from "./reducer/OrderedReducer.ts";
 
 interface CustomizeQueryDispatcher {
-  query?: OrderMenu;
+  customizeQuery?: OrderMenu;
   customizeDispatch: (action: CustomizeAction) => void;
 }
 
 export const useCustomizeStore = create<CustomizeQueryDispatcher>((set) => ({
-  query: undefined,
+  customizeQuery: undefined,
   customizeDispatch: (action) =>
     set((state) => {
-      return { query: customizeReducer(action, state.query) };
+      return { customizeQuery: customizeReducer(action, state.customizeQuery) };
     }),
 }));
 
 interface OrderQueryDispatcher {
-  query: OrderMenu[];
+  orderQuery: OrderMenu[];
   orderDispatch: (action: OrderAction) => void;
 }
 
 export const useOrderStore = create<OrderQueryDispatcher>((set) => ({
-  query: [],
+  orderQuery: [],
   orderDispatch: (action) =>
     set((state) => {
-      return { query: orderReducer(action, state.query) };
+      return { orderQuery: orderReducer(action, state.orderQuery) };
     }),
 }));
 
 interface OrderedQueryDispatcher {
-  query: Order[];
+  orderedQuery: Order[];
   orderedDispatch: (action: OrderedAction) => void;
 }
 
 export const useOrderedStore = create<OrderedQueryDispatcher>((set) => ({
-  query: [],
+  orderedQuery: [],
   orderedDispatch: (action: OrderedAction) =>
     set((state) => {
-      return { query: orderedReducer(action, state.query) };
+      return { orderedQuery: orderedReducer(action, state.orderedQuery) };
     }),
 }));
