@@ -1,26 +1,35 @@
-import type { Order } from "../../../../dataTypes.ts";
 import {
   DECREASE_AMOUNT,
   DISPERSION,
   INCREASE_AMOUNT,
   INITIALIZE,
-  type OrderAction,
+  type CustomizeAction,
   REPLACE,
-} from "../action/OrderAction.ts";
+} from "../action/CustomizeAction.ts";
+import type {OrderMenu} from "../../../../dataTypes.ts";
 
-export const orderReducer = (
-  action: OrderAction,
-  prev?: Order,
-): Order | undefined => {
+
+export const customizeReducer = (
+  action: CustomizeAction,
+  prev?: OrderMenu,
+):OrderMenu  | undefined => {
   const state = prev;
 
   switch (action.type) {
     case INITIALIZE:
       if (state === undefined) {
         return {
-          product: { id: action.payload, amount: 1, price: action.price },
-          options: [],
-        };
+          product: {
+            id: action.payload.id,
+            name: action.payload.name,
+            price: action.payload.price,
+            amount: 1,
+          },
+          options: action.payload.options.map((option) => ({
+            ...option,
+            amount: 0
+          })) || []
+        }
       }
       break;
     case INCREASE_AMOUNT:
@@ -41,7 +50,6 @@ export const orderReducer = (
       }
       state.options = action.payload;
       break;
-
     case DISPERSION:
       return undefined;
     default: {

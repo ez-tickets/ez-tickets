@@ -1,11 +1,11 @@
 import { Fragment, useState } from "react";
-import { useOrderStore } from "../store/Order.ts";
+import { useCustomizeStore } from "../store/Order.ts";
 import { priceTotalViewStyle } from "./style/PriceTotalView.css.ts";
 
 function PriceTotalView() {
   const [totalPrice, setTotalPrice] = useState<number>();
 
-  useOrderStore.subscribe((state, _) => {
+  useCustomizeStore.subscribe((state, _) => {
     if (state.query === undefined) return;
     const basePrice = state.query.product.price * state.query.product.amount;
     const totalPrice = state.query.options.reduce(

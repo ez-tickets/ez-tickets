@@ -1,10 +1,9 @@
-import type { ProdOptionOrder } from "../../../../dataTypes.ts";
+import type {SelectMenu, SelectOption} from "../../../../dataTypes.ts";
 
 export const INITIALIZE = "initialize" as const;
-export const initialize = (id: string, price: number) => ({
+export const initialize = (menuData: SelectMenu) => ({
   type: INITIALIZE,
-  payload: id,
-  price: price,
+  payload: menuData
 });
 
 export const INCREASE_AMOUNT = "increase-amount" as const;
@@ -18,7 +17,7 @@ export const decreaseAmount = () => ({
 });
 
 export const REPLACE = "replace" as const;
-export const replaceOption = (options: ProdOptionOrder[]) => ({
+export const replaceOption = (options: SelectOption[]) => ({
   type: REPLACE,
   payload: options,
 });
@@ -28,7 +27,7 @@ export const dispersion = () => ({
   type: DISPERSION,
 });
 
-export type OrderAction =
+export type CustomizeAction =
   | ReturnType<typeof initialize>
   | ReturnType<typeof increaseAmount>
   | ReturnType<typeof decreaseAmount>
