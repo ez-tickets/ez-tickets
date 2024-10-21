@@ -1,17 +1,7 @@
 import { Fragment } from "react";
-import { Link } from "react-router-dom";
-import { toast } from "react-toastify";
 import type { Option } from "../../../dataTypes.ts";
-import {
-  useCustomizeStore,
-  useOrderStore,
-  useOrderedStore,
-} from "../store/Order.ts";
-import { dispersion } from "../store/action/CustomizeAction.ts";
-import { addSelectedOrder } from "../store/action/OrderAction.ts";
-import { orderAdd } from "../store/action/OrderedAction.ts";
-import { useSelectedOptionsStore } from "./MenuDescription.tsx";
-import OrderAmount, { useOrderAmountStore } from "./OrderAmount.tsx";
+import ConfirmButton from "./ConfirmButton.tsx";
+import OrderAmount from "./OrderAmount.tsx";
 import PriceTotalView from "./PriceTotalView.tsx";
 import { bottomNavStyle } from "./style/BottomNav.css.ts";
 
@@ -20,34 +10,6 @@ type BottomNavProps = {
 };
 
 function BottomNav({ options }: BottomNavProps) {
-  const { query, customizeDispatch } = useCustomizeStore();
-  const { orderDispatch } = useOrderStore();
-  const { orderedDispatch } = useOrderedStore();
-  const { resetHandler } = useSelectedOptionsStore();
-  const { resetAmount } = useOrderAmountStore();
-
-  const orderAddHandler = () => {
-    resetHandler();
-    resetAmount();
-
-    if (query === undefined) return;
-    orderDispatch(addSelectedOrder(query));
-    const order = {
-      product: {
-        id: query.product.id,
-        amount: query.product.amount,
-      },
-      options: query.options.map((option) => ({
-        id: option.id,
-        amount: option.amount,
-      })),
-    };
-    orderedDispatch(orderAdd(order));
-
-    customizeDispatch(dispersion());
-    toast.success("商品をカートに追加しました");
-  };
-
   return (
     <Fragment>
       <div className={bottomNavStyle.buttonContainer}>
@@ -61,24 +23,8 @@ function BottomNav({ options }: BottomNavProps) {
             <OrderAmount />
           )}
         </div>
-
         <PriceTotalView />
-
-        <Link to={"/"}>
-          <button type={"button"} className={bottomNavStyle.actionButton}>
-            注文確定に進む
-          </button>
-        </Link>
-
-        <Link to={"/"}>
-          <button
-            type={"button"}
-            className={bottomNavStyle.actionButton}
-            onClick={orderAddHandler}
-          >
-            カートに追加する
-          </button>
-        </Link>
+        <ConfirmButton />
       </div>
     </Fragment>
   );

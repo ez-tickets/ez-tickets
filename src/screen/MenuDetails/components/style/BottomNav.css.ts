@@ -15,14 +15,6 @@ export const bottomNavStyle = {
     borderTop: "1px solid rgba(0,0,0,0.2)",
   }),
 
-  actionButton: style({
-    width: "150px",
-    backgroundColor: "gold",
-    borderRadius: "2.5px",
-    padding: "10px",
-    border: "1px solid rgba(0,0,0,0.2)",
-  }),
-
   amountContainer: style({
     position: "absolute",
     top: "15px",

@@ -2,8 +2,7 @@ import { style } from "@vanilla-extract/css";
 
 export const decisionNavStyle = {
   footer: style({
-    // backgroundColor: "#ffd700", //カートの中に商品が入っている時の色
-    backgroundColor: "lightgray", //注文の品がない時の色
+    backgroundColor: "white",
     textAlign: "center",
     padding: "20px",
     position: "fixed",
@@ -14,7 +13,39 @@ export const decisionNavStyle = {
     boxShadow: "0 -1px 2px gray",
   }),
 
-  decisionButton: style({
-    color: "rgba(0,0,0,0.5)",
+  existButton: style({
+    width: "250px",
+    backgroundColor: "gold",
+    borderRadius: "2.5px",
+    padding: "10px",
+    border: "1px solid rgba(0,0,0,0.2)",
+  }),
+
+  emptyButton: style({
+    width: "250px",
+    backgroundColor: "rgba(0,0,0,0.2)",
+    borderRadius: "2.5px",
+    padding: "10px",
+    border: "1px solid rgba(0,0,0,0.2)",
+  }),
+
+  buttonContainer: style({
+    position: "relative",
+  }),
+
+  orderQuantity: style({
+    position: "absolute",
+    width: "30px",
+    height: "30px",
+    border: "1px solid white",
+    boxShadow: "-2px -2px 4px rgba(0,0,0,0.2)",
+    borderRadius: "50%",
+    top: "-30%",
+    right: "10%",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "crimson",
+    color: "white",
   }),
 };
