@@ -12,7 +12,9 @@ function ModalOverlay({ setModalFlag }: ModalOverlayProps) {
       <div className={modalOverlayStyle.modalOverlay}>
         <div className={modalOverlayStyle.confirmContainer}>
           <p className={modalOverlayStyle.text}>
-            内容は変更されていませんがよろしいですか？
+            内容は変更されていません
+            <br />
+            よろしいですか？
           </p>
           <div className={modalOverlayStyle.buttonContainer}>
             <Link to={"/MenuDetail"}>

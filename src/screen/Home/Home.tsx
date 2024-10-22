@@ -1,9 +1,11 @@
 import { Fragment } from "react";
 import { create } from "zustand/index";
 import {
-  slideLeftPage,
-  slideRightPage,
-} from "../MenuDetails/MenuDetail.css.ts";
+  slideBottom,
+  slideLeft,
+  slideRight,
+  slideTop,
+} from "../../global.css.ts";
 import { homeStyle } from "./Home.css.ts";
 import CategoryNav from "./components/CategoryNav.tsx";
 import DecisionNav from "./components/DecisionNav.tsx";
@@ -11,14 +13,18 @@ import MenuCardList from "./components/MenuCardList.tsx";
 
 type SlideAnime = {
   animation: string;
+  changeTopAnimation: () => void;
+  changeBottomAnimation: () => void;
   changeLeftAnimation: () => void;
   changeRightAnimation: () => void;
 };
 
 export const useSlideAnimeStore = create<SlideAnime>()((set) => ({
   animation: "",
-  changeLeftAnimation: () => set({ animation: slideLeftPage }),
-  changeRightAnimation: () => set({ animation: slideRightPage }),
+  changeTopAnimation: () => set({ animation: slideTop }),
+  changeBottomAnimation: () => set({ animation: slideBottom }),
+  changeLeftAnimation: () => set({ animation: slideLeft }),
+  changeRightAnimation: () => set({ animation: slideRight }),
 }));
 
 function Home() {
