@@ -34,7 +34,7 @@ function SelectedOptionsView() {
               +{option.price}円
             </p>
             <p className={selectedOptionsViewStyle.amountText}>
-              ×　数量: {option.amount}
+              ×　数量 {option.amount}
             </p>
             <button
               type={"button"}
