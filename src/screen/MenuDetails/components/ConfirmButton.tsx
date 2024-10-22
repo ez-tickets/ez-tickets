@@ -21,7 +21,7 @@ function ConfirmButton() {
   const { resetHandler } = useSelectedOptionsStore();
   const { resetAmount } = useOrderAmountStore();
 
-  const orderAddHandler = () => {
+  const orderAddProcess = () => {
     resetHandler();
     resetAmount();
 
@@ -43,18 +43,27 @@ function ConfirmButton() {
       })),
     };
     orderedDispatch(orderAdd(order));
-
     customizeDispatch(dispersion());
+  };
+
+  const moveOrderHandler = () => orderAddProcess();
+  const orderAddHandler = () => {
+    orderAddProcess();
     toast.success("商品をカートに追加しました");
   };
 
   return (
     <Fragment>
-      <Link to={"/OrderConfirmation"}>
-        <div className={confirmButtonStyle.buttonContainer}>
-          <button type={"button"} className={confirmButtonStyle.actionButton}>
+      <div className={confirmButtonStyle.buttonContainer}>
+        <Link to={"/OrderConfirmation"}>
+          <button
+            type={"button"}
+            className={confirmButtonStyle.actionButton}
+            onClick={moveOrderHandler}
+          >
             注文確定に進む
           </button>
+
           {orderQuery.length !== 0 ? (
             <div className={confirmButtonStyle.orderQuantity}>
               {orderQuery.length}
@@ -62,11 +71,11 @@ function ConfirmButton() {
           ) : (
             ""
           )}
-        </div>
-      </Link>
+        </Link>
+      </div>
 
-      <Link to={"/"}>
-        <div className={confirmButtonStyle.buttonContainer}>
+      <div className={confirmButtonStyle.buttonContainer}>
+        <Link to={"/"}>
           <button
             type={"button"}
             className={confirmButtonStyle.actionButton}
@@ -74,8 +83,8 @@ function ConfirmButton() {
           >
             カートに追加する
           </button>
-        </div>
-      </Link>
+        </Link>
+      </div>
     </Fragment>
   );
 }

@@ -13,8 +13,8 @@ export const orderTopNavStyle = {
 
   backImg: style({
     position: "absolute",
-    top: "5px",
-    left: "5px",
+    top: "10px",
+    left: "10px",
   }),
 
   menuTitle: style({
