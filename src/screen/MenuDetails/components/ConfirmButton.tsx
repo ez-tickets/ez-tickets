@@ -50,7 +50,7 @@ function ConfirmButton() {
 
   return (
     <Fragment>
-      <Link to={"/"}>
+      <Link to={"/OrderConfirmation"}>
         <div className={confirmButtonStyle.buttonContainer}>
           <button type={"button"} className={confirmButtonStyle.actionButton}>
             注文確定に進む

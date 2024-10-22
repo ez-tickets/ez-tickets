@@ -23,6 +23,7 @@ export const modalOverlayStyle = {
   }),
 
   text: style({
+    textAlign: "center",
     fontSize: "18px",
     padding: "10px 20px",
   }),

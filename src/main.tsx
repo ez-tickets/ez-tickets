@@ -7,6 +7,7 @@ import "./global.css.ts";
 import { Bounce, ToastContainer } from "react-toastify";
 import SelectOptions from "./screen/SelectOptions/SelectOptions.tsx";
 import "react-toastify/dist/ReactToastify.css";
+import OrderConfirmation from "./screen/OrderConfirmation/OrderConfirmation.tsx";
 
 // biome-ignore lint: @typescript-eslint/no-non-null-assertion
 createRoot(document.getElementById("root")!).render(
@@ -33,6 +34,7 @@ createRoot(document.getElementById("root")!).render(
           element={<MenuDetail /* key={id} id={id} */ />}
         />
         <Route path="/SelectOptions" element={<SelectOptions />} />
+        <Route path="/OrderConfirmation" element={<OrderConfirmation />} />
       </Routes>
     </MemoryRouter>
   </StrictMode>,
