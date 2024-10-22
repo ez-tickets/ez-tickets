@@ -10,12 +10,9 @@ export const orderListStyle = {
   }),
 
   menuContainer: style({
-    marginTop: "20px",
-    display: "grid",
-    gridTemplateColumns: "repeat(auto-fit, minmax(150px, 1fr));",
-    placeItems: "center",
-    gap: "0 15px",
-    scrollSnapType: "y mandatory",
-    scrollbarWidth: "thin",
+    flex: "1",
+    marginBottom: "60px",
+    overflowY: "auto",
+    paddingBottom: "30px",
   }),
 };

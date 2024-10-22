@@ -19,7 +19,7 @@ function OrderTopNav() {
             <img src={xSVG} className={orderTopNavStyle.backImg} alt={"戻る"} />
           </button>
         </Link>
-        <h1 className={orderTopNavStyle.menuTitle}>注文確認画面</h1>
+        <h1 className={orderTopNavStyle.menuTitle}>注文内容</h1>
       </div>
     </Fragment>
   );
