@@ -1,5 +1,9 @@
 import type { OrderMenu } from "../../../../dataTypes.ts";
-import { ADD_SELECTED_ORDER, type OrderAction } from "../action/OrderAction.ts";
+import {
+  ADD_SELECTED_ORDER,
+  DELETE_ORDER,
+  type OrderAction,
+} from "../action/OrderAction.ts";
 import { DISPERSION } from "../action/OrderedAction.ts";
 
 export const orderReducer = (
@@ -11,6 +15,8 @@ export const orderReducer = (
   switch (action.type) {
     case ADD_SELECTED_ORDER:
       return [...state, action.payload];
+    case DELETE_ORDER:
+      return state.filter((order) => order.product.id !== action.payload);
     case DISPERSION:
       return [];
     default: {

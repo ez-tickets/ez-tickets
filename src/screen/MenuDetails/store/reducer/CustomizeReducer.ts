@@ -8,6 +8,8 @@ import {
   REPLACE,
 } from "../action/CustomizeAction.ts";
 
+let orderID = 1;
+
 export const customizeReducer = (
   action: CustomizeAction,
   prev?: OrderMenu,
@@ -19,7 +21,7 @@ export const customizeReducer = (
       if (state === undefined) {
         return {
           product: {
-            id: action.payload.id,
+            id: orderID++,
             name: action.payload.name,
             price: action.payload.price,
             amount: 1,

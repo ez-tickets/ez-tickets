@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from "react";
+import { Fragment } from "react";
 import { Link } from "react-router-dom";
 import OrderTotal from "./OrderTotal.tsx";
 import { orderBottomNavStyle } from "./style/OrderBottomNav.css.ts";

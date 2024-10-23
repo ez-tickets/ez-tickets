@@ -1,12 +1,21 @@
 import { Fragment } from "react";
+import { useOrderStore } from "../../MenuDetails/store/Order.ts";
+import { deleteOrder } from "../../MenuDetails/store/action/OrderAction.ts";
 import { orderDeleteModalStyle } from "./style/OrderDeleteModal.css.ts";
 
 type OrderDeleteModalProps = {
-  productID: string;
+  productID: number;
   setModalFlag: (Flag: boolean) => void;
 };
 
 function OrderDeleteModal({ productID, setModalFlag }: OrderDeleteModalProps) {
+  const { orderDispatch } = useOrderStore();
+
+  const orderDeleteHandler = (id: number) => {
+    setModalFlag(false);
+    orderDispatch(deleteOrder(id));
+  };
+
   return (
     <Fragment>
       <div className={orderDeleteModalStyle.modalOverlay}>
@@ -16,7 +25,7 @@ function OrderDeleteModal({ productID, setModalFlag }: OrderDeleteModalProps) {
             <button
               type={"button"}
               className={orderDeleteModalStyle.yesButton}
-              onClick={() => setModalFlag(false)}
+              onClick={() => orderDeleteHandler(productID)}
             >
               はい
             </button>

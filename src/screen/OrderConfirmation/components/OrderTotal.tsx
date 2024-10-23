@@ -1,6 +1,5 @@
 import React, { Fragment } from "react";
 import { useOrderStore } from "../../MenuDetails/store/Order.ts";
-import { orderBottomNavStyle } from "./style/OrderBottomNav.css.ts";
 import { orderTotalStyle } from "./style/OrderTotal.css.ts";
 
 function OrderTotal() {
