@@ -31,7 +31,7 @@ export interface SelectMenu {
 
 // 表示データ形成 ---------------------------------------
 export type SelectProduct = {
-  id: string;
+  id: number; //incrementしていく
   name: string;
   price: number;
   amount: number;

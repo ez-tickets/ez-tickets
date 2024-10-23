@@ -6,6 +6,12 @@ export const addSelectedOrder = (orderMenu: OrderMenu) => ({
   payload: orderMenu,
 });
 
+export const DELETE_ORDER = "delete-order" as const;
+export const deleteOrder = (id: number) => ({
+  type: DELETE_ORDER,
+  payload: id,
+});
+
 export const DISPERSION = "dispersion" as const;
 export const dispersion = () => ({
   type: DISPERSION,
@@ -13,4 +19,5 @@ export const dispersion = () => ({
 
 export type OrderAction =
   | ReturnType<typeof addSelectedOrder>
+  | ReturnType<typeof deleteOrder>
   | ReturnType<typeof dispersion>;

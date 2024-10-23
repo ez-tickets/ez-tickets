@@ -34,7 +34,7 @@ function ConfirmButton() {
 
     const order = {
       product: {
-        id: customizeQuery.product.id,
+        id: customizeQuery.product.id.toString(),
         amount: customizeQuery.product.amount,
       },
       options: customizeQuery.options.map((option) => ({

@@ -13,5 +13,4 @@ export const orderListStyle = {
     flex: "1",
     overflowY: "auto",
   }),
-  //--------------------------------------------- option
 };
