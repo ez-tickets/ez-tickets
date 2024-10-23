@@ -1,5 +1,6 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useState } from "react";
 import { Link } from "react-router-dom";
+import OrderTotal from "./OrderTotal.tsx";
 import { orderBottomNavStyle } from "./style/OrderBottomNav.css.ts";
 
 function OrderBottomNav() {
@@ -8,6 +9,8 @@ function OrderBottomNav() {
   return (
     <Fragment>
       <div className={orderBottomNavStyle.footer}>
+        <OrderTotal />
+
         <Link to={"/"}>
           <button
             type={"button"}

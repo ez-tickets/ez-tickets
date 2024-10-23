@@ -25,7 +25,7 @@ type OptionsDetail = {
   resetHandler: () => void;
 };
 
-export const useSelectedOptionsStore = create<OptionsDetail>()((set) => ({
+export const useSelectedOptionsStore = create<OptionsDetail>((set) => ({
   initOptions: [],
   stateOptions: [],
   initOptionsAddHandler: (optionsDetail) => set({ initOptions: optionsDetail }),
