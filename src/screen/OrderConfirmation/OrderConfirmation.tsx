@@ -6,9 +6,6 @@ import OrderList from "./components/OrderList.tsx";
 import OrderTopNav from "./components/OrderTopNav.tsx";
 
 function OrderConfirmation() {
-  const backHandler = () => {};
-  const confirmedHandler = () => {};
-
   return (
     <Fragment>
       <div className={slideBottom}>
