@@ -1,6 +1,7 @@
 import React, { Fragment } from "react";
 import { useOrderStore } from "../../MenuDetails/store/Order.ts";
 import { orderBottomNavStyle } from "./style/OrderBottomNav.css.ts";
+import { orderTotalStyle } from "./style/OrderTotal.css.ts";
 
 function OrderTotal() {
   const { orderQuery } = useOrderStore();
@@ -16,7 +17,7 @@ function OrderTotal() {
 
   return (
     <Fragment>
-      <p className={orderBottomNavStyle.total}>
+      <p className={orderTotalStyle.total}>
         合計　{totalPrice.toLocaleString()}
       </p>
     </Fragment>
