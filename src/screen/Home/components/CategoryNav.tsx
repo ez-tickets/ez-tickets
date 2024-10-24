@@ -1,4 +1,4 @@
-import { Fragment } from "react";
+import {Fragment, Suspense} from "react";
 import Category from "./Category.tsx";
 import { categoryNavStyle } from "./style/CategoryNav.css.ts";
 
@@ -7,7 +7,7 @@ function CategoryNav() {
     <Fragment>
       <div className={categoryNavStyle.header}>
         <ul className={categoryNavStyle.menuCard}>
-          <Category />
+            <Category />
         </ul>
       </div>
     </Fragment>
