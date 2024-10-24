@@ -27,9 +27,15 @@ export const dispersion = () => ({
   type: DISPERSION,
 });
 
+export const RESET_ID = "reset-id" as const;
+export const resetID = () => ({
+  type: RESET_ID,
+});
+
 export type CustomizeAction =
   | ReturnType<typeof initialize>
   | ReturnType<typeof increaseAmount>
   | ReturnType<typeof decreaseAmount>
   | ReturnType<typeof replaceOption>
-  | ReturnType<typeof dispersion>;
+  | ReturnType<typeof dispersion>
+  | ReturnType<typeof resetID>;

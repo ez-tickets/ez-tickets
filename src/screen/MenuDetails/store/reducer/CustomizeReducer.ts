@@ -6,6 +6,7 @@ import {
   INCREASE_AMOUNT,
   INITIALIZE,
   REPLACE,
+  RESET_ID,
 } from "../action/CustomizeAction.ts";
 
 let orderID = 1;
@@ -54,6 +55,9 @@ export const customizeReducer = (
       break;
     case DISPERSION:
       return undefined;
+    case RESET_ID:
+      orderID = 1;
+      return;
     default: {
       // linting error DO NOT TOUCH!
       const _: never = action;
