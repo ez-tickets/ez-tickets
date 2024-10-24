@@ -1,12 +1,12 @@
 import { Fragment } from "react";
 import { Link } from "react-router-dom";
-import { categoryStyle } from "./style/Category.css.ts";
 import useSWR from "swr";
-import type {Category} from "../../../dataTypes.ts";
+import type { Category as CategoryApi } from "../../../dataTypes.ts";
+import { categoryStyle } from "./style/Category.css.ts";
 
 function Category() {
-  const { data, error } = useSWR<Category[]>("categories", () =>
-    fetch("http://localhost:8080/categories").then((res) => res.json())
+  const { data, error } = useSWR<CategoryApi[]>("categories", () =>
+    fetch("http://localhost:8080/categories").then((res) => res.json()),
   );
 
   return (
