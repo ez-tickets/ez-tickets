@@ -1,4 +1,4 @@
-import { Fragment } from "react";
+import { Fragment, Suspense } from "react";
 import Category from "./Category.tsx";
 import { categoryNavStyle } from "./style/CategoryNav.css.ts";
 
