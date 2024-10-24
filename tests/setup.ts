@@ -24,6 +24,7 @@ const handlers = [
   // Categorized Products
   http.get("http://localhost:8080/products", ({ request }) => {
     const url = new URL(request.url);
+    // biome-ignore lint:
     const _category_id = url.searchParams.get("category")!;
     return HttpResponse.json(
       [
@@ -41,6 +42,7 @@ const handlers = [
   // Product Details
   http.get("http://localhost:8080/products", ({ request }) => {
     const url = new URL(request.url);
+    // biome-ignore lint:
     const _product_id = url.searchParams.get("id")!;
     return HttpResponse.json(
       {
@@ -63,6 +65,7 @@ const handlers = [
   // Order
   http.post("http://localhost:8080/order", ({ request }) => {
     const url = new URL(request.url);
+    // biome-ignore lint:
     const _table_id = url.searchParams.get("table")!;
     return HttpResponse.json({}, { status: 201 })
   })

@@ -1,5 +1,4 @@
 import { render, screen, waitFor } from "@testing-library/react";
-import type React from "react";
 import { MemoryRouter } from "react-router-dom";
 import { SWRConfig } from "swr";
 import { describe, it } from "vitest";

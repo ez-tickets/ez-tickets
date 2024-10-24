@@ -29,10 +29,7 @@ createRoot(document.getElementById("root")!).render(
       <Routes>
         <Route path="/" element={<Home />} />
         {/* fixme: see MenuDetail.tsx */}
-        <Route
-          path="/MenuDetail"
-          element={<MenuDetail /* key={id} id={id} */ />}
-        />
+        <Route path="/MenuDetail" element={<MenuDetail /* key={id} id={id} */ />}/>
         <Route path="/SelectOptions" element={<SelectOptions />} />
         <Route path="/OrderConfirmation" element={<OrderConfirmation />} />
       </Routes>
