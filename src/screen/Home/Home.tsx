@@ -11,6 +11,7 @@ import CategoryNav from "./components/CategoryNav.tsx";
 import DecisionNav from "./components/DecisionNav.tsx";
 import MenuCardList from "./components/MenuCardList.tsx";
 import {Link} from "react-router-dom";
+import Loading from "../Loading/Loading";
 
 type SlideAnime = {
   animation: string;
