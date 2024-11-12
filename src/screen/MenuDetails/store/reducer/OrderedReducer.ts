@@ -1,4 +1,4 @@
-import type { Order } from "../../../../dataTypes.ts";
+import type { Order } from "@/dataTypes.ts";
 import {
   DISPERSION,
   ORDER_ADD,

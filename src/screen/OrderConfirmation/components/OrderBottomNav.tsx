@@ -5,13 +5,13 @@ import {
   useCustomizeStore,
   useOrderStore,
   useOrderedStore,
-} from "../../MenuDetails/store/Order.ts";
+} from "@/screen/MenuDetails/store/Order.ts";
 import {
   dispersion,
   resetID,
-} from "../../MenuDetails/store/action/CustomizeAction.ts";
-import OrderTotal from "./OrderTotal.tsx";
-import { orderBottomNavStyle } from "./style/OrderBottomNav.css.ts";
+} from "@/screen/MenuDetails/store/action/CustomizeAction.ts";
+import OrderTotal from "@/screen/OrderConfirmation/components/OrderTotal.tsx";
+import { orderBottomNavStyle } from "@/screen/OrderConfirmation/components/style/OrderBottomNav.css.ts";
 
 function OrderBottomNav() {
   const { customizeDispatch } = useCustomizeStore();

@@ -1,9 +1,9 @@
 import React, { Fragment, useState } from "react";
-import trashSVG from "../../../assets/trash.svg";
-import type { OrderMenu } from "../../../dataTypes.ts";
-import Option from "./Option.tsx";
-import OrderDeleteModal from "./OrderDeleteModal.tsx";
-import { orderStyle } from "./style/Order.css.ts";
+import trashSVG from "@/assets/trash.svg";
+import type { OrderMenu } from "@/dataTypes.ts";
+import Option from "@/screen/OrderConfirmation/components/Option.tsx";
+import OrderDeleteModal from "@/screen/OrderConfirmation/components/OrderDeleteModal.tsx";
+import { orderStyle } from "@/screen/OrderConfirmation/components/style/Order.css.ts";
 
 type OrderProps = {
   order: OrderMenu;

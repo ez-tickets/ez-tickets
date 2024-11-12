@@ -1,10 +1,10 @@
 import { Fragment } from "react";
-import decrementSVG from "../../../assets/decrement.svg";
-import decrementLimitSVG from "../../../assets/decrementLimit.svg";
-import incrementSVG from "../../../assets/increment.svg";
-import incrementLimitSVG from "../../../assets/incrementLimit.svg";
-import { useSelectedOptionsStore } from "../../MenuDetails/components/MenuDescription.tsx";
-import { optionalMenuStyle } from "./style/OptionalMenu.css.ts";
+import decrementSVG from "@/assets/decrement.svg";
+import decrementLimitSVG from "@/assets/decrementLimit.svg";
+import incrementSVG from "@/assets/increment.svg";
+import incrementLimitSVG from "@/assets/incrementLimit.svg";
+import { useSelectedOptionsStore } from "@/screen/MenuDetails/components/MenuDescription.tsx";
+import { optionalMenuStyle } from "@/screen/SelectOptions/components/style/OptionalMenu.css.ts";
 
 function OptionalMenu() {
   const maxAmount = 5;

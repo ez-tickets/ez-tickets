@@ -1,9 +1,9 @@
 import { Fragment } from "react";
-import { slideBottom } from "../../global.css.ts";
-import { orderConfirmationStyle } from "./OrderConfirmation.css.ts";
-import OrderBottomNav from "./components/OrderBottomNav.tsx";
-import OrderList from "./components/OrderList.tsx";
-import OrderTopNav from "./components/OrderTopNav.tsx";
+import { slideBottom } from "@/global.css.ts";
+import { orderConfirmationStyle } from "@/screen/OrderConfirmation/OrderConfirmation.css.ts";
+import OrderBottomNav from "@/screen/OrderConfirmation/components/OrderBottomNav.tsx";
+import OrderList from "@/screen/OrderConfirmation/components/OrderList.tsx";
+import OrderTopNav from "@/screen/OrderConfirmation/components/OrderTopNav.tsx";
 
 function OrderConfirmation() {
   return (

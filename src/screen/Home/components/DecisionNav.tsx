@@ -1,8 +1,8 @@
 import { Fragment } from "react";
 import { Link } from "react-router-dom";
-import { useOrderStore } from "../../MenuDetails/store/Order.ts";
-import { useSlideAnimeStore } from "../Home.tsx";
-import { decisionNavStyle } from "./style/DecisionNav.css.ts";
+import { useOrderStore } from "@/screen/MenuDetails/store/Order.ts";
+import { useSlideAnimeStore } from "@/screen/Home/Home.tsx";
+import { decisionNavStyle } from "@/screen/Home/components/style/DecisionNav.css.ts";
 
 function DecisionNav() {
   const { orderQuery } = useOrderStore();

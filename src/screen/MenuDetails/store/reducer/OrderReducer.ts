@@ -1,4 +1,4 @@
-import type { OrderMenu } from "../../../../dataTypes.ts";
+import type { OrderMenu } from "@/dataTypes.ts";
 import {
   ADD_SELECTED_ORDER,
   DELETE_ORDER,

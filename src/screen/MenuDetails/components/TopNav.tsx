@@ -1,12 +1,12 @@
 import { Fragment } from "react";
 import { Link } from "react-router-dom";
-import backSVG from "../../../assets/back.svg";
-import { useSlideAnimeStore } from "../../Home/Home.tsx";
-import { useCustomizeStore } from "../store/Order.ts";
-import { dispersion } from "../store/action/CustomizeAction.ts";
-import { useSelectedOptionsStore } from "./MenuDescription.tsx";
-import { useOrderAmountStore } from "./OrderAmount.tsx";
-import { topNavStyle } from "./style/TopNav.css.ts";
+import backSVG from "@/assets/back.svg";
+import { useSlideAnimeStore } from "@/screen/Home/Home.tsx";
+import { useCustomizeStore } from "@/screen/MenuDetails/store/Order.ts";
+import { dispersion } from "@/screen/MenuDetails/store/action/CustomizeAction.ts";
+import { useSelectedOptionsStore } from "@/screen/MenuDetails/components/MenuDescription.tsx";
+import { useOrderAmountStore } from "@/screen/MenuDetails/components/OrderAmount.tsx";
+import { topNavStyle } from "@/screen/MenuDetails/components/style/TopNav.css.ts";
 
 type TopNavProps = {
   menuName: string;

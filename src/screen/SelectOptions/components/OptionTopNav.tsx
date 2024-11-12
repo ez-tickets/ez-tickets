@@ -1,10 +1,10 @@
 import { Fragment, useState } from "react";
 import { Link } from "react-router-dom";
-import backSVG from "../../../assets/back.svg";
-import { useSlideAnimeStore } from "../../Home/Home.tsx";
-import { useSelectedOptionsStore } from "../../MenuDetails/components/MenuDescription.tsx";
-import ModalOverlay from "./ModalOverlay.tsx";
-import { optionTopNavStyle } from "./style/OptionTopNav.css.ts";
+import backSVG from "@/assets/back.svg";
+import { useSlideAnimeStore } from "@/screen/Home/Home.tsx";
+import { useSelectedOptionsStore } from "@/screen/MenuDetails/components/MenuDescription.tsx";
+import ModalOverlay from "@/screen/SelectOptions/components/ModalOverlay.tsx";
+import { optionTopNavStyle } from "@/screen/SelectOptions/components/style/OptionTopNav.css.ts";
 
 function OptionTopNav() {
   const [modalFlag, setModalFlag] = useState<boolean>(false);

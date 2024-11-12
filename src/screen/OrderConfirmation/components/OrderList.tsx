@@ -1,7 +1,7 @@
 import { Fragment } from "react";
-import { useOrderStore } from "../../MenuDetails/store/Order.ts";
-import Order from "./Order.tsx";
-import { orderListStyle } from "./style/OrderList.css.ts";
+import { useOrderStore } from "@/screen/MenuDetails/store/Order.ts";
+import Order from "@/screen/OrderConfirmation/components/Order.tsx";
+import { orderListStyle } from "@/screen/OrderConfirmation/components/style/OrderList.css.ts";
 
 function OrderList() {
   const { orderQuery } = useOrderStore();

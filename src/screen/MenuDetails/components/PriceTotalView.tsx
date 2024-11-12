@@ -1,6 +1,6 @@
 import { Fragment, useState } from "react";
-import { useCustomizeStore } from "../store/Order.ts";
-import { priceTotalViewStyle } from "./style/PriceTotalView.css.ts";
+import { useCustomizeStore } from "@/screen/MenuDetails/store/Order.ts";
+import { priceTotalViewStyle } from "@/screen/MenuDetails/components/style/PriceTotalView.css.ts";
 
 function PriceTotalView() {
   const [totalPrice, setTotalPrice] = useState<number>();

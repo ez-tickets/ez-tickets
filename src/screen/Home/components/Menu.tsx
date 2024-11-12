@@ -1,8 +1,8 @@
 import { Fragment } from "react";
 import { Link } from "react-router-dom";
-import { menuData } from "../../../mockData.ts";
-import { useSlideAnimeStore } from "../Home.tsx";
-import { menuStyle } from "./style/Menu.css.ts";
+import { menuData } from "@/mockData.ts";
+import { useSlideAnimeStore } from "@/screen/Home/Home.tsx";
+import { menuStyle } from "@/screen/Home/components/style/Menu.css.ts";
 
 function Menu() {
   const { changeRightAnimation } = useSlideAnimeStore();

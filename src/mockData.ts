@@ -1,6 +1,6 @@
-import sampleMenu1 from "./assets/sampleMenu1.jpeg";
-import sampleMenu2 from "./assets/sampleMenu2.jpeg";
-import type { Category, Menu, SelectMenu } from "./dataTypes.ts";
+import sampleMenu1 from "@/assets/sampleMenu1.jpeg";
+import sampleMenu2 from "@/assets/sampleMenu2.jpeg";
+import type { Category, Menu, SelectMenu } from "@/dataTypes.ts";
 
 export const categoryData: Category[] = [
   { id: "1", name: "card1" },

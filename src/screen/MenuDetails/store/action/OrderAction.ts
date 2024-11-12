@@ -1,4 +1,4 @@
-import type { OrderMenu } from "../../../../dataTypes.ts";
+import type { OrderMenu } from "@/dataTypes.ts";
 
 export const ADD_SELECTED_ORDER = "add-selected-order" as const;
 export const addSelectedOrder = (orderMenu: OrderMenu) => ({

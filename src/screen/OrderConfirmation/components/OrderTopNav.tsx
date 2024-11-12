@@ -1,8 +1,8 @@
 import { Fragment } from "react";
 import { Link } from "react-router-dom";
-import xSVG from "../../../assets/x.svg";
-import { useSlideAnimeStore } from "../../Home/Home.tsx";
-import { orderTopNavStyle } from "./style/OrderTopNav.css.ts";
+import xSVG from "@/assets/x.svg";
+import { useSlideAnimeStore } from "@/screen/Home/Home.tsx";
+import { orderTopNavStyle } from "@/screen/OrderConfirmation/components/style/OrderTopNav.css.ts";
 
 function OrderTopNav() {
   const { changeTopAnimation } = useSlideAnimeStore();

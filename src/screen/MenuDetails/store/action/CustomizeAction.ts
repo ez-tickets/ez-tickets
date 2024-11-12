@@ -1,4 +1,4 @@
-import type { SelectMenu, SelectOption } from "../../../../dataTypes.ts";
+import type { SelectMenu, SelectOption } from "@/dataTypes.ts";
 
 export const INITIALIZE = "initialize" as const;
 export const initialize = (menuData: SelectMenu) => ({

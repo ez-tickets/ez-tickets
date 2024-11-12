@@ -1,10 +1,10 @@
 import { Fragment } from "react";
 import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
-import { useSelectedOptionsStore } from "../../MenuDetails/components/MenuDescription.tsx";
-import { useCustomizeStore } from "../../MenuDetails/store/Order.ts";
-import { replaceOption } from "../../MenuDetails/store/action/CustomizeAction.ts";
-import { optionBottomNavStyle } from "./style/OptionBottomNav.css.ts";
+import { useSelectedOptionsStore } from "@/screen/MenuDetails/components/MenuDescription.tsx";
+import { useCustomizeStore } from "@/screen/MenuDetails/store/Order.ts";
+import { replaceOption } from "@/screen/MenuDetails/store/action/CustomizeAction.ts";
+import { optionBottomNavStyle } from "@/screen/SelectOptions/components/style/OptionBottomNav.css.ts";
 
 function OptionBottomNav() {
   const { customizeDispatch } = useCustomizeStore();

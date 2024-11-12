@@ -5,13 +5,11 @@ import {
   slideLeft,
   slideRight,
   slideTop,
-} from "../../global.css.ts";
-import { homeStyle } from "./Home.css.ts";
-import CategoryNav from "./components/CategoryNav.tsx";
-import DecisionNav from "./components/DecisionNav.tsx";
-import MenuCardList from "./components/MenuCardList.tsx";
-import {Link} from "react-router-dom";
-import Loading from "../Loading/Loading";
+} from "@/global.css.ts";
+import { homeStyle } from "@/screen/Home/Home.css.ts";
+import CategoryNav from "@/screen/Home/components/CategoryNav.tsx";
+import DecisionNav from "@/screen/Home/components/DecisionNav.tsx";
+import MenuCardList from "@/screen/Home/components/MenuCardList.tsx";
 
 type SlideAnime = {
   animation: string;

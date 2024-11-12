@@ -1,4 +1,4 @@
-import type { OrderMenu } from "../../../../dataTypes.ts";
+import type { OrderMenu } from "@/dataTypes.ts";
 import {
   type CustomizeAction,
   DECREASE_AMOUNT,

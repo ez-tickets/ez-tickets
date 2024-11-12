@@ -1,7 +1,7 @@
 import { Fragment } from "react";
-import { useOrderStore } from "../../MenuDetails/store/Order.ts";
-import { deleteOrder } from "../../MenuDetails/store/action/OrderAction.ts";
-import { orderDeleteModalStyle } from "./style/OrderDeleteModal.css.ts";
+import { useOrderStore } from "@/screen//MenuDetails/store/Order.ts";
+import { deleteOrder } from "@/screen/MenuDetails/store/action/OrderAction.ts";
+import { orderDeleteModalStyle } from "@/screen/OrderConfirmation/components/style/OrderDeleteModal.css.ts";
 
 type OrderDeleteModalProps = {
   productID: number;

@@ -1,4 +1,4 @@
-import type { Order } from "../../../../dataTypes.ts";
+import type { Order } from "@/dataTypes.ts";
 
 export const ORDER_ADD = "order-add" as const;
 export const orderAdd = (order: Order) => ({

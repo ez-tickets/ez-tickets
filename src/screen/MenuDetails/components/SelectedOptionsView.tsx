@@ -1,9 +1,9 @@
 import { Fragment } from "react";
-import trashSVG from "../../../assets/trash.svg";
-import { useCustomizeStore } from "../store/Order.ts";
-import { replaceOption } from "../store/action/CustomizeAction.ts";
-import { useSelectedOptionsStore } from "./MenuDescription.tsx";
-import { selectedOptionsViewStyle } from "./style/SelectedOptionsView.css.ts";
+import trashSVG from "@/assets/trash.svg";
+import { useCustomizeStore } from "@/screen/MenuDetails/store/Order.ts";
+import { replaceOption } from "@/screen/MenuDetails/store/action/CustomizeAction.ts";
+import { useSelectedOptionsStore } from "@/screen/MenuDetails/components/MenuDescription.tsx";
+import { selectedOptionsViewStyle } from "@/screen/MenuDetails/components/style/SelectedOptionsView.css.ts";
 
 function SelectedOptionsView() {
   const {

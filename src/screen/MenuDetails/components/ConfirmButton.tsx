@@ -5,13 +5,13 @@ import {
   useCustomizeStore,
   useOrderStore,
   useOrderedStore,
-} from "../store/Order.ts";
-import { dispersion, replaceOption } from "../store/action/CustomizeAction.ts";
-import { addSelectedOrder } from "../store/action/OrderAction.ts";
-import { orderAdd } from "../store/action/OrderedAction.ts";
-import { useSelectedOptionsStore } from "./MenuDescription.tsx";
-import { useOrderAmountStore } from "./OrderAmount.tsx";
-import { confirmButtonStyle } from "./style/ConfirmButton.css.ts";
+} from "@/screen/MenuDetails/store/Order.ts";
+import { dispersion, replaceOption } from "@/screen/MenuDetails/store/action/CustomizeAction.ts";
+import { addSelectedOrder } from "@/screen/MenuDetails/store/action/OrderAction.ts";
+import { orderAdd } from "@/screen/MenuDetails/store/action/OrderedAction.ts";
+import { useSelectedOptionsStore } from "@/screen/MenuDetails/components/MenuDescription.tsx";
+import { useOrderAmountStore } from "@/screen/MenuDetails/components/OrderAmount.tsx";
+import { confirmButtonStyle } from "@/screen/MenuDetails/components/style/ConfirmButton.css.ts";
 
 function ConfirmButton() {
   const { customizeQuery, customizeDispatch } = useCustomizeStore();
