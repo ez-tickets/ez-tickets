@@ -1,6 +1,6 @@
 import { keyframes, style } from "@vanilla-extract/css";
 
-export const loadingStyle = {
+export const loadingCss = {
   screen: style({
     position: "absolute",
     top: "50%",
