@@ -1,6 +1,6 @@
-import React, { Fragment } from "react";
 import type { SelectOption } from "@/dataTypes.ts";
 import { optionStyle } from "@/screen/OrderConfirmation/components/style/Option.css.ts";
+import React, { Fragment } from "react";
 
 type OptionProps = {
   option: SelectOption;

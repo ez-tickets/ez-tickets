@@ -1,6 +1,6 @@
+import { modalOverlayStyle } from "@/screen/SelectOptions/components/style/ModalOverlay.css.ts";
 import { Fragment } from "react";
 import { Link } from "react-router-dom";
-import { modalOverlayStyle } from "@/screen/SelectOptions/components/style/ModalOverlay.css.ts";
 
 type ModalOverlayProps = {
   setModalFlag: (flag: boolean) => void;

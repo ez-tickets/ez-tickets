@@ -1,16 +1,31 @@
-import {Fragment} from "react";
-import {Link} from "react-router-dom";
-import {categoryData} from "@/mockData";
-import {categoryStyle} from "@/screen/Home/components/style/Category.css.ts";
+import type { BasicCategory, ProductModel } from "@/dataTypes.ts";
+import { categoryStyle } from "@/screen/Home/components/style/Category.css.ts";
+import { Fragment } from "react";
+import { Link } from "react-router-dom";
 
-function Category() {
+type CategoryProps = {
+  category: BasicCategory;
+  setProducts: (prod: ProductModel[]) => void;
+};
+
+function Category({ category, setProducts }: CategoryProps) {
+  const moveCategoryHandler = async (id: string) => {
+    //todo: カテゴリーのidをサーバーに渡して商品情報を取得するAPI
+    // const products = await;
+    // setProducts(products);
+  };
+
   return (
     <Fragment>
-      {categoryData.map((category) => (
-        <Link to={"/"} key={category.id}>
-          <li className={categoryStyle.item}>{category.name}</li>
-        </Link>
-      ))}
+      <Link to={"/"} key={category.id}>
+        {/* biome-ignore lint/a11y/useKeyWithClickEvents: <explanation> */}
+        <li
+          className={categoryStyle.category}
+          onClick={() => moveCategoryHandler(category.id)}
+        >
+          {category.name}
+        </li>
+      </Link>
     </Fragment>
   );
 }

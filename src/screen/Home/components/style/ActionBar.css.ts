@@ -1,6 +1,6 @@
 import { style } from "@vanilla-extract/css";
 
-export const decisionNavStyle = {
+export const actionBarStyle = {
   footer: style({
     backgroundColor: "white",
     textAlign: "center",

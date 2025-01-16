@@ -1,9 +1,9 @@
-import { Fragment } from "react";
 import { slideRight } from "@/global.css.ts";
 import { optionTopNavStyle } from "@/screen/SelectOptions/SelectOptions.css.ts";
 import OptionBottomNav from "@/screen/SelectOptions/components/OptionBottomNav.tsx";
 import OptionTopNav from "@/screen/SelectOptions/components/OptionTopNav.tsx";
 import OptionalMenu from "@/screen/SelectOptions/components/OptionalMenu.tsx";
+import { Fragment } from "react";
 
 function SelectOptions() {
   return (

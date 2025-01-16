@@ -1,8 +1,14 @@
 import sampleMenu1 from "@/assets/sampleMenu1.jpeg";
 import sampleMenu2 from "@/assets/sampleMenu2.jpeg";
-import type { Category, Menu, SelectMenu } from "@/dataTypes.ts";
+import type {
+  BasicCategory,
+  Category,
+  Menu,
+  ProductModel,
+  SelectMenu,
+} from "@/dataTypes.ts";
 
-export const categoryData: Category[] = [
+export const categoryData: BasicCategory[] = [
   { id: "1", name: "card1" },
   { id: "2", name: "card2" },
   { id: "3", name: "card3" },
@@ -15,14 +21,14 @@ export const categoryData: Category[] = [
   { id: "10", name: "card10" },
 ];
 
-export const menuData: Menu[] = [
-  { id: "1", name: "Menu1", price: 600, image: sampleMenu1 },
-  { id: "2", name: "Menu2", price: 700, image: sampleMenu2 },
-  { id: "3", name: "Menu3", price: 800, image: sampleMenu1 },
-  { id: "4", name: "Menu4", price: 1000, image: sampleMenu2 },
-  { id: "5", name: "Menu5", price: 1500, image: sampleMenu1 },
-  { id: "6", name: "Menu6", price: 1200, image: sampleMenu2 },
-  { id: "7", name: "Menu7", price: 900, image: sampleMenu1 },
+export const menuData: ProductModel[] = [
+  { id: "1", name: "Menu1", price: 600, img: sampleMenu1, desc: "" },
+  { id: "2", name: "Menu2", price: 700, img: sampleMenu1, desc: "" },
+  { id: "3", name: "Menu3", price: 800, img: sampleMenu1, desc: "" },
+  { id: "4", name: "Menu4", price: 1000, img: sampleMenu1, desc: "" },
+  { id: "5", name: "Menu5", price: 1500, img: sampleMenu1, desc: "" },
+  { id: "6", name: "Menu6", price: 1200, img: sampleMenu1, desc: "" },
+  { id: "7", name: "Menu7", price: 900, img: sampleMenu1, desc: "" },
 ];
 
 export const selectMenuData1: SelectMenu = {
