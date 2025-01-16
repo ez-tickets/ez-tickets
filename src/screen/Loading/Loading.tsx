@@ -1,5 +1,5 @@
-import React, { Fragment } from "react";
 import { loadingAnime, loadingStyle } from "@/screen/Loading/Loading.css";
+import React, { Fragment } from "react";
 
 function Loading() {
   return (

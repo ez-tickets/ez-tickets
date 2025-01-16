@@ -1,6 +1,3 @@
-import { Fragment } from "react";
-import { Link } from "react-router-dom";
-import { toast } from "react-toastify";
 import {
   useCustomizeStore,
   useOrderStore,
@@ -12,6 +9,9 @@ import {
 } from "@/screen/MenuDetails/store/action/CustomizeAction.ts";
 import OrderTotal from "@/screen/OrderConfirmation/components/OrderTotal.tsx";
 import { orderBottomNavStyle } from "@/screen/OrderConfirmation/components/style/OrderBottomNav.css.ts";
+import { Fragment } from "react";
+import { Link } from "react-router-dom";
+import { toast } from "react-toastify";
 
 function OrderBottomNav() {
   const { customizeDispatch } = useCustomizeStore();

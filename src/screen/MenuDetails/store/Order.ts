@@ -1,4 +1,3 @@
-import { create } from "zustand/index";
 import type { Order, OrderMenu } from "@/dataTypes.ts";
 import type { CustomizeAction } from "@/screen/MenuDetails/store/action/CustomizeAction.ts";
 import type { OrderAction } from "@/screen/MenuDetails/store/action/OrderAction.ts";
@@ -6,6 +5,7 @@ import type { OrderedAction } from "@/screen/MenuDetails/store/action/OrderedAct
 import { customizeReducer } from "@/screen/MenuDetails/store/reducer/CustomizeReducer.ts";
 import { orderReducer } from "@/screen/MenuDetails/store/reducer/OrderReducer.ts";
 import { orderedReducer } from "@/screen/MenuDetails/store/reducer/OrderedReducer.ts";
+import { create } from "zustand/index";
 
 interface CustomizeQueryDispatcher {
   customizeQuery?: OrderMenu;

@@ -11,9 +11,10 @@ export const menuDescriptionStyle = {
   menuImg: style({
     display: "flex",
     border: "1px solid gray",
-    width: "250px",
-    height: "200px",
+    maxWidth: "100%",
+    maxHeight: "50%",
     margin: "20px auto",
+    aspectRatio: "4/3",
   }),
 
   menuDescription: style({

@@ -1,37 +1,37 @@
+import { useSlideAnimeStore } from "@/screen/Home/Home.tsx";
+import { actionBarStyle } from "@/screen/Home/components/style/ActionBar.css.ts";
+import { useOrderStore } from "@/screen/MenuDetails/store/Order.ts";
 import { Fragment } from "react";
 import { Link } from "react-router-dom";
-import { useOrderStore } from "@/screen/MenuDetails/store/Order.ts";
-import { useSlideAnimeStore } from "@/screen/Home/Home.tsx";
-import { decisionNavStyle } from "@/screen/Home/components/style/DecisionNav.css.ts";
 
-function DecisionNav() {
+function ActionBar() {
   const { orderQuery } = useOrderStore();
   const { changeTopAnimation } = useSlideAnimeStore();
 
   return (
     <Fragment>
-      <div className={decisionNavStyle.footer}>
+      <div className={actionBarStyle.footer}>
         {orderQuery.length !== 0 ? (
-          <div className={decisionNavStyle.buttonContainer}>
+          <div className={actionBarStyle.buttonContainer}>
             <Link to={"/OrderConfirmation"}>
               <button
                 type={"button"}
-                className={decisionNavStyle.existButton}
+                className={actionBarStyle.existButton}
                 onClick={changeTopAnimation}
               >
                 注文確定に進む
               </button>
             </Link>
 
-            <div className={decisionNavStyle.orderQuantity}>
+            <div className={actionBarStyle.orderQuantity}>
               {orderQuery.length}
             </div>
           </div>
         ) : (
-          <div className={decisionNavStyle.buttonContainer}>
+          <div className={actionBarStyle.buttonContainer}>
             <button
               type={"button"}
-              className={decisionNavStyle.emptyButton}
+              className={actionBarStyle.emptyButton}
               disabled={true}
             >
               メニューを選択してください
@@ -43,4 +43,4 @@ function DecisionNav() {
   );
 }
 
-export default DecisionNav;
+export default ActionBar;

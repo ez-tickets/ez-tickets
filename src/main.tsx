@@ -1,11 +1,11 @@
+import Home from "@/screen/Home/Home.tsx";
+import MenuDetail from "@/screen/MenuDetails/MenuDetail.tsx";
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { MemoryRouter, Route, Routes } from "react-router-dom";
-import Home from "@/screen/Home/Home.tsx";
-import MenuDetail from "@/screen/MenuDetails/MenuDetail.tsx";
 import "@/global.css.ts";
-import { Bounce, ToastContainer } from "react-toastify";
 import SelectOptions from "@/screen/SelectOptions/SelectOptions.tsx";
+import { Bounce, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import OrderConfirmation from "@/screen/OrderConfirmation/OrderConfirmation.tsx";
 
@@ -28,11 +28,7 @@ createRoot(document.getElementById("root")!).render(
       />
       <Routes>
         <Route path="/" element={<Home />} />
-        {/* fixme: see MenuDetail.tsx */}
-        <Route
-          path="/MenuDetail"
-          element={<MenuDetail /* key={id} id={id} */ />}
-        />
+        <Route path="/MenuDetail" element={<MenuDetail />} />
         <Route path="/SelectOptions" element={<SelectOptions />} />
         <Route path="/OrderConfirmation" element={<OrderConfirmation />} />
       </Routes>

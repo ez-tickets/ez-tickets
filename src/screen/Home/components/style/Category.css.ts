@@ -1,7 +1,7 @@
 import { style } from "@vanilla-extract/css";
 
 export const categoryStyle = {
-  item: style({
+  category: style({
     padding: "10px",
   }),
 };

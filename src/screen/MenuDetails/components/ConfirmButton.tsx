@@ -1,17 +1,20 @@
-import { Fragment } from "react";
-import { Link } from "react-router-dom";
-import { toast } from "react-toastify";
+import { useSelectedOptionsStore } from "@/screen/MenuDetails/components/MenuDescription.tsx";
+import { useOrderAmountStore } from "@/screen/MenuDetails/components/OrderAmount.tsx";
+import { confirmButtonStyle } from "@/screen/MenuDetails/components/style/ConfirmButton.css.ts";
 import {
   useCustomizeStore,
   useOrderStore,
   useOrderedStore,
 } from "@/screen/MenuDetails/store/Order.ts";
-import { dispersion, replaceOption } from "@/screen/MenuDetails/store/action/CustomizeAction.ts";
+import {
+  dispersion,
+  replaceOption,
+} from "@/screen/MenuDetails/store/action/CustomizeAction.ts";
 import { addSelectedOrder } from "@/screen/MenuDetails/store/action/OrderAction.ts";
 import { orderAdd } from "@/screen/MenuDetails/store/action/OrderedAction.ts";
-import { useSelectedOptionsStore } from "@/screen/MenuDetails/components/MenuDescription.tsx";
-import { useOrderAmountStore } from "@/screen/MenuDetails/components/OrderAmount.tsx";
-import { confirmButtonStyle } from "@/screen/MenuDetails/components/style/ConfirmButton.css.ts";
+import { Fragment } from "react";
+import { Link } from "react-router-dom";
+import { toast } from "react-toastify";
 
 function ConfirmButton() {
   const { customizeQuery, customizeDispatch } = useCustomizeStore();

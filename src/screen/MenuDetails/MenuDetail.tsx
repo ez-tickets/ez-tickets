@@ -1,4 +1,3 @@
-import { Fragment, useEffect } from "react";
 import { selectMenuData1, selectMenuData2 } from "@/mockData.ts";
 import { useSlideAnimeStore } from "@/screen/Home/Home.tsx";
 import { topNavStyle } from "@/screen/MenuDetails/MenuDetail.css.ts";
@@ -7,6 +6,7 @@ import MenuDescription from "@/screen/MenuDetails/components/MenuDescription.tsx
 import TopNav from "@/screen/MenuDetails/components/TopNav.tsx";
 import { useCustomizeStore } from "@/screen/MenuDetails/store/Order.ts";
 import { initialize } from "@/screen/MenuDetails/store/action/CustomizeAction.ts";
+import { Fragment, useEffect } from "react";
 
 // fixme: IDを指定して商品ごとのデータを得るようにする
 // 多分fetchはSWRを使うことになると思う

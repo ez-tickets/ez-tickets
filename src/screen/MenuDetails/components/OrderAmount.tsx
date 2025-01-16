@@ -1,15 +1,15 @@
-import { Fragment } from "react";
-import { create } from "zustand";
 import decrementSVG from "@/assets/decrement.svg";
 import decrementLimitSVG from "@/assets/decrementLimit.svg";
 import incrementSVG from "@/assets/increment.svg";
 import incrementLimitSVG from "@/assets/incrementLimit.svg";
+import { orderAmountStyle } from "@/screen/MenuDetails/components/style/OrderAmount.css.ts";
 import { useCustomizeStore } from "@/screen/MenuDetails/store/Order.ts";
 import {
   decreaseAmount,
   increaseAmount,
 } from "@/screen/MenuDetails/store/action/CustomizeAction.ts";
-import { orderAmountStyle } from "@/screen/MenuDetails/components/style/OrderAmount.css.ts";
+import { Fragment } from "react";
+import { create } from "zustand";
 
 type OrderAmount = {
   amount: number;

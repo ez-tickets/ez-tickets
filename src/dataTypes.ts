@@ -1,8 +1,28 @@
-// category ------------------------------------------
-export interface Category {
+//初期取得データ
+export type BasicCategory = {
   id: string;
   name: string;
-}
+};
+
+export type Category = {
+  id: string;
+  name: string;
+  products: ProductModel[];
+};
+
+export type ProductModel = {
+  id: string;
+  name: string;
+  price: number;
+  desc: string;
+  img: string;
+};
+
+// category ------------------------------------------
+// export interface Category {
+//   id: string;
+//   name: string;
+// }
 
 export interface Menu {
   id: string;

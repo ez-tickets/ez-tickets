@@ -1,8 +1,7 @@
 import { style } from "@vanilla-extract/css";
 
-export const menuCardListStyle = {
-  //header -------------------------------------------------------------
-  main: style({
+export const productsStyle = {
+  mainContainer: style({
     flex: "1",
     marginBottom: "40px",
     overflowY: "auto",
@@ -10,7 +9,7 @@ export const menuCardListStyle = {
     paddingBottom: "50px",
   }),
 
-  menuContainer: style({
+  prodsContainer: style({
     marginTop: "20px",
     display: "grid",
     gridTemplateColumns: "repeat(auto-fit, minmax(150px, 1fr));",

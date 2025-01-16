@@ -1,10 +1,10 @@
-import { Fragment } from "react";
-import { Link } from "react-router-dom";
-import { create } from "zustand/index";
 import type { SelectMenu } from "@/dataTypes.ts";
 import { useSlideAnimeStore } from "@/screen/Home/Home.tsx";
 import SelectedOptionsView from "@/screen/MenuDetails/components/SelectedOptionsView.tsx";
 import { menuDescriptionStyle } from "@/screen/MenuDetails/components/style/MenuDescription.css.ts";
+import { Fragment } from "react";
+import { Link } from "react-router-dom";
+import { create } from "zustand/index";
 
 type MenuDescriptionProps = {
   data: SelectMenu;

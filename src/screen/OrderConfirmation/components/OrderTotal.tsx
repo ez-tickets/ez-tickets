@@ -1,6 +1,6 @@
-import React, { Fragment } from "react";
 import { useOrderStore } from "@/screen/MenuDetails/store/Order.ts";
 import { orderTotalStyle } from "@/screen/OrderConfirmation/components/style/OrderTotal.css.ts";
+import React, { Fragment } from "react";
 
 function OrderTotal() {
   const { orderQuery } = useOrderStore();
