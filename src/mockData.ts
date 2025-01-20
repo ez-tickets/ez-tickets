@@ -1,12 +1,5 @@
 import sampleMenu1 from "@/assets/sampleMenu1.jpeg";
-import sampleMenu2 from "@/assets/sampleMenu2.jpeg";
-import type {
-  BasicCategory,
-  Category,
-  Menu,
-  ProductModel,
-  SelectMenu,
-} from "@/dataTypes.ts";
+import type { BasicCategory, ProductModel } from "@/dataTypes.ts";
 
 export const categoryData: BasicCategory[] = [
   { id: "1", name: "card1" },
@@ -22,38 +15,11 @@ export const categoryData: BasicCategory[] = [
 ];
 
 export const menuData: ProductModel[] = [
-  { id: "1", name: "Menu1", price: 600, img: sampleMenu1, desc: "" },
-  { id: "2", name: "Menu2", price: 700, img: sampleMenu1, desc: "" },
-  { id: "3", name: "Menu3", price: 800, img: sampleMenu1, desc: "" },
-  { id: "4", name: "Menu4", price: 1000, img: sampleMenu1, desc: "" },
-  { id: "5", name: "Menu5", price: 1500, img: sampleMenu1, desc: "" },
-  { id: "6", name: "Menu6", price: 1200, img: sampleMenu1, desc: "" },
-  { id: "7", name: "Menu7", price: 900, img: sampleMenu1, desc: "" },
+  { id: "1", name: "Menu1", price: 600, img: "", desc: "田中の煮汁" },
+  { id: "2", name: "Menu2", price: 700, img: "", desc: "田中のパチンコ伝説" },
+  { id: "3", name: "Menu3", price: 800, img: "", desc: "田中浪費田中" },
+  { id: "4", name: "Menu4", price: 1000, img: "", desc: "menu4の説明書き" },
+  { id: "5", name: "Menu5", price: 1500, img: "", desc: "menu5の説明書き" },
+  { id: "6", name: "Menu6", price: 1200, img: "", desc: "menu6の説明書き" },
+  { id: "7", name: "Menu7", price: 900, img: "", desc: "menu7の説明書き" },
 ];
-
-export const selectMenuData1: SelectMenu = {
-  id: "1",
-  name: "sampleMenu",
-  image: sampleMenu1,
-  description:
-    "サンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキスト",
-  options: [
-    { id: "1", name: "キャラメルソース", price: 50 },
-    { id: "2", name: "ねぎ", price: 100 },
-    { id: "3", name: "もやし", price: 150 },
-    { id: "4", name: "チョコレート", price: 20 },
-    { id: "5", name: "バニラ", price: 80 },
-  ],
-  price: 850,
-};
-
-//optionがなければ複数選択できるようにしたい
-export const selectMenuData2: SelectMenu = {
-  id: "1",
-  name: "sampleMenu",
-  image: sampleMenu2,
-  description:
-    "サンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキスト",
-  options: [],
-  price: 500,
-};
