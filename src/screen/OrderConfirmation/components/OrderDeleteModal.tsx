@@ -1,10 +1,10 @@
-import { useOrderStore } from "@/screen//MenuDetails/store/Order.ts";
-import { deleteOrder } from "@/screen/MenuDetails/store/action/OrderAction.ts";
 import { orderDeleteModalStyle } from "@/screen/OrderConfirmation/components/style/OrderDeleteModal.css.ts";
+import { useOrderStore } from "@/store/OrderStore.ts";
+import { deleteProduct } from "@/store/action/OrderAction.ts";
 import { Fragment } from "react";
 
 type OrderDeleteModalProps = {
-  productID: number;
+  productID: string;
   setModalFlag: (Flag: boolean) => void;
 };
 
@@ -13,7 +13,7 @@ function OrderDeleteModal({ productID, setModalFlag }: OrderDeleteModalProps) {
 
   const orderDeleteHandler = (id: number) => {
     setModalFlag(false);
-    orderDispatch(deleteOrder(id));
+    // orderDispatch(deleteProduct(id));
   };
 
   return (
@@ -25,7 +25,7 @@ function OrderDeleteModal({ productID, setModalFlag }: OrderDeleteModalProps) {
             <button
               type={"button"}
               className={orderDeleteModalStyle.yesButton}
-              onClick={() => orderDeleteHandler(productID)}
+              onClick={() => orderDeleteHandler(1)} //out
             >
               はい
             </button>

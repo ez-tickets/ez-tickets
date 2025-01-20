@@ -1,6 +1,6 @@
-import { useOrderStore } from "@/screen/MenuDetails/store/Order.ts";
 import Order from "@/screen/OrderConfirmation/components/Order.tsx";
 import { orderListStyle } from "@/screen/OrderConfirmation/components/style/OrderList.css.ts";
+import { useOrderStore } from "@/store/OrderStore.ts";
 import { Fragment } from "react";
 
 function OrderList() {
@@ -11,7 +11,7 @@ function OrderList() {
       <div className={orderListStyle.main}>
         <div className={orderListStyle.orderContainer}>
           {orderQuery.map((order) => (
-            <Order order={order} key={order.product.id} />
+            <Order order={order} key={order.id} />
           ))}
         </div>
       </div>

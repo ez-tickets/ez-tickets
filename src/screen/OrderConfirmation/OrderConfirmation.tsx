@@ -1,4 +1,4 @@
-import { slideBottom } from "@/global.css.ts";
+import { slideBottom } from "@/parts/components/style/AnimationFrame.css.ts";
 import { orderConfirmationStyle } from "@/screen/OrderConfirmation/OrderConfirmation.css.ts";
 import OrderBottomNav from "@/screen/OrderConfirmation/components/OrderBottomNav.tsx";
 import OrderList from "@/screen/OrderConfirmation/components/OrderList.tsx";
