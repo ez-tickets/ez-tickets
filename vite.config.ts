@@ -1,4 +1,3 @@
-/// <reference types="vitest" />
 /// <reference types="vite/client" />
 
 import { resolve } from "node:path";
@@ -10,6 +9,15 @@ import { defineConfig } from "vite";
 export default defineConfig({
   plugins: [react(), vanillaExtractPlugin()],
   resolve: {
-    alias: [{ find: "@", replacement: resolve(__dirname, "./src") }],
+    alias: [
+      { find: "@", replacement: resolve(__dirname, "./src") },
+      {
+        find: "@tabler/icons-react",
+        replacement: resolve(
+          __dirname,
+          "./node_modules/@tabler/icons-react/dist/esm/icons/index.mjs",
+        ),
+      },
+    ],
   },
 });

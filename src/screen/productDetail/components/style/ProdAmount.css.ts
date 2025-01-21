@@ -5,6 +5,7 @@ export const prodAmountStyle = {
     width: "100%",
     display: "flex",
     alignItems: "center",
+    justifyContent: "center",
     paddingBottom: "14px",
   }),
 

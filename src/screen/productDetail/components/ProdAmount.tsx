@@ -1,4 +1,4 @@
-import { actionNavStyle } from "@/screen/productDetail/components/style/ActionNav.css.ts";
+import { actionType } from "@/mockData.ts";
 import { prodAmountStyle } from "@/screen/productDetail/components/style/ProdAmount.css.ts";
 import { IconCircleMinus, IconCirclePlus } from "@tabler/icons-react";
 import { Fragment } from "react";
@@ -15,15 +15,11 @@ function ProdAmount({ price, amount, setAmount }: OrderAmountProps) {
 
   const changeAmountHandler = (task: string) => {
     switch (task) {
-      case "increment":
-        if (amount < max) {
-          setAmount(amount + 1);
-        }
+      case actionType.INCREMENT:
+        if (amount < max) setAmount(amount + 1);
         break;
-      case "decrement":
-        if (amount > min) {
-          setAmount(amount - 1);
-        }
+      case actionType.DECREMENT:
+        if (amount > min) setAmount(amount - 1);
         break;
     }
   };
@@ -39,7 +35,7 @@ function ProdAmount({ price, amount, setAmount }: OrderAmountProps) {
               ? prodAmountStyle.decrementButton
               : prodAmountStyle.limitDecrementButton
           }
-          onClick={() => changeAmountHandler("decrement")}
+          onClick={() => changeAmountHandler(actionType.DECREMENT)}
         />
 
         <div className={prodAmountStyle.amount}>{amount}</div>
@@ -50,7 +46,7 @@ function ProdAmount({ price, amount, setAmount }: OrderAmountProps) {
               ? prodAmountStyle.incrementButton
               : prodAmountStyle.limitIncrementButton
           }
-          onClick={() => changeAmountHandler("increment")}
+          onClick={() => changeAmountHandler(actionType.INCREMENT)}
         />
 
         <p className={prodAmountStyle.total}>

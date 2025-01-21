@@ -3,7 +3,7 @@ import { style } from "@vanilla-extract/css";
 export const actionBarStyle = {
   container: style({
     width: "100%",
-    padding: "1.35rem",
+    paddingTop: "1.35rem",
     display: "flex",
     justifyContent: "center",
     alignItems: "center",

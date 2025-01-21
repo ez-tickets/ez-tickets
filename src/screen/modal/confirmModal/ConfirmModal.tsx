@@ -3,7 +3,7 @@ import { buttonStyle } from "@/parts/components/style/Button.css.ts";
 import {
   confirmModalContainer,
   confirmModalStyle,
-} from "@/screen/modal/ConfirmModal.css.ts";
+} from "@/screen/modal/confirmModal/ConfirmModal.css.ts";
 import Modal from "react-modal";
 
 type ConfirmModalProps = {
@@ -12,6 +12,7 @@ type ConfirmModalProps = {
   executeHandler?: () => void;
 };
 
+// biome-ignore format: enable ts-ignore.
 function ConfirmModal({
   modalFlag,
   setModalFlag,
@@ -19,11 +20,7 @@ function ConfirmModal({
 }: ConfirmModalProps) {
   return (
     // @ts-ignore react version incompatible
-    <Modal
-      isOpen={modalFlag}
-      style={confirmModalContainer}
-      onRequestClose={() => setModalFlag(false)}
-    >
+    <Modal isOpen={modalFlag} style={confirmModalContainer} onRequestClose={() => setModalFlag(false)}>
       <div>
         <p className={confirmModalStyle.text}>この商品を削除しますか？</p>
         <div className={confirmModalStyle.buttonContainer}>

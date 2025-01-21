@@ -6,6 +6,12 @@ export const addProduct = (orderProd: OrderProduct) => ({
   payload: orderProd,
 });
 
+export const UPDATE_PRODUCT = "update-product" as const;
+export const updateProduct = (updatedProd: OrderProduct) => ({
+  type: UPDATE_PRODUCT,
+  payload: updatedProd,
+});
+
 export const DELETE_PRODUCT = "delete-product" as const;
 export const deleteProduct = (id: string) => ({
   type: DELETE_PRODUCT,
@@ -19,5 +25,6 @@ export const resetProduct = () => ({
 
 export type OrderAction =
   | ReturnType<typeof addProduct>
+  | ReturnType<typeof updateProduct>
   | ReturnType<typeof deleteProduct>
   | ReturnType<typeof resetProduct>;

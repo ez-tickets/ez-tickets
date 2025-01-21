@@ -42,7 +42,7 @@ export const buttonStyle = {
     margin: "0 5px",
     backgroundColor: "gold",
     borderRadius: "5px",
-    boxShadow: "0 -1px 2px gray",
+    boxShadow: "0 1px 2px gray",
   }),
 
   noButton: style({
@@ -51,6 +51,6 @@ export const buttonStyle = {
     margin: "0 5px",
     backgroundColor: "white",
     borderRadius: "5px",
-    boxShadow: "0 -1px 2px gray",
+    boxShadow: "0 1px 2px gray",
   }),
 };

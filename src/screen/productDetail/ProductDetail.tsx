@@ -6,6 +6,7 @@ import { headerStyle } from "@/parts/components/style/Header.css.ts";
 import ActionNav from "@/screen/productDetail/components/ActionNav.tsx";
 import NavBar from "@/screen/productDetail/components/NavBar.tsx";
 import ProdDesc from "@/screen/productDetail/components/ProdDesc.tsx";
+import { useOrderStore } from "@/store/OrderStore.ts";
 import type { ProductModel } from "@/types.ts";
 import { Fragment, useState } from "react";
 import { useLocation } from "react-router-dom";
@@ -16,7 +17,12 @@ type ProductState = {
 
 function ProductDetail() {
   const { product } = useLocation().state as ProductState;
-  const [amount, setAmount] = useState<number>(1);
+  const { orderQuery } = useOrderStore();
+
+  const prodAmount = orderQuery.find((prod) => prod.id === product.id);
+  const [amount, setAmount] = useState<number>(
+    prodAmount ? prodAmount.amount : 1,
+  );
 
   return (
     <Fragment>
