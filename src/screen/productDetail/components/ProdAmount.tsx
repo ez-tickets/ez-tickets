@@ -1,5 +1,4 @@
 import { actionType } from "@/mockData.ts";
-import { actionNavStyle } from "@/screen/productDetail/components/style/ActionNav.css.ts";
 import { prodAmountStyle } from "@/screen/productDetail/components/style/ProdAmount.css.ts";
 import { IconCircleMinus, IconCirclePlus } from "@tabler/icons-react";
 import { Fragment } from "react";
