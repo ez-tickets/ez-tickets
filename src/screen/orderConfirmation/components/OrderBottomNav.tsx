@@ -3,6 +3,7 @@ import { buttonStyle } from "@/parts/components/style/Button.css.ts";
 import { orderBottomNavStyle } from "@/screen/orderConfirmation/components/style/OrderBottomNav.css.ts";
 import { useOrderStore } from "@/store/OrderStore.ts";
 import { resetProduct } from "@/store/action/OrderAction.ts";
+import type { SendOrder } from "@/types.ts";
 import React, { Fragment, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
@@ -20,7 +21,7 @@ function OrderBottomNav() {
   }, [orderQuery]);
 
   const orderHandler = () => {
-    const orderData = [];
+    const orderData: SendOrder[] = [];
 
     for (const order of orderQuery) {
       orderData.push({ id: order.id, amount: order.amount });

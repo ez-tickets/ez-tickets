@@ -1,4 +1,4 @@
-import type { BasicCategory, ProductModel } from "@/types.ts";
+import type { BasicCategory, CounterActions, ProductModel } from "@/types.ts";
 
 export const categoryData: BasicCategory[] = [
   { id: "1", name: "card1" },
@@ -22,3 +22,8 @@ export const menuData: ProductModel[] = [
   { id: "6", name: "Menu6", price: 1200, img: "", desc: "menu6の説明書き" },
   { id: "7", name: "Menu7", price: 900, img: "", desc: "menu7の説明書き" },
 ];
+
+export const actionType: CounterActions = {
+  INCREMENT: "increment",
+  DECREMENT: "decrement",
+};

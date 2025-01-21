@@ -26,3 +26,8 @@ export type SendOrder = {
   id: string;
   amount: number;
 };
+
+export type CounterActions = {
+  INCREMENT: string;
+  DECREMENT: string;
+};

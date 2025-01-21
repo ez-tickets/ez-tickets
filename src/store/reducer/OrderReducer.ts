@@ -4,6 +4,7 @@ import {
   DELETE_PRODUCT,
   type OrderAction,
   RESET_PRODUCT,
+  UPDATE_PRODUCT,
 } from "../action/OrderAction.ts";
 
 export const orderReducer = (
@@ -15,6 +16,10 @@ export const orderReducer = (
   switch (action.type) {
     case ADD_PRODUCT:
       return [...state, action.payload];
+    case UPDATE_PRODUCT:
+      return state.map((order) =>
+        order.id === action.payload.id ? action.payload : order,
+      );
     case DELETE_PRODUCT:
       return state.filter((order) => order.id !== action.payload);
     case RESET_PRODUCT:

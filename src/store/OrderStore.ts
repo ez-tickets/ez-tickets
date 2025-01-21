@@ -3,10 +3,10 @@ import { orderReducer } from "@/store/reducer/OrderReducer.ts";
 import type { OrderProduct } from "@/types.ts";
 import { create } from "zustand/index";
 
-interface OrderQueryDispatcher {
+type OrderQueryDispatcher = {
   orderQuery: OrderProduct[];
   orderDispatch: (action: OrderAction) => void;
-}
+};
 
 export const useOrderStore = create<OrderQueryDispatcher>((set) => ({
   orderQuery: [],

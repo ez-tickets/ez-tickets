@@ -9,7 +9,6 @@ export const headerStyle = {
     maxHeight: "7svh",
     boxShadow: "1px 2px 2px rgba(0,0,0,0.4)",
     overflowX: "scroll",
-
     // backgroundColor: "gold"
   }),
 

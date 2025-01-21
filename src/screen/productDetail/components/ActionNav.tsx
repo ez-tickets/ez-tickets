@@ -3,7 +3,7 @@ import { buttonStyle } from "@/parts/components/style/Button.css.ts";
 import ProdAmount from "@/screen/productDetail/components/ProdAmount.tsx";
 import { actionNavStyle } from "@/screen/productDetail/components/style/ActionNav.css.ts";
 import { useOrderStore } from "@/store/OrderStore.ts";
-import { addProduct } from "@/store/action/OrderAction.ts";
+import { addProduct, updateProduct } from "@/store/action/OrderAction.ts";
 import type { ProductModel } from "@/types.ts";
 import { Fragment } from "react";
 import { Link } from "react-router-dom";
@@ -25,13 +25,15 @@ function ActionNav({ product, amount, setAmount }: ActionNavigationProps) {
       price: product.price,
       amount: amount,
     };
-    orderDispatch(addProduct(prod));
-    setAmount(1);
-  };
 
-  const addToCartHandler = () => {
-    addOrder();
-    toast.success("商品をカートに追加しました");
+    if (orderQuery.find((prod) => prod.id === product.id)) {
+      orderDispatch(updateProduct(prod));
+      toast.success("数量を変更しました");
+    } else {
+      orderDispatch(addProduct(prod));
+      toast.success("商品をカートに追加しました");
+    }
+    setAmount(1);
   };
 
   return (
@@ -63,7 +65,7 @@ function ActionNav({ product, amount, setAmount }: ActionNavigationProps) {
             <Button
               name={"カートに追加する"}
               style={buttonStyle.actionButton}
-              execute={addToCartHandler}
+              execute={addOrder}
             />
           </Link>
         </div>
