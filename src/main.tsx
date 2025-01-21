@@ -6,7 +6,7 @@ import { MemoryRouter, Route, Routes } from "react-router-dom";
 import "@/global.css.ts";
 import { Bounce, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import OrderConfirmation from "@/screen/OrderConfirmation/OrderConfirmation.tsx";
+import OrderConfirmation from "@/screen/orderConfirmation/OrderConfirmation.tsx";
 
 // biome-ignore lint: @typescript-eslint/no-non-null-assertion
 createRoot(document.getElementById("root")!).render(

@@ -11,8 +11,8 @@ export const actionBarStyle = {
 
   orderQuantity: style({
     position: "absolute",
-    top: "0",
-    right: "0",
+    top: "10%",
+    right: "7%",
     width: "30px",
     height: "30px",
     display: "flex",

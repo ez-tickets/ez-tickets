@@ -1,5 +1,4 @@
-import sampleMenu1 from "@/assets/sampleMenu1.jpeg";
-import type { BasicCategory, ProductModel } from "@/dataTypes.ts";
+import type { BasicCategory, ProductModel } from "@/types.ts";
 
 export const categoryData: BasicCategory[] = [
   { id: "1", name: "card1" },
