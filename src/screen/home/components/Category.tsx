@@ -1,5 +1,5 @@
-import type { BasicCategory, ProductModel } from "@/dataTypes.ts";
 import { categoryStyle } from "@/screen/home/components/style/Category.css.ts";
+import type { BasicCategory, ProductModel } from "@/types.ts";
 import { Fragment } from "react";
 import { Link } from "react-router-dom";
 

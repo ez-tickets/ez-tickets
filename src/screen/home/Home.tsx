@@ -1,4 +1,3 @@
-import type { ProductModel } from "@/dataTypes.ts";
 import AnimationFrame from "@/parts/components/AnimationFrame.tsx";
 import ScreenFrame from "@/parts/components/ScreenFrame.tsx";
 import { contentsStyle } from "@/parts/components/style/Contents.css.ts";
@@ -7,10 +6,16 @@ import { headerStyle } from "@/parts/components/style/Header.css.ts";
 import ActionBar from "@/screen/home/components/ActionBar.tsx";
 import Categories from "@/screen/home/components/Categories.tsx";
 import Products from "@/screen/home/components/Products.tsx";
+import type { ProductModel } from "@/types.ts";
 import { useEffect, useState } from "react";
+import Modal from "react-modal";
 
 function Home() {
   const [products, setProducts] = useState<ProductModel[]>([]);
+
+  useEffect(() => {
+    Modal.setAppElement("#root");
+  }, []);
 
   //商品情報を省いたCategoryの配列を取得する、そこからcategoryのidをサーバーに渡して初期の商品情報を取得して表示する。
   //id, name, price, img情報が欲しい

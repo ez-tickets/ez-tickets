@@ -1,5 +1,5 @@
-import type { ProductModel } from "@/dataTypes.ts";
 import { prodDescStyle } from "@/screen/productDetail/components/style/ProdDesc.css.ts";
+import type { ProductModel } from "@/types.ts";
 import { Fragment } from "react";
 
 type MenuDescriptionProps = {

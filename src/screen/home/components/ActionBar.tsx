@@ -14,15 +14,14 @@ function ActionBar() {
     <Fragment>
       <div className={actionBarStyle.container}>
         {orderQuery.length !== 0 ? (
-          <Link to={"/OrderConfirmation"}>
+          <Link to={"/orderConfirmation"}>
             <Button
               name={"注文確定に進む"}
               style={buttonStyle.existButton}
               execute={changeTopAnimation}
             />
             <div className={actionBarStyle.orderQuantity}>
-              {/*{orderQuery.length}*/}
-              {2}
+              {orderQuery.length}
             </div>
           </Link>
         ) : (

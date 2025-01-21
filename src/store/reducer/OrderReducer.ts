@@ -1,8 +1,9 @@
-import type { OrderProduct } from "@/dataTypes.ts";
+import type { OrderProduct } from "@/types.ts";
 import {
   ADD_PRODUCT,
   DELETE_PRODUCT,
   type OrderAction,
+  RESET_PRODUCT,
 } from "../action/OrderAction.ts";
 
 export const orderReducer = (
@@ -16,6 +17,8 @@ export const orderReducer = (
       return [...state, action.payload];
     case DELETE_PRODUCT:
       return state.filter((order) => order.id !== action.payload);
+    case RESET_PRODUCT:
+      return [];
     default: {
       // linting error DO NOT TOUCH!
       const _: never = action;

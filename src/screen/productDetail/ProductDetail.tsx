@@ -1,4 +1,3 @@
-import type { ProductModel } from "@/dataTypes.ts";
 import AnimationFrame from "@/parts/components/AnimationFrame.tsx";
 import ScreenFrame from "@/parts/components/ScreenFrame.tsx";
 import { contentsStyle } from "@/parts/components/style/Contents.css.ts";
@@ -7,6 +6,7 @@ import { headerStyle } from "@/parts/components/style/Header.css.ts";
 import ActionNav from "@/screen/productDetail/components/ActionNav.tsx";
 import NavBar from "@/screen/productDetail/components/NavBar.tsx";
 import ProdDesc from "@/screen/productDetail/components/ProdDesc.tsx";
+import type { ProductModel } from "@/types.ts";
 import { Fragment, useState } from "react";
 import { useLocation } from "react-router-dom";
 

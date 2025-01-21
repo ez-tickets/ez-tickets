@@ -1,7 +1,7 @@
-import type { ProductModel } from "@/dataTypes.ts";
 import { menuData } from "@/mockData.ts";
 import Product from "@/screen/home/components/Product.tsx";
 import { productsStyle } from "@/screen/home/components/style/Products.css.ts";
+import type { ProductModel } from "@/types.ts";
 import { Fragment } from "react";
 
 type ProductsProps = {

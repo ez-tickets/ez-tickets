@@ -1,6 +1,6 @@
-import type { OrderProduct } from "@/dataTypes.ts";
 import type { OrderAction } from "@/store/action/OrderAction.ts";
 import { orderReducer } from "@/store/reducer/OrderReducer.ts";
+import type { OrderProduct } from "@/types.ts";
 import { create } from "zustand/index";
 
 interface OrderQueryDispatcher {

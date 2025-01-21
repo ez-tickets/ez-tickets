@@ -1,6 +1,6 @@
-import type { ProductModel } from "@/dataTypes.ts";
 import { productStyle } from "@/screen/home/components/style/Product.css.ts";
 import { useSlideAnimeStore } from "@/store/AnimationStore.ts";
+import type { ProductModel } from "@/types.ts";
 import { Fragment } from "react";
 import { Link } from "react-router-dom";
 

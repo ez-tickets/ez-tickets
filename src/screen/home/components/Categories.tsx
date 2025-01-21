@@ -1,7 +1,7 @@
-import type { BasicCategory, ProductModel } from "@/dataTypes.ts";
 import { categoryData } from "@/mockData.ts";
 import Category from "@/screen/home/components/Category.tsx";
 import { categoriesStyle } from "@/screen/home/components/style/Categories.css.ts";
+import type { BasicCategory, ProductModel } from "@/types.ts";
 import { Fragment, useEffect, useState } from "react";
 
 type CategoriesProps = {
