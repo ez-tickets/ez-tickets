@@ -4,12 +4,12 @@ export const confirmModalStyle = {
   text: style({
     textAlign: "center",
     fontSize: "18px",
-    marginTop: "20px",
-    padding: "0 20px",
+    padding: "5px",
+    borderBottom: "1px solid lightgray",
   }),
 
   buttonContainer: style({
-    marginTop: "40px",
+    marginTop: "25px",
     display: "flex",
     justifyContent: "space-around",
   }),

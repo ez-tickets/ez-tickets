@@ -18,6 +18,7 @@ function Product({ product }: ProductProps) {
         to={"/ProductDetail"}
         state={{ product: product }}
         onClick={changeRightAnimation}
+        className={productStyle.link}
       >
         <div className={productStyle.prod}>
           <img
@@ -26,7 +27,9 @@ function Product({ product }: ProductProps) {
             alt={product.name}
           />
           <div className={productStyle.prodName}>{product.name}</div>
-          <div className={productStyle.prodPrice}>{product.price}</div>
+          <div className={productStyle.prodPrice}>
+            {product.price.toLocaleString()}
+          </div>
         </div>
       </Link>
     </Fragment>

@@ -11,7 +11,11 @@ import { useEffect, useState } from "react";
 import Modal from "react-modal";
 
 function Home() {
+  const initSelectedCategoryId = "1";
   const [products, setProducts] = useState<ProductModel[]>([]);
+  const [selectedCategoryId, setSelectedCategoryId] = useState<string>(
+    initSelectedCategoryId,
+  );
 
   useEffect(() => {
     Modal.setAppElement("#root");
@@ -31,7 +35,13 @@ function Home() {
     <AnimationFrame
       element={
         <ScreenFrame
-          header={<Categories setProducts={setProducts} />}
+          header={
+            <Categories
+              setProducts={setProducts}
+              selectedCategoryId={selectedCategoryId}
+              setSelectedCategoryId={setSelectedCategoryId}
+            />
+          }
           contents={<Products products={products} />}
           footer={<ActionBar />}
           // 7%, 85%, 8%

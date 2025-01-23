@@ -12,26 +12,24 @@ function ActionBar() {
 
   return (
     <Fragment>
-      <div className={actionBarStyle.container}>
-        {orderQuery.length !== 0 ? (
-          <Link to={"/orderConfirmation"}>
-            <Button
-              name={"注文確定に進む"}
-              style={buttonStyle.existButton}
-              execute={changeTopAnimation}
-            />
-            <div className={actionBarStyle.orderQuantity}>
-              {orderQuery.length}
-            </div>
+      {orderQuery.length !== 0 ? (
+        <div className={actionBarStyle.container}>
+          <Link
+            to={"/orderConfirmation"}
+            className={actionBarStyle.link}
+            onClick={changeTopAnimation}
+          >
+            注文確定に進む
           </Link>
-        ) : (
-          <Button
-            name={"メニューを選択してください"}
-            style={buttonStyle.emptyButton}
-            disabled={true}
-          />
-        )}
-      </div>
+          <div className={actionBarStyle.quantity}>{orderQuery.length}</div>
+        </div>
+      ) : (
+        <Button
+          name={"メニューを選択してください"}
+          style={buttonStyle.emptyButton}
+          disabled={true}
+        />
+      )}
     </Fragment>
   );
 }

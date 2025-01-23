@@ -9,13 +9,11 @@ function OrderTopNav() {
 
   return (
     <Fragment>
-      <div className={orderTopNavStyle.topBar}>
-        <Link to={"/"} onClick={changeTopAnimation}>
-          <IconX className={orderTopNavStyle.backImg} />
-        </Link>
+      <Link to={"/"} onClick={changeTopAnimation}>
+        <IconX className={orderTopNavStyle.backImg} />
+      </Link>
 
-        <h1 className={orderTopNavStyle.menuTitle}>注文内容</h1>
-      </div>
+      <h1 className={orderTopNavStyle.menuTitle}>注文内容</h1>
     </Fragment>
   );
 }

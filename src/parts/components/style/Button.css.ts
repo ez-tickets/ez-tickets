@@ -2,21 +2,20 @@ import { style } from "@vanilla-extract/css";
 
 export const buttonStyle = {
   existButton: style({
-    display: "block",
-    width: "300px",
-    backgroundColor: "gold",
-    borderRadius: "2.5px",
+    position: "relative",
+    width: "90%",
     padding: "10px 10px",
+    backgroundColor: "gold",
     border: "1px solid rgba(0,0,0,0.2)",
+    borderRadius: "5px",
   }),
 
   emptyButton: style({
-    display: "block",
-    width: "300px",
-    backgroundColor: "rgba(0,0,0,0.2)",
-    borderRadius: "2.5px",
+    width: "90%",
     padding: "10px 20px",
+    backgroundColor: "rgba(0,0,0,0.2)",
     border: "1px solid rgba(0,0,0,0.2)",
+    borderRadius: "5px",
   }),
 
   actionButton: style({
@@ -29,15 +28,15 @@ export const buttonStyle = {
   }),
 
   confirmButton: style({
+    width: "100%",
     padding: "10px 20px",
     backgroundColor: "gold",
     border: "1px solid rgba(0,0,0,0.2)",
     borderRadius: "5px",
-    width: "100%",
   }),
 
   yesButton: style({
-    width: "140px",
+    width: "150px",
     padding: "5px",
     margin: "0 5px",
     backgroundColor: "gold",
@@ -46,7 +45,7 @@ export const buttonStyle = {
   }),
 
   noButton: style({
-    width: "140px",
+    width: "150px",
     padding: "5px",
     margin: "0 5px",
     backgroundColor: "white",

@@ -6,6 +6,7 @@ globalStyle("html, body", {
   height: "100svh",
   fontFamily: "Noto Sans JP",
   touchAction: "none",
+  color: "#646464",
 });
 
 globalStyle("a", {

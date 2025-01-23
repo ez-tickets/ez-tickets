@@ -1,5 +1,3 @@
-import React, { Fragment } from "react";
-
 type ButtonProps = {
   name: string;
   style: string;
