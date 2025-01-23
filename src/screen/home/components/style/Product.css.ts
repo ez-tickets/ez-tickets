@@ -16,11 +16,23 @@ export const productStyle = {
   }),
 
   prodImg: style({
+    position: "relative",
     margin: "0 auto",
     padding: "0.0625rem",
-    width: "10rem",
-    height: "7.5rem",
+    width: "100%",
+    height: "50%",
+    backgroundColor: "#f6f6f6",
+    border: "1px dashed lightgray",
     borderRadius: "0.625rem 0.625rem 0 0",
+    aspectRatio: "4/3",
+    ":before": {
+      content: "No Image",
+      position: "absolute",
+      top: "50%",
+      left: "50%",
+      transform: "translate(-50%, -50%)",
+      fontSize: "0.75rem",
+    },
   }),
 
   prodName: style({

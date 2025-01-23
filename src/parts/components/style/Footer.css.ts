@@ -24,6 +24,7 @@ export const footerStyle = {
     height: "15svh",
     boxShadow: "1px -2px 2px rgba(0,0,0,0.4)",
     zIndex: 100,
+    overflow: "scroll",
 
     // backgroundColor: "skyblue"
   }),

@@ -1,5 +1,5 @@
 import { actionType } from "@/mockData.ts";
-import { prodAmountStyle } from "@/screen/productDetail/components/style/ProdAmount.css.ts";
+import { orderAmountStyle } from "@/screen/productDetail/components/style/OrderAmount.css.ts";
 import { IconCircleMinus, IconCirclePlus } from "@tabler/icons-react";
 import { Fragment } from "react";
 
@@ -9,7 +9,7 @@ type OrderAmountProps = {
   setAmount: (amount: number) => void;
 };
 
-function ProdAmount({ price, amount, setAmount }: OrderAmountProps) {
+function OrderAmount({ price, amount, setAmount }: OrderAmountProps) {
   const max = 10;
   const min = 1;
 
@@ -26,30 +26,30 @@ function ProdAmount({ price, amount, setAmount }: OrderAmountProps) {
 
   return (
     <Fragment>
-      <div className={prodAmountStyle.amountContainer}>
-        <div className={prodAmountStyle.text}>数量:</div>
+      <div className={orderAmountStyle.amountContainer}>
+        <div className={orderAmountStyle.text}>数量:</div>
 
         <IconCircleMinus
           className={
             amount > min
-              ? prodAmountStyle.decrementButton
-              : prodAmountStyle.limitDecrementButton
+              ? orderAmountStyle.decrementButton
+              : orderAmountStyle.limitDecrementButton
           }
           onClick={() => changeAmountHandler(actionType.DECREMENT)}
         />
 
-        <div className={prodAmountStyle.amount}>{amount}</div>
+        <div className={orderAmountStyle.amount}>{amount}</div>
 
         <IconCirclePlus
           className={
             amount < max
-              ? prodAmountStyle.incrementButton
-              : prodAmountStyle.limitIncrementButton
+              ? orderAmountStyle.incrementButton
+              : orderAmountStyle.limitIncrementButton
           }
           onClick={() => changeAmountHandler(actionType.INCREMENT)}
         />
 
-        <p className={prodAmountStyle.total}>
+        <p className={orderAmountStyle.total}>
           {(price * amount).toLocaleString()}
         </p>
       </div>
@@ -57,4 +57,4 @@ function ProdAmount({ price, amount, setAmount }: OrderAmountProps) {
   );
 }
 
-export default ProdAmount;
+export default OrderAmount;

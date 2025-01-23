@@ -1,28 +1,10 @@
 import { style } from "@vanilla-extract/css";
 
 export const buttonStyle = {
-  existButton: style({
-    position: "relative",
-    width: "90%",
-    padding: "10px 10px",
-    backgroundColor: "gold",
-    border: "1px solid rgba(0,0,0,0.2)",
-    borderRadius: "5px",
-  }),
-
   emptyButton: style({
     width: "90%",
     padding: "10px 20px",
     backgroundColor: "rgba(0,0,0,0.2)",
-    border: "1px solid rgba(0,0,0,0.2)",
-    borderRadius: "5px",
-  }),
-
-  actionButton: style({
-    width: "150px",
-    padding: "10px",
-    margin: "0 16px",
-    backgroundColor: "gold",
     border: "1px solid rgba(0,0,0,0.2)",
     borderRadius: "5px",
   }),

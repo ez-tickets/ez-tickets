@@ -1,23 +1,23 @@
 import { style } from "@vanilla-extract/css";
 
-export const prodAmountStyle = {
+export const orderAmountStyle = {
   amountContainer: style({
     width: "100%",
+    height: "50%",
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
-    paddingBottom: "14px",
   }),
 
   text: style({
-    marginRight: "1.2rem",
+    marginRight: "0.75rem",
   }),
 
   decrementButton: style({
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
-    marginRight: "10px",
+    marginRight: "0.625rem",
     color: "#565656",
   }),
 
@@ -25,7 +25,7 @@ export const prodAmountStyle = {
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
-    marginRight: "10px",
+    marginRight: "0.625rem",
     color: "lightgray",
   }),
 
@@ -33,7 +33,7 @@ export const prodAmountStyle = {
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
-    marginLeft: "10px",
+    marginLeft: "0.625rem",
     color: "#565656",
   }),
 
@@ -41,22 +41,22 @@ export const prodAmountStyle = {
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
-    marginLeft: "10px",
+    marginLeft: "0.625rem",
     color: "lightgray",
   }),
 
   amount: style({
-    width: "30px",
-    height: "30px",
+    width: "1.875rem",
+    height: "1.875rem",
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
     border: "1px solid gray",
-    borderRadius: "5px",
+    borderRadius: "0.3125rem",
   }),
 
   total: style({
-    width: "120px",
+    width: "7.5rem",
     marginLeft: "4rem",
     fontSize: "1.5rem",
     textAlign: "right",

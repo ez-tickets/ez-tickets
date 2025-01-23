@@ -2,7 +2,6 @@ import { menuData } from "@/mockData.ts";
 import Product from "@/screen/home/components/Product.tsx";
 import { productsStyle } from "@/screen/home/components/style/Products.css.ts";
 import type { ProductModel } from "@/types.ts";
-import { Fragment } from "react";
 
 type ProductsProps = {
   products: ProductModel[];
@@ -10,19 +9,17 @@ type ProductsProps = {
 
 function Products({ products }: ProductsProps) {
   return (
-    <Fragment>
-      <div className={productsStyle.prodsContainer}>
-        {/* mockData */}
-        {menuData.map((product) => (
-          <Product key={product.id} product={product} />
-        ))}
+    <div className={productsStyle.prodsContainer}>
+      {/* mockData */}
+      {menuData.map((product) => (
+        <Product key={product.id} product={product} />
+      ))}
 
-        {/*todo: 以下に置き換える*/}
-        {/*{products.map((product) => (*/}
-        {/*  <Product key={product.id} product={product} />*/}
-        {/*))}*/}
-      </div>
-    </Fragment>
+      {/*todo: 以下に置き換える*/}
+      {/*{products.map((product) => (*/}
+      {/*  <Product key={product.id} product={product} />*/}
+      {/*))}*/}
+    </div>
   );
 }
 
