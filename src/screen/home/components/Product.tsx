@@ -12,27 +12,25 @@ function Product({ product }: ProductProps) {
   const { changeRightAnimation } = useSlideAnimeStore();
 
   return (
-    <Fragment>
-      <Link
-        key={product.id}
-        to={"/ProductDetail"}
-        state={{ product: product }}
-        onClick={changeRightAnimation}
-        className={productStyle.link}
-      >
-        <div className={productStyle.prod}>
-          <img
-            src={product.img}
-            className={productStyle.prodImg}
-            alt={product.name}
-          />
-          <div className={productStyle.prodName}>{product.name}</div>
-          <div className={productStyle.prodPrice}>
-            {product.price.toLocaleString()}
-          </div>
+    <Link
+      key={product.id}
+      to={"/ProductDetail"}
+      state={{ product: product }}
+      onClick={changeRightAnimation}
+      className={productStyle.link}
+    >
+      <div className={productStyle.prod}>
+        <img
+          src={product.img}
+          className={productStyle.prodImg}
+          alt={product.name}
+        />
+        <div className={productStyle.prodName}>{product.name}</div>
+        <div className={productStyle.prodPrice}>
+          {product.price.toLocaleString()}
         </div>
-      </Link>
-    </Fragment>
+      </div>
+    </Link>
   );
 }
 

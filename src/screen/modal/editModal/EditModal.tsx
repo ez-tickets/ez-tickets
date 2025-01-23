@@ -5,7 +5,6 @@ import {
   editModalContainer,
   editModalStyle,
 } from "@/screen/modal/editModal/EditModal.css.ts";
-import { prodAmountStyle } from "@/screen/productDetail/components/style/ProdAmount.css.ts";
 import { useOrderStore } from "@/store/OrderStore.ts";
 import { updateProduct } from "@/store/action/OrderAction.ts";
 import type { OrderProduct } from "@/types.ts";
@@ -59,19 +58,19 @@ function EditModal({ order, editModal, setEditModal }: EditModalProd) {
           <IconCircleMinus
             className={
               amount > min
-                ? prodAmountStyle.decrementButton
-                : prodAmountStyle.limitDecrementButton
+                ? editModalStyle.decrementButton
+                : editModalStyle.limitDecrementButton
             }
             onClick={() => editAmountHandler(actionType.DECREMENT)}
           />
 
-          <div className={prodAmountStyle.amount}>{amount}</div>
+          <div className={editModalStyle.amount}>{amount}</div>
 
           <IconCirclePlus
             className={
               amount < max
-                ? prodAmountStyle.incrementButton
-                : prodAmountStyle.limitIncrementButton
+                ? editModalStyle.incrementButton
+                : editModalStyle.limitIncrementButton
             }
             onClick={() => editAmountHandler(actionType.INCREMENT)}
           />

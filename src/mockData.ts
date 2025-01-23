@@ -36,7 +36,7 @@ export const menuData: ProductModel[] = [
     id: "2",
     name: "寿司セット",
     price: 2500,
-    img: Sample,
+    img: "",
     desc: "新鮮な魚介を使用した職人こだわりの握り寿司",
   },
   {
@@ -50,7 +50,7 @@ export const menuData: ProductModel[] = [
     id: "4",
     name: "牛丼",
     price: 800,
-    img: Sample,
+    img: "",
     desc: "柔らかい牛肉を甘辛いタレで煮込み、ご飯の上にたっぷりのせた一品",
   },
   {
@@ -64,7 +64,7 @@ export const menuData: ProductModel[] = [
     id: "6",
     name: "蕎麦セット",
     price: 1200,
-    img: Sample,
+    img: "",
     desc: "コシのある蕎麦に天ぷらや薬味がセットになった一品",
   },
   {

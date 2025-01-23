@@ -2,7 +2,7 @@ import { categoryData } from "@/mockData.ts";
 import Category from "@/screen/home/components/Category.tsx";
 import { categoriesStyle } from "@/screen/home/components/style/Categories.css.ts";
 import type { BasicCategory, ProductModel } from "@/types.ts";
-import { Fragment, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 type CategoriesProps = {
   selectedCategoryId: string;
@@ -28,29 +28,27 @@ function Categories({
   // }, []);
 
   return (
-    <Fragment>
-      <div className={categoriesStyle.categories}>
-        {/*mockData*/}
-        {categoryData.map((category) => (
-          <Category
-            key={category.id}
-            category={category}
-            selectedCategoryId={selectedCategoryId}
-            setSelectedCategoryId={setSelectedCategoryId}
-            setProducts={setProducts}
-          />
-        ))}
+    <div className={categoriesStyle.categories}>
+      {/*mockData*/}
+      {categoryData.map((category) => (
+        <Category
+          key={category.id}
+          category={category}
+          selectedCategoryId={selectedCategoryId}
+          setSelectedCategoryId={setSelectedCategoryId}
+          setProducts={setProducts}
+        />
+      ))}
 
-        {/*todo: 以下に置き換える*/}
-        {/*{categories.map((category) => (*/}
-        {/*  <Category*/}
-        {/*    key={category.id}*/}
-        {/*    category={category}*/}
-        {/*    setProducts={setProducts}*/}
-        {/*  />*/}
-        {/*))}*/}
-      </div>
-    </Fragment>
+      {/*todo: 以下に置き換える*/}
+      {/*{categories.map((category) => (*/}
+      {/*  <Category*/}
+      {/*    key={category.id}*/}
+      {/*    category={category}*/}
+      {/*    setProducts={setProducts}*/}
+      {/*  />*/}
+      {/*))}*/}
+    </div>
   );
 }
 

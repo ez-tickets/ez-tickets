@@ -1,6 +1,5 @@
 import { prodDescStyle } from "@/screen/productDetail/components/style/ProdDesc.css.ts";
 import type { ProductModel } from "@/types.ts";
-import { Fragment } from "react";
 
 type MenuDescriptionProps = {
   product: ProductModel;
@@ -8,17 +7,11 @@ type MenuDescriptionProps = {
 
 function ProdDesc({ product }: MenuDescriptionProps) {
   return (
-    <Fragment>
-      <div className={prodDescStyle.prodContainer}>
-        <img
-          src={product.img}
-          className={prodDescStyle.img}
-          alt={product.name}
-        />
-        <p className={prodDescStyle.desc}>{product.desc}</p>
-        <p className={prodDescStyle.price}>{product.price}</p>
-      </div>
-    </Fragment>
+    <div className={prodDescStyle.prodContainer}>
+      <img src={product.img} className={prodDescStyle.img} alt={product.name} />
+      <p className={prodDescStyle.desc}>{product.desc}</p>
+      <p className={prodDescStyle.price}>{product.price.toLocaleString()}</p>
+    </div>
   );
 }
 

@@ -1,15 +1,15 @@
-import { navBarStyle } from "@/screen/productDetail/components/style/NavBar.css.ts";
+import { detailTopNavStyle } from "@/screen/productDetail/components/style/DetailTopNav.css.ts";
 import { useSlideAnimeStore } from "@/store/AnimationStore.ts";
 import { IconArrowLeft } from "@tabler/icons-react";
 import { Fragment } from "react";
 import { Link } from "react-router-dom";
 
-type NavBarProps = {
+type DetailTopNavProps = {
   name: string;
   setAmount: (amount: number) => void;
 };
 
-function NavBar({ name, setAmount }: NavBarProps) {
+function DetailTopNav({ name, setAmount }: DetailTopNavProps) {
   const { changeLeftAnimation } = useSlideAnimeStore();
 
   const backHandler = () => {
@@ -20,12 +20,12 @@ function NavBar({ name, setAmount }: NavBarProps) {
   return (
     <Fragment>
       <Link to={"/"} onClick={backHandler}>
-        <IconArrowLeft className={navBarStyle.icon} />
+        <IconArrowLeft className={detailTopNavStyle.icon} />
       </Link>
 
-      <h1 className={navBarStyle.name}>{name}</h1>
+      <h1 className={detailTopNavStyle.name}>{name}</h1>
     </Fragment>
   );
 }
 
-export default NavBar;
+export default DetailTopNav;
