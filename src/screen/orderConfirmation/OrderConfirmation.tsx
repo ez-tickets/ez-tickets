@@ -18,9 +18,9 @@ function OrderConfirmation() {
             header={<OrderTopNav />}
             contents={<OrderList />}
             footer={<OrderBottomNav />}
-            headerStyle={headerStyle.homeFrame}
-            contentsStyle={contentsStyle.homeFrame}
-            footerStyle={footerStyle.homeFrame}
+            headerStyle={headerStyle.confirmFrame}
+            contentsStyle={contentsStyle.confirmFrame}
+            footerStyle={footerStyle.confirmFrame}
           />
         }
       />

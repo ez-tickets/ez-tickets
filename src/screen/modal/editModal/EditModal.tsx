@@ -79,14 +79,14 @@ function EditModal({ order, editModal, setEditModal }: EditModalProd) {
 
         <div className={editModalStyle.buttonContainer}>
           <Button
-            name={"キャンセル"}
-            style={buttonStyle.noButton}
-            execute={() => setEditModal(false)}
-          />
-          <Button
             name={"変更する"}
             style={buttonStyle.yesButton}
             execute={confirmHandler}
+          />
+          <Button
+              name={"キャンセル"}
+              style={buttonStyle.noButton}
+              execute={() => setEditModal(false)}
           />
         </div>
       </div>

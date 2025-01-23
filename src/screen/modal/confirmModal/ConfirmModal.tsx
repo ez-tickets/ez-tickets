@@ -25,14 +25,14 @@ function ConfirmModal({
         <p className={confirmModalStyle.text}>この商品を削除しますか？</p>
         <div className={confirmModalStyle.buttonContainer}>
           <Button
+              name={"はい"}
+              style={buttonStyle.yesButton}
+              execute={executeHandler}
+          />
+          <Button
             name={"キャンセル"}
             style={buttonStyle.noButton}
             execute={() => setModalFlag(false)}
-          />
-          <Button
-            name={"はい"}
-            style={buttonStyle.yesButton}
-            execute={executeHandler}
           />
         </div>
       </div>

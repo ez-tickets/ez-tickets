@@ -5,10 +5,16 @@ import type { BasicCategory, ProductModel } from "@/types.ts";
 import { Fragment, useEffect, useState } from "react";
 
 type CategoriesProps = {
+  selectedCategoryId: string;
+  setSelectedCategoryId: (id: string) => void;
   setProducts: (prod: ProductModel[]) => void;
 };
 
-function Categories({ setProducts }: CategoriesProps) {
+function Categories({
+  selectedCategoryId,
+  setSelectedCategoryId,
+  setProducts,
+}: CategoriesProps) {
   const [categories, setCategories] = useState<BasicCategory[]>([]);
 
   //todo: カテゴリー情報のみを取得するAPI
@@ -29,6 +35,8 @@ function Categories({ setProducts }: CategoriesProps) {
           <Category
             key={category.id}
             category={category}
+            selectedCategoryId={selectedCategoryId}
+            setSelectedCategoryId={setSelectedCategoryId}
             setProducts={setProducts}
           />
         ))}

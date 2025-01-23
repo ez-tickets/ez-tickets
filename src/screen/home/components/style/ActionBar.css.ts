@@ -2,26 +2,38 @@ import { style } from "@vanilla-extract/css";
 
 export const actionBarStyle = {
   container: style({
-    width: "100%",
-    paddingTop: "1.35rem",
+    position: "relative",
+    width: "90%",
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
   }),
 
-  orderQuantity: style({
+  link: style({
+    width: "100%",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "gold",
+    padding: "0.625rem 1.25rem",
+    borderRadius: "0.3125rem",
+    boxShadow: "0 0.0625rem 0.125rem gray",
+  }),
+
+  quantity: style({
     position: "absolute",
-    top: "10%",
-    right: "7%",
-    width: "30px",
-    height: "30px",
+    top: 0,
+    right: 0,
+    transform: "translate(50%, -50%)",
+    width: "1.875rem",
+    height: "1.875rem",
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
     color: "white",
     backgroundColor: "crimson",
-    border: "1px solid white",
+    border: "0.0625rem solid white",
     borderRadius: "50%",
-    boxShadow: "-2px -2px 4px rgba(0,0,0,0.2)",
+    boxShadow: "-0.125rem -0.125rem 0.25rem rgba(0,0,0,0.2)",
   }),
 };

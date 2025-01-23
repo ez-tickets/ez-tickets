@@ -19,13 +19,11 @@ function NavBar({ name, setAmount }: NavBarProps) {
 
   return (
     <Fragment>
-      <div className={navBarStyle.navBar}>
-        <Link to={"/"} onClick={backHandler}>
-          <IconArrowLeft className={navBarStyle.icon} />
-        </Link>
+      <Link to={"/"} onClick={backHandler}>
+        <IconArrowLeft className={navBarStyle.icon} />
+      </Link>
 
-        <h1 className={navBarStyle.name}>{name}</h1>
-      </div>
+      <h1 className={navBarStyle.name}>{name}</h1>
     </Fragment>
   );
 }

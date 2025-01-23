@@ -2,11 +2,13 @@ import { style } from "@vanilla-extract/css";
 
 export const categoriesStyle = {
   categories: style({
-    height: "7svh",
+    height: "100%",
     display: "flex",
     alignItems: "center",
-    fontSize: "14px",
-    boxShadow: "0px 2px 5px gray",
-    overflowX: "scroll",
+    fontSize: "0.875rem",
+    overflow: "scroll",
+    "::-webkit-scrollbar": {
+      display: "none",
+    },
   }),
 };
