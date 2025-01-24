@@ -1,53 +1,82 @@
-import sampleMenu1 from "@/assets/sampleMenu1.jpeg";
-import sampleMenu2 from "@/assets/sampleMenu2.jpeg";
-import type { Category, Menu, SelectMenu } from "@/dataTypes.ts";
+import Sample from "@/assets/sample.jpeg";
+import type { BasicCategory, CounterActions, ProductModel } from "@/types.ts";
 
-export const categoryData: Category[] = [
-  { id: "1", name: "card1" },
-  { id: "2", name: "card2" },
-  { id: "3", name: "card3" },
-  { id: "4", name: "card4" },
-  { id: "5", name: "card5" },
-  { id: "6", name: "card6" },
-  { id: "7", name: "card7" },
-  { id: "8", name: "card8" },
-  { id: "9", name: "card9" },
-  { id: "10", name: "card10" },
+export const categoryData: BasicCategory[] = [
+  { id: "1", name: "和食" },
+  { id: "2", name: "洋食" },
+  { id: "3", name: "中華料理" },
+  { id: "4", name: "イタリアン" },
+  { id: "5", name: "フレンチ" },
+  { id: "6", name: "焼肉" },
+  { id: "7", name: "寿司" },
+  { id: "8", name: "カフェ" },
+  { id: "9", name: "居酒屋" },
+  { id: "10", name: "ファストフード" },
 ];
 
-export const menuData: Menu[] = [
-  { id: "1", name: "Menu1", price: 600, image: sampleMenu1 },
-  { id: "2", name: "Menu2", price: 700, image: sampleMenu2 },
-  { id: "3", name: "Menu3", price: 800, image: sampleMenu1 },
-  { id: "4", name: "Menu4", price: 1000, image: sampleMenu2 },
-  { id: "5", name: "Menu5", price: 1500, image: sampleMenu1 },
-  { id: "6", name: "Menu6", price: 1200, image: sampleMenu2 },
-  { id: "7", name: "Menu7", price: 900, image: sampleMenu1 },
+// export const menuData: ProductModel[] = [
+//   { id: "1", name: "Spaghetti Carbonara", price: 1200, img: "", desc: "クリーミーなソースとベーコンが絡む絶品スパゲッティ" },
+//   { id: "2", name: "Margherita Pizza", price: 1500, img: "", desc: "トマト、バジル、モッツァレラチーズが香る本格ピザ" },
+//   { id: "3", name: "Caesar Salad", price: 800, img: "", desc: "新鮮野菜と特製ドレッシングが特徴のサラダ" },
+//   { id: "4", name: "Grilled Salmon", price: 2000, img: "", desc: "香ばしく焼き上げたサーモンのステーキ" },
+//   { id: "5", name: "Beef Steak", price: 3000, img: "", desc: "ジューシーで柔らかいビーフステーキ、特製ソース添え" },
+//   { id: "6", name: "Chicken Curry", price: 1000, img: "", desc: "スパイスが効いた濃厚なチキンカレー" },
+//   { id: "7", name: "Cheesecake", price: 600, img: "", desc: "濃厚で滑らかな口当たりのベイクドチーズケーキ" },
+// ];
+
+export const menuData: ProductModel[] = [
+  {
+    id: "1",
+    name: "天ぷら盛り合わせ天ぷら盛り合わせ",
+    price: 1500,
+    img: Sample,
+    desc: "旬の野菜と海老をサクサクに揚げた天ぷらセット旬の野菜と海老をサクサクに揚げた天ぷらセット旬の野菜と海老をサクサクに揚げた天ぷらセット旬の野菜と海老をサクサクに揚げた天ぷらセット旬の野菜と海老をサクサクに揚げた天ぷらセット旬の野菜と海老をサクサクに揚げた天ぷらセット旬の野菜と海老をサクサクに揚げた天ぷらセット旬の野菜と海老をサクサクに揚げた天ぷらセット旬の野菜と海老をサクサクに揚げた天ぷらセット旬の野菜と海老をサクサクに揚げた天ぷらセット旬の野菜と海老をサクサクに揚げた天ぷらセット旬の野菜と海老をサクサクに揚げた天ぷらセット旬の野菜と海老をサクサクに揚げた天ぷらセット旬の野菜と海老をサクサクに揚げた天ぷらセット旬の野菜と海老をサクサクに揚げた天ぷらセット旬の野菜と海老をサクサクに揚げた天ぷらセット旬の野菜と海老をサクサクに揚げた天ぷらセット",
+  },
+  {
+    id: "2",
+    name: "寿司セット",
+    price: 2500,
+    img: "",
+    desc: "新鮮な魚介を使用した職人こだわりの握り寿司",
+  },
+  {
+    id: "3",
+    name: "味噌ラーメン",
+    price: 1000,
+    img: Sample,
+    desc: "濃厚味噌スープが自慢の北海道風ラーメン",
+  },
+  {
+    id: "4",
+    name: "牛丼",
+    price: 800,
+    img: "",
+    desc: "柔らかい牛肉を甘辛いタレで煮込み、ご飯の上にたっぷりのせた一品",
+  },
+  {
+    id: "5",
+    name: "鰻重",
+    price: 3000,
+    img: Sample,
+    desc: "ふっくら焼き上げた国産鰻を秘伝のタレで仕上げた贅沢な重箱",
+  },
+  {
+    id: "6",
+    name: "蕎麦セット",
+    price: 1200,
+    img: "",
+    desc: "コシのある蕎麦に天ぷらや薬味がセットになった一品",
+  },
+  {
+    id: "7",
+    name: "抹茶アイス",
+    price: 500,
+    img: Sample,
+    desc: "宇治抹茶を使用した濃厚な和風デザート",
+  },
 ];
 
-export const selectMenuData1: SelectMenu = {
-  id: "1",
-  name: "sampleMenu",
-  image: sampleMenu1,
-  description:
-    "サンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキスト",
-  options: [
-    { id: "1", name: "キャラメルソース", price: 50 },
-    { id: "2", name: "ねぎ", price: 100 },
-    { id: "3", name: "もやし", price: 150 },
-    { id: "4", name: "チョコレート", price: 20 },
-    { id: "5", name: "バニラ", price: 80 },
-  ],
-  price: 850,
-};
-
-//optionがなければ複数選択できるようにしたい
-export const selectMenuData2: SelectMenu = {
-  id: "1",
-  name: "sampleMenu",
-  image: sampleMenu2,
-  description:
-    "サンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキスト",
-  options: [],
-  price: 500,
+export const actionType: CounterActions = {
+  INCREMENT: "increment",
+  DECREMENT: "decrement",
 };
