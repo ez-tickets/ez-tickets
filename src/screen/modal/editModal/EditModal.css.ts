@@ -5,18 +5,18 @@ export const editModalStyle = {
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
-    margin: "30px 0",
+    margin: "1.875rem 0",
   }),
 
   name: style({
-    padding: "5px",
+    padding: "0.3125rem",
     textAlign: "center",
-    fontSize: "18px",
+    fontSize: "1.125rem",
     borderBottom: "1px dotted gray",
   }),
 
   text: style({
-    marginRight: "50px",
+    marginRight: "3.125rem",
   }),
 
   buttonContainer: style({
@@ -79,8 +79,8 @@ export const editModalContainer = {
     position: "relative",
     top: "50%",
     left: "50%",
-    width: "360px",
-    height: "200px",
+    width: "22.5rem",
+    height: "12.5rem",
     transform: "translate(-50%, -50%)",
     overflow: "hidden",
   },
