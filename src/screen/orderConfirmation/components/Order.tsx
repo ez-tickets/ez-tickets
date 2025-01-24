@@ -35,16 +35,19 @@ function Order({ order }: OrderProps) {
         onClick={(e) => openEditHandler(e)}
       >
         <div className={orderStyle.orderProduct}>
-          <span className={orderStyle.productName}>{order.name}</span>
-          <p className={orderStyle.productAmount}>数量 {order.amount}</p>
+          <div className={orderStyle.name}>{order.name}</div>
+          <div className={orderStyle.priceViewContainer}>
+            <div className={orderStyle.price}>
+              {order.price.toLocaleString()}円
+            </div>
+            <div className={orderStyle.amount}>数量 {order.amount}</div>
+          </div>
         </div>
 
-        <p className={orderStyle.productPrice}>{order.price}円</p>
-
         <div className={orderStyle.totalContainer}>
-          <span className={orderStyle.totalPrice}>
+          <div className={orderStyle.total}>
             合計 {(order.price * order.amount).toLocaleString()}円
-          </span>
+          </div>
         </div>
 
         <IconTrash

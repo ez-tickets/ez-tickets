@@ -3,49 +3,61 @@ import { style } from "@vanilla-extract/css";
 export const orderStyle = {
   order: style({
     position: "relative",
-    width: "100%",
-    marginBottom: "30px",
-    padding: "10px",
+    marginBottom: "1.875rem",
+    padding: "0.625rem",
     border: "1px solid rgba(0,0,0,0.2)",
-    borderRadius: "5px",
-    boxShadow: "5px 3px 10px rgba(0,0,0,0.4)",
+    borderRadius: "0.3125rem",
+    boxShadow: "0.3125rem 0.1875rem 0.625rem rgba(0,0,0,0.4)",
   }),
 
   orderProduct: style({
     position: "relative",
     width: "100%",
-    padding: "0 10px",
   }),
 
-  productName: style({
-    fontSize: "20px",
+  name: style({
+    width: "90%",
+    fontSize: "1.25rem",
+    padding: "0 0.625rem",
+    textOverflow: "ellipsis",
+    whiteSpace: "nowrap",
+    overflow: "hidden",
   }),
 
-  productAmount: style({
-    position: "absolute",
-    top: "80%",
-    right: "2%",
-  }),
-
-  productPrice: style({
-    fontSize: "12px",
-    padding: "0 10px 5px 10px",
+  priceViewContainer: style({
+    display: "flex",
+    alignItems: "center",
+    padding: "0.5rem 0",
     borderBottom: "1px solid rgba(0,0,0,0.2)",
   }),
 
-  totalContainer: style({
-    textAlign: "right",
-    padding: "15px 2px 10px 5px",
+  price: style({
+    width: "50%",
+    padding: "0 0.625rem",
   }),
 
-  totalPrice: style({
-    marginRight: "20px",
+  amount: style({
+    width: "50%",
+    padding: "0 0.625rem",
+    textAlign: "right",
+  }),
+
+  totalContainer: style({
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    padding: "0.625rem",
+  }),
+
+  total: style({
+    width: "100%",
+    textAlign: "right",
   }),
 
   deleteIcon: style({
     position: "absolute",
-    top: "3px",
-    right: "5px",
+    top: "0.1875rem",
+    right: "0.3125rem",
     stroke: "red",
   }),
 };

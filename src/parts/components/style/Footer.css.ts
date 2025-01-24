@@ -35,6 +35,10 @@ export const footerStyle = {
     left: 0,
     width: "100%",
     height: "15svh",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    flexDirection: "column",
     boxShadow: "1px -2px 2px rgba(0,0,0,0.4)",
     zIndex: 100,
 
