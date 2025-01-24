@@ -12,11 +12,11 @@ export const detailTopNavStyle = {
   }),
 
   name: style({
-    width: "70%",
+    width: "300px",
     fontSize: "1.25rem",
     textAlign: "center",
     backgroundColor: "white",
-    textOverflow: "ellipsis",
+    textOverflow: "aaa",
     whiteSpace: "nowrap",
     overflow: "hidden",
   }),

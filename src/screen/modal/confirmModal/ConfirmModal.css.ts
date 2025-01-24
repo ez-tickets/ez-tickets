@@ -3,13 +3,12 @@ import { style } from "@vanilla-extract/css";
 export const confirmModalStyle = {
   text: style({
     textAlign: "center",
-    fontSize: "18px",
-    padding: "5px",
+    padding: "0.3125rem 0",
     borderBottom: "1px solid lightgray",
   }),
 
   buttonContainer: style({
-    marginTop: "25px",
+    marginTop: "1.5625rem",
     display: "flex",
     justifyContent: "space-around",
   }),
@@ -20,15 +19,15 @@ export const confirmModalContainer = {
     position: "absolute",
     top: 0,
     left: 0,
-    backgroundColor: "rgba(0,0,0,0.4)",
+    backgroundColor: "rgba(0,0,0,0.5)",
     zIndex: 100,
   },
   content: {
     position: "relative",
     top: "50%",
     left: "50%",
-    width: "360px",
-    height: "160px",
+    width: "22.5rem",
+    height: "10rem",
     transform: "translate(-50%, -50%)",
     display: "flex",
     justifyContent: "center",

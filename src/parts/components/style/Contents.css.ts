@@ -8,7 +8,7 @@ export const contentsStyle = {
     width: "100%",
     height: "82svh",
     overflowY: "scroll",
-    padding: "10px",
+    padding: "0.625rem",
 
     // backgroundColor: "red"
   }),
@@ -20,7 +20,7 @@ export const contentsStyle = {
     width: "100%",
     height: "78svh",
     overflowY: "scroll",
-    padding: "10px",
+    padding: "0.625rem",
 
     // backgroundColor: "red"
   }),
@@ -32,7 +32,7 @@ export const contentsStyle = {
     width: "100%",
     height: "78svh",
     overflowY: "scroll",
-    padding: "10px",
+    padding: "0.625rem",
 
     // backgroundColor: "red"
   }),

@@ -7,7 +7,7 @@ export const footerStyle = {
     left: 0,
     width: "100%",
     height: "11svh",
-    boxShadow: "1px -2px 2px rgba(0,0,0,0.4)",
+    boxShadow: "0.0625rem -0.125rem 0.125rem rgba(0,0,0,0.4)",
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
@@ -22,7 +22,7 @@ export const footerStyle = {
     left: 0,
     width: "100%",
     height: "15svh",
-    boxShadow: "1px -2px 2px rgba(0,0,0,0.4)",
+    boxShadow: "0.0625rem -0.125rem 0.125rem rgba(0,0,0,0.4)",
     zIndex: 100,
     overflow: "scroll",
 
@@ -39,7 +39,7 @@ export const footerStyle = {
     justifyContent: "center",
     alignItems: "center",
     flexDirection: "column",
-    boxShadow: "1px -2px 2px rgba(0,0,0,0.4)",
+    boxShadow: "0.0625rem -0.125rem 0.125rem rgba(0,0,0,0.4)",
     zIndex: 100,
 
     // backgroundColor: "skyblue"
