@@ -4,7 +4,7 @@ import { orderBottomNavStyle } from "@/screen/orderConfirmation/components/style
 import { useOrderStore } from "@/store/OrderStore.ts";
 import { resetProduct } from "@/store/action/OrderAction.ts";
 import type { SendOrder } from "@/types.ts";
-import React, { Fragment, useEffect, useState } from "react";
+import { Fragment, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
 
@@ -27,7 +27,7 @@ function OrderBottomNav() {
       orderData.push({ id: order.id, amount: order.amount });
     }
     console.log(orderData);
-    //注文データをサーバーに送るAPI
+    //todo: 注文データをサーバーに送るAPI
 
     toast.success("注文が完了しました");
     orderDispatch(resetProduct());
@@ -36,11 +36,13 @@ function OrderBottomNav() {
   return (
     <Fragment>
       <div className={orderBottomNavStyle.footer}>
-        <p className={orderBottomNavStyle.total}>
-          合計 {total.toLocaleString()}
-        </p>
+        <div className={orderBottomNavStyle.totalContainer}>
+          <div className={orderBottomNavStyle.total}>
+            合計 {total.toLocaleString()}
+          </div>
+        </div>
 
-        <Link to={"/"}>
+        <Link to={"/"} className={orderBottomNavStyle.link}>
           {orderQuery.length !== 0 ? (
             <Button
               name={"注文を確定する"}

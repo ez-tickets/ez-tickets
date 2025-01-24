@@ -9,6 +9,8 @@ export const headerStyle = {
     height: "7svh",
     boxShadow: "1px 2px 2px rgba(0,0,0,0.4)",
     zIndex: 100,
+
+    // backgroundColor: "yellow",
   }),
 
   detailFrame: style({
@@ -36,7 +38,6 @@ export const headerStyle = {
     justifyContent: "center",
     alignItems: "center",
     boxShadow: "1px 2px 2px rgba(0,0,0,0.4)",
-    overflowX: "scroll",
     zIndex: 100,
 
     // backgroundColor: "yellow"

@@ -3,12 +3,12 @@ import { style } from "@vanilla-extract/css";
 export const detailTopNavStyle = {
   icon: style({
     position: "absolute",
-    top: "52%",
-    left: "1%",
+    top: "50%",
+    left: 0,
     width: "2.5rem",
-    height: "2.5rem",
+    height: "100%",
     strokeWidth: "0.09375rem",
-    transform: "translate(-1%, -50%)",
+    transform: "translate(0%, -50%)",
   }),
 
   name: style({
