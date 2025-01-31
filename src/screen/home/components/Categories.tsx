@@ -1,53 +1,25 @@
-import { categoryData } from "@/mockData.ts";
 import Category from "@/screen/home/components/Category.tsx";
 import { categoriesStyle } from "@/screen/home/components/style/Categories.css.ts";
-import type { BasicCategory, ProductModel } from "@/types.ts";
-import { useEffect, useState } from "react";
+import type { BasicCategory } from "@/types.ts";
 
 type CategoriesProps = {
-  selectedCategoryId: string;
-  setSelectedCategoryId: (id: string) => void;
-  setProducts: (prod: ProductModel[]) => void;
+  categories?: BasicCategory[];
+  selected: number | undefined;
+  setSelected: (id: number) => void;
 };
 
-function Categories({
-  selectedCategoryId,
-  setSelectedCategoryId,
-  setProducts,
-}: CategoriesProps) {
-  const [categories, setCategories] = useState<BasicCategory[]>([]);
-
-  //todo: カテゴリー情報のみを取得するAPI
-  // useEffect(() => {
-  //   (async => {
-  //     const getCategories = await;     //カテゴリー情報を取得するAPI
-  //     const getInitProducts = await;   //初期表示するカテゴリーの商品情報を取得するAPI
-  //     setCategories(getCategories);
-  //     setProducts(getInitProducts);
-  //   })
-  // }, []);
-
+function Categories({ categories, selected, setSelected }: CategoriesProps) {
   return (
     <div className={categoriesStyle.categories}>
-      {/*mockData*/}
-      {categoryData.map((category) => (
+      {categories?.map((category, index) => (
         <Category
           key={category.id}
+          idx={index}
           category={category}
-          selectedCategoryId={selectedCategoryId}
-          setSelectedCategoryId={setSelectedCategoryId}
-          setProducts={setProducts}
+          selectedCategoryId={selected}
+          setSelectedCategoryId={setSelected}
         />
       ))}
-
-      {/*todo: 以下に置き換える*/}
-      {/*{categories.map((category) => (*/}
-      {/*  <Category*/}
-      {/*    key={category.id}*/}
-      {/*    category={category}*/}
-      {/*    setProducts={setProducts}*/}
-      {/*  />*/}
-      {/*))}*/}
     </div>
   );
 }
