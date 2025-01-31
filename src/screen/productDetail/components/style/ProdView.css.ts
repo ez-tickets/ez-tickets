@@ -1,6 +1,6 @@
 import { style } from "@vanilla-extract/css";
 
-export const prodDescStyle = {
+export const prodViewStyle = {
   prodContainer: style({
     padding: "0.3125rem",
   }),

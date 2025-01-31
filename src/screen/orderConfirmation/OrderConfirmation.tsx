@@ -11,7 +11,6 @@ import { Fragment } from "react";
 function OrderConfirmation() {
   return (
     <Fragment>
-      {/* slideBottom */}
       <AnimationFrame
         element={
           <ScreenFrame

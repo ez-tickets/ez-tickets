@@ -1,19 +1,15 @@
 import OrderAmount from "@/screen/productDetail/components/OrderAmount.tsx";
 import OrderButtons from "@/screen/productDetail/components/OrderButtons.tsx";
-import type { ProductModel } from "@/types.ts";
+import type { ProductDetails } from "@/types.ts";
 import { Fragment } from "react";
 
-type ActionNavigationProps = {
-  product: ProductModel;
+type DetailBottomNavProps = {
+  product: ProductDetails;
   amount: number;
   setAmount: (amount: number) => void;
 };
 
-function DetailBottomNav({
-  product,
-  amount,
-  setAmount,
-}: ActionNavigationProps) {
+function DetailBottomNav({ product, amount, setAmount }: DetailBottomNavProps) {
   return (
     <Fragment>
       <OrderAmount
@@ -21,7 +17,7 @@ function DetailBottomNav({
         amount={amount}
         setAmount={setAmount}
       />
-
+      
       <OrderButtons product={product} amount={amount} setAmount={setAmount} />
     </Fragment>
   );
