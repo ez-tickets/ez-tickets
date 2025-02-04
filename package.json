@@ -11,9 +11,11 @@
   },
   "dependencies": {
     "@tabler/icons-react": "^3.28.1",
+    "@tanstack/react-query": "^5.65.1",
     "@types/react-modal": "^3.16.3",
     "@types/uuid": "^10.0.0",
     "@vanilla-extract/css": "^1.16.0",
+    "axios": "^1.7.9",
     "msw": "^2.5.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",

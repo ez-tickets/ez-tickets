@@ -1,13 +1,13 @@
 import { orderButtonsStyle } from "@/screen/productDetail/components/style/OrderButtons.css.ts";
 import { useOrderStore } from "@/store/OrderStore.ts";
 import { addProduct, updateProduct } from "@/store/action/OrderAction.ts";
-import type { ProductModel } from "@/types";
+import type { ProductDetails } from "@/types";
 import { Fragment } from "react";
 import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
 
 type OrderButtonsProps = {
-  product: ProductModel;
+  product: ProductDetails;
   amount: number;
   setAmount: (amount: number) => void;
 };

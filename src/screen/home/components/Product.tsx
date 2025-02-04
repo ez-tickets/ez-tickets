@@ -14,13 +14,13 @@ function Product({ product }: ProductProps) {
     <Link
       key={product.id}
       to={"/ProductDetail"}
-      state={{ product: product }}
+      state={{ productId: product.id }}
       onClick={changeRightAnimation}
       className={productStyle.link}
     >
       <div className={productStyle.prod}>
         <img
-          src={product.img}
+          src={`http://100.77.238.23:3650/images/${product.id}`}
           className={productStyle.prodImg}
           alt={product.name}
         />

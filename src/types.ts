@@ -1,16 +1,24 @@
-//初期取得Categoryデータ
+//Categoryデータ
 export type BasicCategory = {
   id: string;
   name: string;
+  ordering: number;
 };
 
-//カテゴリー選択時取得Productsデータ
+//Productデータ
 export type ProductModel = {
   id: string;
   name: string;
   price: number;
+  ordering: number;
+};
+
+//Product詳細
+export type ProductDetails = {
+  id: string;
+  name: string;
+  price: number;
   desc: string;
-  img: string;
 };
 
 //商品追加時の情報
