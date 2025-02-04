@@ -7,6 +7,8 @@ import type { SendOrder } from "@/types.ts";
 import { Fragment, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
+import {useMutation} from "@tanstack/react-query";
+import axios from "axios";
 
 function OrderBottomNav() {
   const [total, setTotal] = useState<number>(0);
@@ -20,6 +22,14 @@ function OrderBottomNav() {
     setTotal(total);
   }, [orderQuery]);
 
+  const postOrder = useMutation({
+    mutationFn: (order: SendOrder[]) => axios.post("http://localhost:3651/order", order),
+    onSuccess: () => {
+      toast.success("注文が完了しました");
+      orderDispatch(resetProduct());
+    }
+  })
+
   const orderHandler = () => {
     const orderData: SendOrder[] = [];
 
@@ -27,10 +37,8 @@ function OrderBottomNav() {
       orderData.push({ id: order.id, amount: order.amount });
     }
     console.log(orderData);
-    //todo: 注文データをサーバーに送るAPI
 
-    toast.success("注文が完了しました");
-    orderDispatch(resetProduct());
+    postOrder.mutate(orderData);
   };
 
   return (
