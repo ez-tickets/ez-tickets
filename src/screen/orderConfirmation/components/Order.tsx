@@ -5,7 +5,7 @@ import { useOrderStore } from "@/store/OrderStore.ts";
 import { deleteProduct } from "@/store/action/OrderAction.ts";
 import type { OrderProduct } from "@/types.ts";
 import { IconTrash } from "@tabler/icons-react";
-import { Fragment, useState } from "react";
+import { Fragment, useState, type MouseEvent } from "react";
 
 type OrderProps = {
   order: OrderProduct;
@@ -16,12 +16,12 @@ function Order({ order }: OrderProps) {
   const [modalFlag, setModalFlag] = useState<boolean>(false);
   const { orderDispatch } = useOrderStore();
 
-  const openEditHandler = (e: React.MouseEvent<HTMLDivElement>) => {
+  const openEditHandler = (e: MouseEvent<HTMLDivElement>) => {
     e.preventDefault();
     setEditModal(true);
   };
 
-  const deleteModalHandler = (e: React.MouseEvent<SVGSVGElement>) => {
+  const deleteModalHandler = (e: MouseEvent<SVGSVGElement>) => {
     e.stopPropagation(); // Stop event propagation
     setModalFlag(true);
   };
